@@ -23,7 +23,7 @@
 
 # 时间工具
 
-- 鼠标悬停图片放大镜特效、参数和最简教程 — http://momentjs.cn/
+- momentjs — http://momentjs.cn/
 
 
 
