@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="description" content="Description">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!--<link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css"> -->
+    <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+</head>
+<body>
+<nav>
+    <!--
+    <a href="#/">EN</a>
+    <a href="#/zh-cn/">中文</a>
+    -->
+</nav>
+<div id="app">加载中</div>
+</body>
+<script>
+    window.$docsify = {
+        loadSidebar: true, // 多页文档
+        autoHeader: true,
+        executeScript: true,
+        loadNavbar: true,
+        sidebarToggle: true,
+        coverpage: true, // 启用封面
+        coverpage: 'cover.md', //// 自定义文件名
+        name: 'zongQi',
+        nameLink: 'https://blog.zongqilive.cn/sdbxpjzq/',
+        repo: 'https://github.com/sdbxpjzq',
+
+        markdown: {
+            smartypants: true
+        }
+    }
+</script>
+<!--
+
+<script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+-->
+<script src="//cdn.bootcss.com/docsify/3.7.3/docsify.js"></script>
+<script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
+</html>
