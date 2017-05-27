@@ -23,5 +23,22 @@
 
 # 时间工具
 
-- momentjs — http://momentjs.cn/
+- 鼠标悬停图片放大镜特效、参数和最简教程 — http://momentjs.cn/
 
+
+
+# 鼠标悬停图片放大
+
+- jQ插件(jquery.imagezoom.js) — http://www.ijquery.cn/?p=489
+
+
+
+# 过渡动画库
+
+- jQ插件(jquery.transit.js) — http://code.ciaoca.com/jquery/transit/
+
+
+
+# jQuery Easing 动画效果扩展
+
+- jQuery 的动画的 easing 参数，默认只提供 "linear" 和 "swing"（默认值），足够日常的任务需求使用，但是当我们需要更好玩的过渡效果时，就可以使用这个扩展插件！— http://code.ciaoca.com/jquery/easing/
