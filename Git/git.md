@@ -36,3 +36,7 @@
 
 -  `git checkout -b [branch-name]` — 新建分支,并切换该分支
 -  `git checkout [branch-name]` — 切换分支
+-  `git fetch origin branchname:branchname` — 拉取远程分支到本地
+-  `git branch -d (-D强制删除) [branch-name]` — 删除本地分支
+-  `git push origin --delete [branch-name]` — 删除远程分支
+
