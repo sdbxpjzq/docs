@@ -40,3 +40,11 @@
 -  `git branch -d (-D强制删除) [branch-name]` — 删除本地分支
 -  `git push origin --delete [branch-name]` — 删除远程分支
 
+
+# 更新自己的分支开发(上班第一件事)
+
+1. `git checkout master`
+2. `git pull origin master`
+3. `git checkout zongqi`
+4. `git merger master`
+5. `git push zongqi`
