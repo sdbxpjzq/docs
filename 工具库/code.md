@@ -60,3 +60,10 @@
 - Kalendae 是一个 JavaScript 实现的日期选择工具，无需依赖其他 JS 库。
 - https://www.oschina.net/p/kalendae
 - https://github.com/ChiperSoft/Kalendae
+
+
+
+# JavaScript 内容复制 Clipboard.js
+
+- https://www.oschina.net/p/clipboard-js
+- https://clipboardjs.com/#example-text
