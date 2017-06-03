@@ -119,7 +119,7 @@ hosts所在文件夹：
 - phpstorm
 - webstorm
   - [破解网站-参考一](http://idea.lanyus.com/)
-  - [破解网站-参考二](https://www.imsxm.com/jetbrains-license-server.html)
+  - [破解网站-参考二](http://www.imsxm.com/jetbrains-license-server.html)
 - 为知笔记,有道笔记,印象笔记
 - 滴答清单
 - Spark -- 邮箱
