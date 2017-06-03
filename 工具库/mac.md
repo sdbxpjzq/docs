@@ -54,7 +54,7 @@ hosts所在文件夹：
 
   5、终端：make install (安装)
 
-# chrome 插件 ( [插件网](http://www.cnplugins.com/))
+# chrome插件 ( [插件网](http://www.cnplugins.com/))
 
 - 为知笔记
 - [Google翻译](https://translate.google.com/?source=gtx)
