@@ -1,6 +1,6 @@
 # 图片懒加载
 
-- echo.js--https://github.com/toddmotto/echo
+- **echo.js**--https://github.com/toddmotto/echo
 
 ```html
 <body>
@@ -23,19 +23,19 @@
 
 # 时间工具
 
-- momentjs — http://momentjs.cn/
+- **momentjs** — http://momentjs.cn/
 
 
 
 # 鼠标悬停图片放大
 
-- jQ插件(jquery.imagezoom.js) — http://www.ijquery.cn/?p=489
+- jQ插件(**jquery.imagezoom.js**) — http://www.ijquery.cn/?p=489
 
 
 
 # 过渡动画库
 
-- jQ插件(jquery.transit.js) — http://code.ciaoca.com/jquery/transit/
+- jQ插件(**jquery.transit.js**) — http://code.ciaoca.com/jquery/transit/
 
 
 
