@@ -5,6 +5,16 @@
 
 
 
+#  Homebrew(推荐安装)
+
+- [Homebrew][https://brew.sh/]
+
+# 图片自动上传图床
+
+- iPic
+- iPic move
+- AIfred(需要破解版本) 设置快捷键
+
 # 修改`host`文件翻墙
 
 提供2个常用地址(一直在更新中).
@@ -113,6 +123,14 @@ hosts所在文件夹：
 3. 常见插件说明--http://www.cnblogs.com/mitnick/p/6270384.html — https://www.v2ex.com/t/156997
 
 
+
+
+ # tmux
+
+1. **安装**`brew install tmux`
+2. 新建窗口— `tmux new -n <窗口名>`
+3. 装了 oh-my-zsh 的话，自定义窗口名不起作用,修改zsh的配置文件,打开`DISABLE_AUTO_TITLE="true"`
+
 # 其他工具
 
 - 微信开发者工具
@@ -141,7 +159,6 @@ hosts所在文件夹：
 - Adobe Acrobat
 - Parallels Desktop
 - Postman
-- [Homebrew][https://brew.sh/]
 - [兼容性查询网站](http://caniuse.com/)
 
 # 推荐下载地址

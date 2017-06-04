@@ -41,6 +41,12 @@
 -  `git push origin --delete [branch-name]` — 删除远程分支
 
 
+
+
+# git log
+
+- `git log --pretty=oneline ` — 查看commit号
+
 # 更新自己的分支开发(上班第一件事)
 
 1. `git checkout master`
