@@ -130,6 +130,10 @@ withCredentials:true   //加了这段就可以跨域了
 3. 就是在config这个文件里的index.js这个文件夹了 里面有个proxyTable 这个可以给你代理域名到你想要的域名。 简书搜索 proxyTable 跨域 就可以得到你想要的答案了
 
 
+> 以上方法若没解决(就像我😂),使用代理的方式吧
+>
+> 我是用 whistle 代理解决的
+
 
 
 
