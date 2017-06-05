@@ -10,6 +10,48 @@
 
 初始化`git`库
 
+
+
+# 撤销本地的修改
+
+- `git checkout --[fileName]` — 撤销某个文件的修改
+- 那撤销全局文件的修改是什么呢?
+
+
+
+# 撤销git add后的文件
+
+`git add`之后,文件就参加到了暂存区,想丢弃修改分两步.
+
+1. `git reset HEAD [fileName]` — 从暂存区移除文件
+2. `git checkout --[fileName]` — 撤销这个文件的修改
+
+
+
+# 撤销git commit后的文件
+
+`git commit`已经提交到版本库,并没有推送到远程库.
+
+1. `git reset --hard [commit_id]`
+
+可以使用 `git log`查看提交历史.
+
+
+
+# git reflog
+
+这个一直没用过
+
+http://blog.csdn.net/shichaosong/article/details/22067529
+
+http://www.jianshu.com/p/253e15e324cd
+
+http://www.jianshu.com/p/3622ed542c3b
+
+# git
+
+
+
 # git remote
 
 
