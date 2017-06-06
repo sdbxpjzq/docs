@@ -134,7 +134,7 @@ withCredentials:true   //加了这段就可以跨域了
 >
 > 我是用 whistle 代理解决的
 
-
+4. 使用chrome插件`Allow-Control-Allow-Origin: *`解决
 
 
 # vue-cli
