@@ -86,7 +86,32 @@ new Vue({
 
 
 
+# vue-router
 
+**手册**
+
+https://router.vuejs.org/zh-cn/
+
+```js
+import Router from 'vue-router'
+export default new Router({
+    mode: 'history',
+  routes: [
+    {
+      path: '/',
+      name: 'vueCollection',
+      component: Collection
+    }
+  ]
+})
+
+```
+
+
+
+# vuex
+
+https://vuex.vuejs.org/zh-cn/
 
 # axios
 
@@ -127,19 +152,35 @@ withCredentials:true   //加了这段就可以跨域了
 });
 ```
 
-3. 就是在config这个文件里的index.js这个文件夹了 里面有个proxyTable 这个可以给你代理域名到你想要的域名。 简书搜索 proxyTable 跨域 就可以得到你想要的答案了
+3. 就是在config这个文件里的index.js这个文件夹了 里面有个proxyTable 这个可以给你代理域名到你想要的域名。 简书搜索 proxyTable 跨域 就可以得到你想要的答案了. **需要配合chrome跨域插件好使(Allow-Control-Allow-Origin: *)**
+
+
+```js
+proxyTable: {
+        '/sales/activity/ajax.php': {
+            target: "https://m.mafengwo.cn/sales/activity/ajax.php",
+            changeOrigin: true,
+            pathRewrite: {
+              '^/sales/activity/ajax.php': ""
+            }
+        },
+}
+```
+
 
 
 > 以上方法若没解决(就像我😂),使用代理的方式吧
 >
 > 我是用 whistle 代理解决的
 
-4. 使用chrome插件`Allow-Control-Allow-Origin: *`解决
-
-
 # vue-cli
 
 - [github](https://github.com/vuejs/vue-cli)
+- [**全局配置分析参考**](https://github.com/DDFE/DDFE-blog/issues/10?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)— 值得一看
+
+
+
+
 
 **全局安装**
 
@@ -163,6 +204,20 @@ withCredentials:true   //加了这段就可以跨域了
 
 直接安装 `node-sass`和`sass-loader`
 `npm install node-sass sass-loader --save-dev`
+
+
+
+# vue-cli 自定义模板
+
+1. 当官方模板不能满足需求时，我们可以 fork 官方模板按照自己的需求修改后，通过 vue-cli 命令生成基于自己模板的项目结构：
+
+   `vue init username/repo my-project`
+
+2. 除了从 github 下载模板外，我们还可以从本地加载模板：
+
+   `vue init ~/fs/path/to-custom-template my-project`
+
+
 
 # vue2.0手册
 
