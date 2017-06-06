@@ -64,9 +64,10 @@ hosts所在文件夹：
 
   5、终端：make install (安装)
 
-# chrome插件 ( [插件网](http://www.cnplugins.com/))
+# chrome插件 
 
 - 为知笔记
+- [Allow-Control-Allow-Origin: *](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi/related?hl=en)解决跨域问题,好用的很😎
 - [Google翻译](https://translate.google.com/?source=gtx)
 - 掘金
 - oneTab
@@ -80,6 +81,8 @@ hosts所在文件夹：
 - 二维码（生成及识别）
 - StayFocused --(设定时间后，这短时间内就无法访问你添加的网站,感谢`@梁同学`的推荐)
 - whistle(推荐 node 安装)
+
+也可以去 [插件网](http://www.cnplugins.com/)看看😜😜😜
 
 # 代理
 
