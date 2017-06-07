@@ -104,16 +104,19 @@ export default new Router({
     }
   ]
 })
-
 ```
 
 
+
+<center>**路由元信息- 配置`meta`**</center>
 
 # vuex
 
 https://vuex.vuejs.org/zh-cn/
 
 # axios
+
+http://www.jianshu.com/p/df464b26ae58
 
 **安装**
 

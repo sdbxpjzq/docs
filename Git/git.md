@@ -84,6 +84,10 @@ http://www.jianshu.com/p/3622ed542c3b
 
 #  分支
 
+-  `git branch` — 列出所有本地分支
+-  `git branch -r` — 列出所有远程分支
+-  `git branch -a` --列出所有本地和远程分支
+-  `git branch [branchName]` — 新建一个,并依然停留在当前
 -  `git checkout -b [branch-name]` — 新建分支,并切换该分支
 -  `git checkout [branch-name]` — 切换分支
 -  `git fetch origin branchname:branchname` — 拉取远程分支到本地
