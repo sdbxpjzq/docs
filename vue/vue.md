@@ -1,6 +1,6 @@
 
 
-# vue 基础指令
+# **vue 基础指令**
 
 v-for
 
@@ -31,7 +31,7 @@ v-for
 
 
 
-# vue2.0生命周期
+# **vue2.0生命周期**
 
 1. beforeCreate
 2. created
@@ -86,7 +86,7 @@ new Vue({
 
 
 
-# vue-router
+# **vue-router**
 
 **手册**
 
@@ -106,9 +106,62 @@ export default new Router({
 })
 ```
 
+**路由元信息- 配置`meta`**
+
+```js
+const router = new VueRouter({
+  routes: [
+    {
+      path: '/foo',
+      component: Foo,
+      children: [
+        {
+          path: 'bar',
+          component: Bar,
+          // a meta field
+          meta: { requiresAuth: true }
+        }
+      ]
+    }
+  ]
+})
+```
 
 
-<center>**路由元信息- 配置`meta`**</center>
+
+# **控制title和分享信息 -- vue-meta**
+
+https://github.com/declandewet/vue-meta
+
+router.js
+
+```js
+import Vue from 'vue'
+import Router from 'vue-router'
+import Meta from 'vue-meta'
+
+Vue.use(Router)
+Vue.use(Meta)
+```
+
+collection.vue
+
+```js
+export default {
+        name: 'vueCollection',
+        metaInfo: {
+                    title: '我是聚合页',
+                    meta: [
+                        { property: "og:title",content:"我是聚合页的分享title"},
+                        { property: "og:description",content:"我是聚合页的分享title"},
+                        { property: "og:url",content:"我是聚合页的分享title"},
+                        { property: "og:image",content:"image"},
+                    ]
+                }
+}
+```
+
+
 
 # vuex
 
@@ -221,6 +274,13 @@ proxyTable: {
    `vue init ~/fs/path/to-custom-template my-project`
 
 
+
+
+# vue 服务端渲染
+
+https://vuefe.cn/v2/guide/ssr.html
+
+https://segmentfault.com/a/1190000007933349
 
 # vue2.0手册
 
