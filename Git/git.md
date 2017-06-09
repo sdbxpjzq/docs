@@ -27,17 +27,6 @@
 2. `git checkout --[fileName]` — 撤销这个文件的修改
 
 
-
-# 撤销git commit后的文件
-
-`git commit`已经提交到版本库,并没有推送到远程库.
-
-1. `git reset --hard [commit_id]`
-
-可以使用 `git log`查看提交历史.
-
-
-
 # git reflog
 
 这个一直没用过
@@ -47,10 +36,6 @@ http://blog.csdn.net/shichaosong/article/details/22067529
 http://www.jianshu.com/p/253e15e324cd
 
 http://www.jianshu.com/p/3622ed542c3b
-
-# git
-
-
 
 # git remote
 
@@ -63,7 +48,7 @@ http://www.jianshu.com/p/3622ed542c3b
 # git add
 
 - `git add [file1][file2]…` — 添加指定文件到暂存区
-- `git add .` —  添加当前迷路的所有文件到暂存区
+- `git add .` —  添加当前的所有文件到暂存区
 
 
 
@@ -78,7 +63,41 @@ http://www.jianshu.com/p/3622ed542c3b
 - `git commit -v` — 提交时显示所有diff信息
 - `git commit --amend [file1]... -m '描述'` — 向一个`commit`里追加新的改动文件
 
-# [让单个文件回退到指定的版本](http://blog.csdn.net/ikscher/article/details/43851643)
+
+
+# 撤销 commit
+
+- `git reset –mixed`
+
+  此为默认方式，不带任何参数的`git reset`，即时这种方式，它回退到某个版本，**保留修改源码，回退commit和index信息**. 下次提交还需要`git add`.
+
+- ` git reset –soft`
+
+  回退到某个版本，保留修改源码,回退了commit的信息，不会恢复到index file一级。如果还要提交，直接commit即可(不需要`git add`)
+
+- `git reset –hard`
+
+  彻底回退到某个版本，**不保留修改源码**,本地的源码也会变为上一个版本的内容
+
+
+
+
+
+
+
+
+
+
+
+
+
+# git stash -暂时保存自己的修改
+
+- `git stash save '说明信息'`  — 保存到git 栈
+- `git stash list`  — 列出git栈信息
+- `git stash pop` — 取出***最近一次保存的内容***
+- `git stash apply stash@{1}`  — 取出指定的内容
+- `git stash clear` — 清空git 栈
 
 
 
@@ -95,7 +114,10 @@ http://www.jianshu.com/p/3622ed542c3b
 -  `git push origin --delete [branch-name]` — 删除远程分支
 
 
+**切换分支注意事项**
 
+1. 切换之前,确保当前分支的没有文件状态的变化. (可以使用 `git stash` 保存起来)
+2. 如果不小心地带着未commit的工作跳转到了另一分支下，不做任何修改直接再跳回去就好.
 
 # git log
 

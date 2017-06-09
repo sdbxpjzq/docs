@@ -1,1 +1,1 @@
-## [javascript作用域](javascript/作用域)
+## [javascript](javascript/javascript.md)
