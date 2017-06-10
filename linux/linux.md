@@ -38,6 +38,11 @@
 
 **栗子**
 
+- 每小时执行一次:
+
+  `00 * * * * /usr/local/bin/php /home/john/myscript.php`
+
+
 - 每天早上7点执行一次 /bin/ls : 
 
   `0 7 * * * /bin/ls`
