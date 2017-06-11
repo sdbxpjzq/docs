@@ -1,3 +1,9 @@
+#  制作动画
+
+http://hiloteam.github.io/
+
+http://hiloteam.github.io/tutorial/flappybird.html
+
 #  拖放排序插件-Sortable.js
 
 - 拖放排序插件Sortable.js

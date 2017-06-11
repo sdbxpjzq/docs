@@ -1,3 +1,9 @@
+#  实时刷新
+
+http://browsersync.cn/
+
+1. `npm install -g browser-sync`
+
 # 读写NTFS格式硬盘
 
 - 免费推荐--http://enjoygineering.com/mounty/
