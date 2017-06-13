@@ -3,6 +3,7 @@
 http://browsersync.cn/
 
 1. `npm install -g browser-sync`
+2. `browser-sync start --server --files "**/*.css, **/*.html"`
 
 # 读写NTFS格式硬盘
 
