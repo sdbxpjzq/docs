@@ -6,10 +6,6 @@
 4. `git merger master`
 5. `git push zongqi`
 
-# 很好的文章
-
-https://www.oschina.net/translate/10-tips-git-next-level
-
 # git init
 
 初始化`git`库
