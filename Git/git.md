@@ -18,11 +18,12 @@ https://www.oschina.net/translate/10-tips-git-next-level
 
 #  git cherry-pick
 
+当你通过一番挣扎终于搞定一个bug,顺手提交到 git 服务器,心里一阵暗爽. 这时发现你当前所在的分支是 master !!!这个分支不是开发者用来提交代码的,可惜现在剁手也晚了.
 
-
-
-
-
+1. `git checkout master` —切到主分支
+2. `git log` — 获取你提交的版本号
+3. `git checkout -b dev` —切换到开发分支
+4. `git cherry-pick [commit id]` 
 
 
 
