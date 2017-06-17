@@ -29,7 +29,11 @@ v-for
 </div>
 ```
 
+**ref**
 
+https://vuefe.cn/v2/api/#ref
+
+http://jingyan.baidu.com/article/acf728fd5ee4acf8e510a3cc.html
 
 # **vue2.0生命周期**
 

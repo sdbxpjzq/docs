@@ -32,7 +32,25 @@
 
 
 
-# 创建节点
+# React.createElement 创建节点
+
+
+
+```js
+<script type="text/babel">
+    var child1 = React.createElement('h1',null, 'hello world');
+    var child2 = React.createElement('h1',null, 'hello zong');
+    var root = React.createElement('div',{id: 'welcome'}, child1,child2);
+    ReactDOM.render(
+//        jsx
+//        <div id="welcome">
+//            <h1>hello</h1>
+//            <h1>world</h1>
+//        </div>
+        root
+        ,document.getElementById('root'));
+</script>
+```
 
 
 
@@ -43,4 +61,10 @@ https://hulufei.gitbooks.io/react-tutorial/content/component-lifecycle.html
 ![](https://ws4.sinaimg.cn/large/006tNbRwly1fgi60pqgx9j30v80j8q5s.jpg)
 
 ![](https://ws3.sinaimg.cn/large/006tNbRwly1fgi67rov2rj30rs0bq760.jpg)
+
+
+
+# React.Component 和 React.createClass一点点区别- 也挺重要
+
+http://www.tuicool.com/articles/nYj2aq
 
