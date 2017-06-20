@@ -54,6 +54,105 @@
 
 
 
+# 时钟案例
+
+```js
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="root"></div>
+</body>
+<script src="//cdn.bootcss.com/react/15.5.4/react.min.js"></script>
+<script src="//cdn.bootcss.com/react/15.5.4/react-dom.min.js"></script>
+<script src="../lib/babel.min.js"></script>
+<script type="text/babel">
+    function timeFun() {
+        const strhtml = (
+                <div>
+                    {/*<p>jsx代码部分</p>  注释的写法*/}
+                    <div>time: {new Date().toLocaleString()}</div>
+                </div>
+        );
+        ReactDOM.render(
+            strhtml ,
+            document.getElementById('root')
+        )
+    }
+    setInterval(timeFun,1000);
+//    创建虚拟dom, 只改变虚拟dom
+</script>
+</html>
+```
+
+
+
+# mixin 混合
+
+
+
+#  refs  访问DOM
+
+```js
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>refs</title>
+</head>
+<body>
+refs 访问 dom
+<div id="root"></div>
+</body>
+<script src="//cdn.bootcss.com/react/15.5.4/react.min.js"></script>
+<script src="//cdn.bootcss.com/react/15.5.4/react-dom.min.js"></script>
+<script src="https://b4-q.mafengwo.net/s10/M00/41/A7/wKgBZ1k99S-AQgoQAAv5hCkoCjw0625.js"></script>
+<!--<script src="../lib/babel.min.js"></script>-->
+<script type="text/babel">
+    class HelloName extends React.Component {
+        constructor(props){
+            super(props)
+            this.state = {
+                msg: ''
+            }
+        }
+        add() {
+            let a = this.refs.name // 这里获取
+            console.log(a);
+            console.log(a.value);
+            this.setState({ // 这是状态积
+                msg: '输入的是---' +a.value
+            })
+        }
+        render() {
+            return (
+                   <div>
+                       <p>
+                           <input type="text" ref="name"/> // 给个标志吧
+                       </p>
+                       <p>
+                           <button onClick={this.add.bind(this)}>提交</button>
+                       </p>
+                       <p>{this.state.msg}</p>
+                   </div>
+            )
+        }
+    }
+    ReactDOM.render(
+            <HelloName name="zong Qi"/>,
+        document.getElementById('root')
+    )
+</script>
+</html>
+```
+
+
+
+
+
 # 生命周期
 
 https://hulufei.gitbooks.io/react-tutorial/content/component-lifecycle.html

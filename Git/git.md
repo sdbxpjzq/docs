@@ -6,6 +6,11 @@
 4. `git merger master`
 5. `git push zongqi`
 
+或者
+
+1. `git checkout -b zongqi`
+2. `git pull origin master `
+
 # git init
 
 初始化`git`库
