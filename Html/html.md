@@ -1,4 +1,4 @@
-#  <select> 多选-multiple
+#  `<select>` 多选-multiple
 
 ```html
 <select multiple="multiple">
