@@ -1,3 +1,11 @@
+# iScroll 5 API 中文版
+
+https://iiunknown.gitbooks.io/iscroll-5-api-cn/content/
+
+http://www.jb51.net/article/84744.htm
+
+
+
 #  制作动画
 
 http://hiloteam.github.io/
