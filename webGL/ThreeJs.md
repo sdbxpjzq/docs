@@ -1,3 +1,5 @@
+http://www.hewebgl.com/article/getarticle/56
+
 # 三大组件
 
 在Three.js中，要渲染物体到网页中，我们需要3个组建：
