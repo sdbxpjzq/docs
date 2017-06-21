@@ -22,5 +22,9 @@
 
 `onclick='return false`'  或者` target=""`
 
+原因在于三款浏览器，对三个属性的处理顺序不同。
+Chrome顺序：onclick -> href -> target
+IE和Firefox顺序：onclick -> target -> href
+
 
 
