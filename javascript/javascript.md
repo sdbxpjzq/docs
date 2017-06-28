@@ -1,3 +1,57 @@
+# 原生js创建和触发自定义事件
+
+使用 Event构造函数创建,dispatchEvent触发
+
+```js
+// Listen for the event.
+elem.addEventListener('build', function (e) { ... }, false);
+var event = new Event('build');
+// Dispatch the event.
+elem.dispatchEvent(event);
+```
+
+
+
+https://developer.mozilla.org/zh-CN/docs/Web/Guide/Events/Creating_and_triggering_events
+
+
+
+# event.preventDefault()报错
+
+```js
+document.addEventListener('touchstart', function(event) {
+    event.preventDefault();
+}, false);
+```
+
+报错信息:
+
+> Unable to preventDefault inside passive event listener due to target being treated as passive. See [https://www.chromestatus.com/...](https://www.chromestatus.com/features/5093566007214080)
+
+原因:
+
+> 是新版chrome，给这个preventDefault返回了naive，不再是清除浏览器默认行为了
+
+优化代码:
+
+```js
+document.addEventListener('touchstart', function(event) {
+    // 判断默认行为是否可以被禁用
+    if (event.cancelable) {
+        // 判断默认行为是否已经被禁用
+        if (!event.defaultPrevented) {
+            event.preventDefault();
+        }
+    }
+}, false);
+```
+
+
+
+
+
+
+
 # js中的双取反操作-"!!"
 
 首先看看判断`IE`浏览器的`Code`

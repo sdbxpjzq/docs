@@ -38,6 +38,10 @@
 
 **栗子**
 
+- 输出到指定文件
+
+​	`*/1 * * * *  /usr/bin/php   /mfw_project/www2011/app/sales/cron_update_promotion_cache.php >> /home/zongqi/cron_update_promotion_cache.log`
+
 - 每小时执行一次:
 
   `00 * * * * /usr/local/bin/php /home/john/myscript.php`
