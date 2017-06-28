@@ -98,6 +98,16 @@ http://www.jianshu.com/p/3622ed542c3b
 
 
 
+# git rebase
+
+用于把一个分支的修改合并到当前分支
+
+
+
+# 给分支打标签-git tag
+
+git tag分为两种类型：轻量tag和附注tag。轻量tag是指向提交对象的引用，附注Tag则是仓库中的一个独立对象。建议使用附注Tag。
+
 
 
 
