@@ -13,3 +13,15 @@ CREATE table sales_activity_honey_center {
 }ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
 
+
+
+# 索引
+
+### 主键索引  primary key
+
+一个表只能指定一个主键，且主键的值不能为空。
+
+### 唯一索引  unique
+
+一个表中可以有多个唯一索引。
+主要是为了避免数据出现重复。
