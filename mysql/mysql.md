@@ -28,6 +28,11 @@ CREATE table sales_activity_honey_center {
 一个表中可以有多个唯一索引。
 主要是为了避免数据出现重复。
 
+主键和唯一键约束是通过参考索引实施的，如果插入的值均为NULL，则根据索引的原理，全NULL值不被记录在索引上，所以插入全NULL值时，可以有重复的，而其他的则不能插入重复值。 
+alter table t add constraint uk_t_1 unique (a,b); 
+insert into t (a ,b ) values (null,1);    # 不能重复 
+insert into t (a ,b ) values (null,null);#可以重复 .
+
 1. 创建表的时候直接指定
 
    ```sql
@@ -54,6 +59,46 @@ CREATE table sales_activity_honey_center {
    ```sql
    ALTER table mytable ADD UNIQUE [indexName] ON (username(length)) 
    ```
+
+### 常规索引  index || key
+
+关键字 index 或 key
+索引应该建立在搜索，排序，分组等操涉及的数据列上，就是在 where字句，from字句，order by字句，group by字句
+不要建立太多索引，索引会消耗系统资源。
+
+1. 创建表的时候直接指定
+
+```sql
+create table if not exists you(
+id int not null ,
+youname CHAR(20),
+index indexname(youname(20))
+);
+```
+
+2. 创建索引
+
+   ```sql
+   CREATE INDEX indexName ON mytable(username(length)); 
+   ```
+
+3. 修改表结构
+
+```sql
+ALTER mytable ADD INDEX [indexName] ON (username(length)) 
+```
+
+
+
+### 删除索引
+
+```sql
+DROP INDEX [indexName] ON mytable; 
+```
+
+
+
+
 
 
 

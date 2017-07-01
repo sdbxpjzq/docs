@@ -1,3 +1,7 @@
+[TOC]
+
+
+
 #  实时刷新
 
 http://browsersync.cn/
@@ -22,7 +26,53 @@ http://browsersync.cn/
 - iPic move
 - AIfred(需要破解版本) 设置快捷键
 
-# 修改`host`文件翻墙
+
+
+# Mac免费的文件解压缩软件—keka
+
+http://www.kekaosx.com/zh-cn/
+
+
+
+# VIP视频解析网站
+
+http://v.laod.cn/
+
+
+
+#  翻墙推荐
+
+## 安云加速服务
+
+**安云400元2年,连接数2个,不限流量.速度还不错.
+
+使用下面的注册都有好处呀😙
+
+http://www.ay321.com/union/share/?fuid=11287755
+
+或者推荐注册码: `11287755` 
+
+## 蓝灯
+
+https://github.com/getlantern/forum
+
+## bcoderSS
+
+99.00/年, 30G/月
+
+http://ss.bcoder.cn/cart.php
+
+## 一枝红杏
+
+99元/年, 50G/月, 同时支持1个在线
+
+199元/年,无限流量,同事支持3个客户端在线
+
+https://my.yizhihongxing.com/aff.php?aff=5961
+
+
+
+## 修改`host`文件翻墙
 
 提供2个常用地址(一直在更新中).
 [老D博客](https://laod.cn/hosts)
