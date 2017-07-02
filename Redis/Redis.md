@@ -107,6 +107,16 @@ rpop newgoods; // 删除 huawie
 
 
 
+## Sets - 集合
+
+该类型应用场合：qq好友推荐、微博系统的关注关系使用
+
+redis的set是string类型的无序集合。set元素最大可以包含(2的32次方-1)个元素。
+
+关于set集合类型除了基本的添加删除操作，其他有用的操作还包含集合的取并集(union)，交集(intersection)，差集(difference)。通过这些操作可以很容易的实现sns中的好友推荐功能。
+
+![](https://ws1.sinaimg.cn/large/006tNc79ly1fh5nvftz3cj30nh08zdgw.jpg)
+
 
 
 
