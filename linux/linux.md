@@ -2,6 +2,10 @@
 
 
 
+#  OneinStack相关启动
+
+https://www.nmfox.com/2015/10/22/370.html
+
 # 启动
 
 `shutdown -r now` — 重新启动
