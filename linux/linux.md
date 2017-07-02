@@ -1,3 +1,37 @@
+[TOC]
+
+
+
+# 启动
+
+`shutdown -r now` — 重新启动
+
+# 配置防火墙
+
+`vim /etc/sysconfig/iptables`
+
+1. 添加下面这2句,
+
+`-A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT` #允许80端口通过防火墙
+
+`-A INPUT -m state --state NEW -m tcp -p tcp --dport 3306 -j ACCEPT` #允许3306端口通过防火墙
+
+2. 执行 `/etc/init.d/iptables restart` #最后重启防火墙使配置生效
+
+## 关闭SELINUX
+
+`vim /etc/selinux/config`
+
+`SELINUX=enforcing` #注释掉
+
+`SELINUXTYPE=targeted` #注释掉
+
+`SELINUX=disabled` #增加
+
+`shutdown -r now` #重启系统
+
+
+
 # 删除文件和目录
 
 - `rm [fileName]`  — 删除文件
@@ -40,7 +74,7 @@
 
 - 输出到指定文件
 
-​	`*/1 * * * *  /usr/bin/php   /mfw_project/www2011/app/sales/cron_update_promotion_cache.php >> /home/zongqi/cron_update_promotion_cache.log`
+ ​`*/1 * * * *  /usr/bin/php   /mfw_project/www2011/app/sales/cron_update_promotion_cache.php >> /home/zongqi/cron_update_promotion_cache.log`
 
 - 每小时执行一次:
 

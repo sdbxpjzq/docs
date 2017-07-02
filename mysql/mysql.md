@@ -1,5 +1,41 @@
 [TOC]
 
+
+
+days8开始学习
+
+
+
+
+
+# 创建数据库
+
+```sql
+CREATE DATABASE zongqi;
+```
+
+每个数据库对应有个opt文件,每个表都有frm文件.有的表有3个文件(和表设置的类型有关).
+
+![](https://ws3.sinaimg.cn/large/006tNc79ly1fh4qlansgkj30pk0tmgoj.jpg)
+
+
+
+
+
+# 数据库编码问题
+
+### utf8 和 utf8mb4(支持表情)
+
+utf8mb4兼容utf8，且比utf8能表示更多的字符。在做移动应用时，会遇到ios用户会在文本的区域输入emoji表情，如果不做一定处理，就会导致插入数据库异常。需要 >= MySQL 5.5.3版本、从库也必须是5.5的了、低版本不支持这个字符集、复制报错
+
+### 查看字符集设置
+
+`show variables like 'collation_%';`
+
+`show variables like 'character_set_%';`
+
+
+
 # 创建表
 
 ```sql
