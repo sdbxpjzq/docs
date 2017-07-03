@@ -4,6 +4,8 @@
 
 http://redis.cn/
 
+[Redis命令参考简体中文版](https://redis.readthedocs.io/en/2.4/)
+
 
 
 # redis客户端安装
@@ -116,6 +118,16 @@ redis的set是string类型的无序集合。set元素最大可以包含(2的32�
 关于set集合类型除了基本的添加删除操作，其他有用的操作还包含集合的取并集(union)，交集(intersection)，差集(difference)。通过这些操作可以很容易的实现sns中的好友推荐功能。
 
 ![](https://ws1.sinaimg.cn/large/006tNc79ly1fh5nvftz3cj30nh08zdgw.jpg)
+
+
+
+## Sort Set排序集合类型
+
+set类型：集合类型、内部元素没有顺序，同一个集合没有重复元素
+
+list链表类型：内部元素有彼此的先后顺序，同一个链表允许有重复元素
+
+Sortset类型：排序集合类型，相比set类型有排序功能
 
 
 
