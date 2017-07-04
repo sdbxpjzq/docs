@@ -74,9 +74,11 @@ http://v.laod.cn/
 
 ## FreeVPN Plus
 
-去appstore下载就行. 或者 chrome 插件
+去appstore下载就行. 
 
 https://www.freevpn.pw/
+
+win.mac都有
 
 ## 安云加速服务
 
