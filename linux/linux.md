@@ -132,6 +132,65 @@ https://www.nmfox.com/2015/10/22/370.html
 
 
 
+# Yum
+
+自动化升级，安装、移除rpm软件包，收集软件包的相关信息，检查依赖并自动提示用户解决。关键是有可靠的软件池。
+
+- ## 选项
+
+  -h：显示帮助信息；
+
+  -y：对所有的提问都回答“yes”；
+
+  -c：指定配置文件；
+
+  -q：安静模式；
+
+  -v：详细模式；
+
+  -d：设置调试等级（0-10）；
+
+  -e：设置错误等级（0-10）；
+
+  -R：设置
+
+  yum
+
+  处理一个命令的最大等待时间；
+
+  -C：完全从缓存中运行，而不去下载或者更新任何头文件。
+
+  来自:
+
+  ```
+  http://man.linuxde.net/yum
+  ```
+
+## 参数
+
+install：安装rpm软件包； 
+update：更新rpm软件包； 
+check-update：检查是否有可用的更新rpm软件包； 
+remove：删除指定的rpm软件包； 
+list：显示软件包的信息； 
+search：检查软件包的信息； 
+info：显示指定的rpm软件包的描述信息和概要信息； 
+clean：清理yum过期的缓存； 
+shell：进入yum的shell提示符； 
+resolvedep：显示rpm软件包的依赖关系； 
+localinstall：安装本地的rpm软件包； 
+localupdate：显示本地rpm软件包进行更新； 
+deplist：显示rpm软件包的所有依赖关系。 
+来自: `http://man.linuxde.net/yum`
+
+## 更改软件仓库
+
+- 先备份 `mv   CentOS-Base.repo.backup`
+- Linu进入`/etc/yum.repos.d/`下载 [下载文件参考](http://mirrors.aliyun.com/help/centos)
+- 运行以下命令生成缓存`yum clean all` `yum makecache`
+
+
+
 
 
 
