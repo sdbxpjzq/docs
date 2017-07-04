@@ -4,7 +4,9 @@
 
 http://redis.cn/
 
-[Redis命令参考简体中文版](https://redis.readthedocs.io/en/2.4/)
+http://redisdoc.com/
+
+http://www.runoob.com/redis/redis-tutorial.html
 
 
 
@@ -129,7 +131,25 @@ list链表类型：内部元素有彼此的先后顺序，同一个链表允许�
 
 Sortset类型：排序集合类型，相比set类型有排序功能
 
+![](https://ws1.sinaimg.cn/large/006tKfTcly1fh6g3s0n8cj30m407wjs6.jpg)
 
+
+
+
+
+
+
+### Sort set类型适合场合：
+
+获得热门帖子(回复量)信息：select * from message order by backnum desc limit 5;
+
+根据学生成绩排序获得信息等: select * from student order by 成绩 desc limit 100;
+
+(以上需求可以通过简单sql语句实现，但是sql语句比较耗费mysql数据库资源，不如使用redis的sort set更加科学)
+
+案例：利用sort set实现获取成绩高的前5个学生信息（500万个学生）
+
+![](https://ws1.sinaimg.cn/large/006tKfTcly1fh6gsugmq0j30hs080q30.jpg)
 
 
 
