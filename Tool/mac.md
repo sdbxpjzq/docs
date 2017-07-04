@@ -2,6 +2,26 @@
 
 
 
+# 设置macOS 10.12 Sierra 安全性与隐私的设置中任何来源选项
+
+`sudo spctl --master-disable`
+
+# ssh连接远程机器
+
+SecureCRT
+
+设置颜色去 session option
+
+
+
+# 删除 .DS_store文件
+
+BlueHarvest 6.4.1 破解版本
+
+
+
+
+
 
 
 # Photoshop下载安装
@@ -49,6 +69,14 @@ http://v.laod.cn/
 
 
 #  翻墙推荐
+
+
+
+## FreeVPN Plus
+
+去appstore下载就行. 或者 chrome 插件
+
+https://www.freevpn.pw/
 
 ## 安云加速服务
 
@@ -228,6 +256,25 @@ hosts所在文件夹：
 - Parallels Desktop
 - Postman
 - [兼容性查询网站](http://caniuse.com/)
+
+
+
+# phpstrom 快捷键
+
+1. 转大小写(Toggle Case) — `Command+Shift+U`
+2. 列出左侧文件（command + 1）
+3. 格式化代码（command + option + l）
+4. ​
+
+# mac键盘图标
+
+![](https://ws3.sinaimg.cn/large/006tKfTcly1fh7pwkb5ogj30ps0umwfc.jpg)
+
+
+
+
+
+
 
 # 推荐下载地址
 
