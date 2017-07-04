@@ -1,3 +1,7 @@
+[TOC]
+
+
+
 # 更新自己的分支开发(上班第一件事)
 
 1. `git checkout master`
@@ -10,6 +14,8 @@
 
 1. `git checkout -b zongqi`
 2. `git pull origin master `
+
+
 
 # git init
 
@@ -155,6 +161,14 @@ git tag分为两种类型：轻量tag和附注tag。轻量tag是指向提交对�
 # tig — 查看小工具
 
 `brew install tig`
+
+
+
+# 内建图形化工具— gitk
+
+`gitk`
+
+
 
 
 
