@@ -179,12 +179,33 @@ hosts所在文件夹：
 
 也可以去 [插件网](http://www.cnplugins.com/)看看😜😜😜
 
-# 代理
+# 代理工具--whistle
 
 - whistle --跨平台[手册](https://avwo.github.io/whistle/)[教程](https://www.qcloud.com/community/article/151)--(目前只是使用了简单的代理,许多功能还没有用到) 
 - 安装— `npm install -g whistle`
 - 启动— `w2 start`
 
+
+## weinre的使用
+
+weinre可以用于调试远程页面特别是移动端的网页.
+
+配置规则的时候,后面加上 `weinre id`
+
+```js
+ # xxx为对应的weinre id，主要用于页面分类，默认为anonymous
+ www.example.com weinre://xxx  
+```
+
+栗子:
+
+```js
+m.mafengwo.cn/sales/activity/honey_center/ weinre://test  
+```
+
+在weinre下拉列表就可以找到设置的weinre id的，点击会新开一个weinre调试页面，可以开始使用weinre.
+
+https://avwo.github.io/whistle/rules/weinre.html
 
 
 #  终端 -Oh My Zsh
