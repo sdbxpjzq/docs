@@ -1,1 +1,1 @@
-## [其他问题](其他问题/others.md)
+## [其他问题](Others/others.md)
