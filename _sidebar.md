@@ -1,6 +1,8 @@
 - **前端**
   - **[javascript](javascript/index)**
   - **[html](Html/html.md)**
+  - **[Vue](vue/index.md)**
+  - **[React](React/index.md)**
 - **Git**
   - **[Git命令](Git/index)**
 
@@ -13,12 +15,6 @@
 
 - **Linux**
   - [Linux命令](linux/index.md)
-- **Vue**
-
-  - [Vue](vue/index.md)
-- **React**
-
-  - [React](React/index.md)
 
 
 
@@ -30,8 +26,6 @@
   - [php](php/index.md)
 - **Redis**
   - **[Redis](Redis/index.md)**
-
-
 
 
 - **Mysql**

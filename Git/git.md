@@ -133,7 +133,7 @@ git tag分为两种类型：轻量tag和附注tag。轻量tag是指向提交对�
 
 
 
-#  分支
+#  git branch 分支
 
 -  `git branch` — 列出所有本地分支
 -  `git branch -r` — 列出所有远程分支

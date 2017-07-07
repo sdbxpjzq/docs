@@ -159,3 +159,91 @@ Sortset类型：排序集合类型，相比set类型有排序功能
 
 
 
+
+
+# 事务处理
+
+## 进入事务队列
+
+`multi`  `exec`
+
+当一个client在一个连接中发出`multi`命令时,这个连接会进入一个事务上下文, 该连接接到后续的命令 **不会立即执行**, 而是先放到一个队列中, 当执行`exec`时, redis会顺序执行队列中的所有命令.
+
+![](https://ws2.sinaimg.cn/large/006tKfTcly1fhagt8dfyqj30i60fkmxp.jpg)
+
+
+
+## 取消前面所有的事务队列
+
+`discard`命令就是清空事务的命令队列并退出事务上下文, 也就是我们常说的事务回滚.
+
+
+
+队列中有一个队列执行错误,整个事务不会回滚.
+
+![](https://ws2.sinaimg.cn/large/006tKfTcly1fhaenem4ydj30hh06mweq.jpg)
+
+
+
+乐观锁
+
+![](https://ws4.sinaimg.cn/large/006tKfTcly1fhaep07burj312e0osjtl.jpg)
+
+
+
+![](https://ws1.sinaimg.cn/large/006tKfTcly1fhaey4vx7dj31hs10240z.jpg)
+
+![](https://ws1.sinaimg.cn/large/006tKfTcly1fhaeyewyi0j30ze0dk74w.jpg)
+
+![](https://ws4.sinaimg.cn/large/006tKfTcly1fhaf05xstaj31080nsjtd.jpg)
+
+
+
+事务回滚
+
+
+
+# 持久化机制
+
+![](https://ws4.sinaimg.cn/large/006tKfTcly1fhaf2ffxl2j312g0gkmyc.jpg)
+
+![](https://ws1.sinaimg.cn/large/006tKfTcly1fhaf3m6r1mj311s0mo409.jpg)
+
+![](https://ws4.sinaimg.cn/large/006tKfTcly1fhaf6oefpxj31280memyl.jpg)
+
+![](https://ws4.sinaimg.cn/large/006tKfTcly1fhaf8ga6f5j311y0oodi4.jpg)
+
+在配置文件中
+
+会生成  appendonly.aof 文件,里面记录我们的操作
+
+
+
+# 发布与订阅消息
+
+![](https://ws4.sinaimg.cn/large/006tKfTcly1fhafor36rhj311y0p440t.jpg)
+
+
+
+![](https://ws3.sinaimg.cn/large/006tKfTcly1fhag7cerh7j30zi0gkabf.jpg)
+
+
+
+
+
+# 虚拟内存的使用
+
+
+
+![](https://ws2.sinaimg.cn/large/006tKfTcly1fhag3ipeszj31280o4mzf.jpg)
+
+![](https://ws4.sinaimg.cn/large/006tKfTcly1fhag562vugj313i0f6myh.jpg)
+
+
+
+# 网易云课堂--学习未完成
+
+
+
+http://study.163.com/course/courseLearn.htm?courseId=265010#/learn/video?lessonId=373693&courseId=265010
+
