@@ -177,23 +177,35 @@ Sortset类型：排序集合类型，相比set类型有排序功能
 
 `discard`命令就是清空事务的命令队列并退出事务上下文, 也就是我们常说的事务回滚.
 
-
-
-队列中有一个队列执行错误,整个事务不会回滚.
+>  队列中有一个队列执行错误,整个事务不会回滚.
 
 ![](https://ws2.sinaimg.cn/large/006tKfTcly1fhaenem4ydj30hh06mweq.jpg)
 
 
 
-乐观锁
+#  乐观锁
 
-![](https://ws4.sinaimg.cn/large/006tKfTcly1fhaep07burj312e0osjtl.jpg)
+一般是为数据库添加一个'version' 字段来实现, 对此版本号`+1`.将提交数据的版本号与数据库表对应的距离的当前版本号进行比对.如果提交的数据版本号大于数据库当前版本号,则予以更新,否则认为是过期数据.
+
+## redis乐观锁实例:
+
+假设有一个name的key,开2个session来对name进行赋值操作.
+
+session1
+
+![](https://ws3.sinaimg.cn/large/006tNbRwly1fhb2um7eqxj30c903ymx4.jpg)
+
+session2
+
+![](https://ws3.sinaimg.cn/large/006tNbRwly1fhb2uydw5gj30e002xdfq.jpg)
+
+对session1执行`exec`
+
+![](https://ws4.sinaimg.cn/large/006tNbRwly1fhb2vltgnxj30de05ajrg.jpg)
 
 
 
-![](https://ws1.sinaimg.cn/large/006tKfTcly1fhaey4vx7dj31hs10240z.jpg)
-
-![](https://ws1.sinaimg.cn/large/006tKfTcly1fhaeyewyi0j30ze0dk74w.jpg)
+`watch`命令会监视给定的key
 
 ![](https://ws4.sinaimg.cn/large/006tKfTcly1fhaf05xstaj31080nsjtd.jpg)
 

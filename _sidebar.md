@@ -24,8 +24,8 @@
 
 - **PHP**
   - [php](php/index.md)
-- **Redis**
-  - **[Redis](Redis/index.md)**
+- **缓存**
+  - **[Redis](Cache/index.md)**
 
 
 - **Mysql**

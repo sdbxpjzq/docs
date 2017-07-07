@@ -2,6 +2,27 @@
 
 
 
+# function use 匿名函数(闭包函数)
+
+```php
+$message = 'world';
+// 继承 $message
+$example = function ($info) use ($message) {
+    var_dump($message);
+};
+echo $example('hello'); // hello world
+```
+
+
+
+
+
+
+
+
+
+
+
 # PHP 日期 加减 月数,天数,周数,小时,分,秒
 
 - PHP 日期 加减 周  
