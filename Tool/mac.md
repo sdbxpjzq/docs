@@ -2,6 +2,28 @@
 
 
 
+
+
+#  处理 .DS_Store 的方法
+
+.DS_Store是Mac OS保存文件夹的自定义属性的隐藏文件，如文件的图标位置或背景色，相当于Windows的desktop.ini。
+
+## 禁止生成
+
+`defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE`
+
+
+
+## 恢复生成
+
+`defaults delete com.apple.desktopservices DSDontWriteNetworkStores`
+
+## 删除所有的 .DS_Store 文件
+
+`sudo find / -name ".DS_Store" -depth -exec rm {} \;`
+
+
+
 # 设置macOS 10.12 Sierra 安全性与隐私的设置中任何来源选项
 
 `sudo spctl --master-disable`
