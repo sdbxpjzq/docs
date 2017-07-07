@@ -13,7 +13,7 @@ $example = function ($info) use ($message) {
 echo $example('hello'); // hello world
 ```
 
-
+http://blog.csdn.net/suiye/article/details/8742380
 
 
 
