@@ -39,6 +39,16 @@ http://www.jianshu.com/p/214baa511f2e
 
 
 
+#  设置redis密码
+
+在配置文件中 
+
+requirepass选项, 修改之后,重新登录redis-cli , 首先输入`auth [yourpassword]`
+
+或者
+
+`redis-cli -a [yourpassword]`
+
 # 使用场景
 
 ![](https://ws1.sinaimg.cn/large/006tNbRwly1fhc9psl34kj30xw0kemy8.jpg)
@@ -68,6 +78,54 @@ daemonize yes — 设置成 `yes` 后台启动
 databases 16 —  redis有16个数据库.
 
 # key的操作
+
+
+
+1. keys [模糊匹配]
+
+查键
+
+2. exists [key]
+
+确定一个key是否存在
+
+3. del
+
+删除一个 key
+
+4. expire
+
+设置键的过期时间
+
+![](https://ws4.sinaimg.cn/large/006tNbRwly1fhclosbm5tj311i0isjsj.jpg)
+
+5. move
+
+将当前数据库中的key转移到其他数据库中.
+
+![](https://ws3.sinaimg.cn/large/006tNbRwly1fhclpwnrq7j30mi0jyjsd.jpg)
+
+6. persist
+
+移除key的过期时间
+
+7. randomkey
+
+随机返回一个key
+
+8. rename
+
+![](https://ws1.sinaimg.cn/large/006tNbRwly1fhclt078l2j30xm0bowf8.jpg)
+
+9. type
+
+返回值的类型
+
+![](https://ws4.sinaimg.cn/large/006tNbRwly1fhcltmzxmfj30rk09igm0.jpg)
+
+
+
+
 
 Redis支持5种数据类型.
 
@@ -162,6 +220,81 @@ string可以包含任何数据。包括jpg图片或者序列化的对象。
 
 ## Lists - 列表
 
+![](https://ws1.sinaimg.cn/large/006tNbRwly1fhcgy8tchcj31260l0myp.jpg)
+
+### 常用方法
+
+1. lpush (栈)
+
+从list的头部添加元素`LPUSH list01 zongqi niuniu dada `
+
+2. lrange
+
+从头部取元素
+
+`LRANGE list01 0 -1` — // dada niuniu zongqi  
+
+3. rpush (队列)
+
+从尾部添加元素 `RPUSH list02 zongqi niuniu dada`
+
+` LRANGE list02 0 -1` — //zongqi niuniu dada
+
+4. linsert
+
+在list的特定位置添加values
+
+`linsert list02 before niuniu jingjing` — 在niuniu的前面添加jingjing
+
+`linsert list02 after niuniu guoguo` — 在niuniu的后面添加guoguo
+
+5. lset
+
+设置list中指定下标的元素值.
+
+![](https://ws1.sinaimg.cn/large/006tNbRwly1fhchlrn15yj30cy05cjrg.jpg)
+
+6. lrem
+
+从list中删除n个和value相同的元素. n<0从尾删除,n=0 全部删除
+
+![](https://ws1.sinaimg.cn/large/006tNbRwly1fhchojicfdj30vk098q3h.jpg)
+
+以上是,删除1个hello
+
+7. ltrim
+
+保留范围内的数据.
+
+![](https://ws3.sinaimg.cn/large/006tNbRwly1fhchy7ruv2j30ei07bjrk.jpg)
+
+8. lpop
+
+从头部删除元素,并返回删除元素
+
+9. rpop
+10. rpoplpush
+
+从尾部移除元素,并添加到第二个list的头部
+
+![](https://ws1.sinaimg.cn/large/006tNbRwly1fhci6f60m0j314g0samyn.jpg)
+
+11. lindex
+
+在indext位置 的 元素
+
+![](https://ws2.sinaimg.cn/large/006tNbRwly1fhcie5lusfj30qe0cm3z0.jpg)
+
+12. llen
+
+list的长度 .` llen list02`
+
+
+
+
+
+
+
 该list链表类型应用场合：
 
 获得最新的10个商品：select *from goods order by id desc limit 10;
@@ -195,9 +328,99 @@ rpop newgoods; // 删除 huawie
 
 ## Sets - 集合
 
+set是 ***无序集合***
+
+![](https://ws1.sinaimg.cn/large/006tNbRwly1fhcil1r2myj31260hyt9w.jpg)
+
+###  常用方法
+
+1. sadd \[key]\[ value]
+
+添加元素, 不允许有重复的值
+
+2. smembers \[key]
+
+查看set集合
+
+3. srem \[key]\[value]
+
+删除一个元素
+
+4. spop \[key]
+
+随机删除.(因为sets是无序集合)
+
+5. sdiff \[key1] [key2]  差集
+
+key1 为基准, 与key2的差集.
+
+![](https://ws3.sinaimg.cn/large/006tNbRwly1fhcj7vgiqyj30tg0cu3zb.jpg)
+
+6. sdiffstore
+
+将返回的差集 存储为另外一个key
+
+![](https://ws2.sinaimg.cn/large/006tNbRwly1fhcjaknylzj30xg0bw3z3.jpg)
+
+7. sinter  交集
+
+返回 交集
+
+![](https://ws2.sinaimg.cn/large/006tNbRwly1fhcjhmmi80j30r00cmgm7.jpg)
+
+8. sinterstore
+
+将差集存到另一个key里面
+
+![](https://ws3.sinaimg.cn/large/006tNbRwly1fhcjkv9id1j30xc0cc0td.jpg)
+
+9. sunion  并集
+
+返回并集
+
+10. sunionstore
+
+将并集存储在另一个key
+
+![](https://ws4.sinaimg.cn/large/006tNbRwly1fhcjnpndqsj30ym0cujs0.jpg)
+
+11. smove
+
+![](https://ws1.sinaimg.cn/large/006tNbRwly1fhcjpkmiynj30uk0ciwf5.jpg)
+
+将myset2 中的three 移除, 并添加到 myset7中
+
+12. scard
+
+返回set 元素的个数
+
+![](https://ws4.sinaimg.cn/large/006tNbRwly1fhcju4vwh0j30p204wdfw.jpg)
+
+13. sismember
+
+测试member是否是key的元素
+
+![](https://ws4.sinaimg.cn/large/006tNbRwly1fhcjvs9p36j30uo09k0t7.jpg)
+
+14. srandmember
+
+随机返回一个元素,但是不删除
+
+![](https://ws1.sinaimg.cn/large/006tNbRwly1fhcjwyig1vj30sq0b0gm3.jpg)
+
+
+
+
+
+
+
+
+
+
+
 该类型应用场合：qq好友推荐、微博系统的关注关系使用
 
-redis的set是string类型的无序集合。set元素最大可以包含(2的32次方-1)个元素。
+。
 
 关于set集合类型除了基本的添加删除操作，其他有用的操作还包含集合的取并集(union)，交集(intersection)，差集(difference)。通过这些操作可以很容易的实现sns中的好友推荐功能。
 
@@ -205,7 +428,76 @@ redis的set是string类型的无序集合。set元素最大可以包含(2的32�
 
 
 
-## Sort Set排序集合类型
+## Sorted Set 排序集合类型
+
+
+
+
+
+## 常用方法
+
+1. zadd \[key]\[score][member]
+
+添加
+
+2. zrange
+
+取元素
+
+![](https://ws3.sinaimg.cn/large/006tNbRwly1fhck5et7czj31b60pwq4f.jpg)
+
+3. zrem ![](https://ws2.sinaimg.cn/large/006tNbRwly1fhckd4olkrj30xe0f6jsb.jpg)
+4. zincrby
+
+![](https://ws4.sinaimg.cn/large/006tNbRwly1fhckej6h2yj30xs0i43zq.jpg)
+
+5. zrank
+
+,按 score值从小到排序,返回score 索引值
+
+![](https://ws2.sinaimg.cn/large/006tNbRwly1fhckjf4j3jj30xs0hcgma.jpg)
+
+6. zrevrank
+
+按 score值从大到小排序,返回score 索引值
+
+![](https://ws1.sinaimg.cn/large/006tNbRwly1fhckmoltc6j30y80h2t9f.jpg)
+
+7. zrangebyscore
+
+找到某个范围内的元素
+
+![](https://ws1.sinaimg.cn/large/006tNbRwly1fhcl61xxjtj30zy0iwq3w.jpg)
+
+8. zcount
+
+某个范围内的数量
+
+![](https://ws4.sinaimg.cn/large/006tNbRwly1fhcl7vih5wj30x40hagm9.jpg)
+
+9. zcard
+
+集合中的元素个数
+
+![](https://ws4.sinaimg.cn/large/006tNbRwly1fhcl9wmhwcj30wu0gy3z7.jpg)
+
+10. zremrangebyrank
+
+删除某区间内的元素
+
+![](https://ws1.sinaimg.cn/large/006tNbRwly1fhclck10unj30yy0get9p.jpg)
+
+11. zremrangebyscore
+
+删除score区间内的元素, 
+
+![](https://ws4.sinaimg.cn/large/006tNbRwly1fhclfyj1l9j30xy0i2t9q.jpg)
+
+
+
+
+
+
 
 set类型：集合类型、内部元素没有顺序，同一个集合没有重复元素
 
@@ -239,9 +531,69 @@ Sortset类型：排序集合类型，相比set类型有排序功能
 
 ## hash 数据类型
 
+![](https://ws3.sinaimg.cn/large/006tNbRwly1fhcc90xk2yj30n00e2wfd.jpg)
 
 
 
+### 常用方法
+
+1. hset
+
+设置hash field. ` hset zongqi_redis user zongqi` , `zongqi_redis`表明
+
+![](https://ws3.sinaimg.cn/large/006tNbRwly1fhccitxg04j313y05kq37.jpg)
+
+2. hget
+
+获取一个value.`hget zongqi_redis user`
+
+3. hsetnx
+4. hmset
+
+同事设置hash的多个field.`hmet hashName field1 hello field2 world`
+
+5. hmget
+6. hincrby
+
+给hash field加定值
+
+7. hexists
+
+测试指定的field是否存在
+
+8. hlen
+
+指定hash的field数量
+
+10. hkeys
+
+返回hash的所有field
+
+11. hvals
+
+返回hash的所有value
+
+9. hdel
+
+删除指定hash的field. ` hdel zongqi_redis_hash name`
+
+12. hgetall
+
+获取莫哥hash中全部的field和value.` HGETALL zongqi_redis`
+
+
+
+# 主从复制
+
+![](https://ws4.sinaimg.cn/large/006tNbRwly1fhcm9z77i6j311a0lmgn7.jpg)
+
+
+
+![](https://ws3.sinaimg.cn/large/006tNbRwly1fhcmdc3wblj310s0jyq4c.jpg)
+
+
+
+![](https://ws2.sinaimg.cn/large/006tNbRwly1fhcmfrta6xj310s0fuq41.jpg)
 
 # 事务处理
 
