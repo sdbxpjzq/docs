@@ -28,11 +28,15 @@
 
 `sudo spctl --master-disable`
 
-# ssh连接远程机器
+# 远程连接机器
 
-SecureCRT
+- SecureCRT
 
 设置颜色去 session option
+
+- Remote Desktop Manager   — 功能更多
+
+可以设置成简体中文. 点击“Preference…”，选择“User Interface”，将“Language:”更改为“Chinese”后重启软件完成汉化
 
 
 
