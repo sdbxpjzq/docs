@@ -51,13 +51,15 @@ requirepass选项, 修改之后,重新登录redis-cli , 首先输入`auth [yourp
 
 # 使用场景
 
-![](https://ws1.sinaimg.cn/large/006tNbRwly1fhc9psl34kj30xw0kemy8.jpg)
-
-![](https://ws3.sinaimg.cn/large/006tNbRwly1fhc9qmmw1oj30my098q30.jpg)
-
-
-
-
+1. 取最新N个数据的操作
+2. 排行榜操作,取TOP N 操作
+3. 需要精确设定过期时间的应用
+4. 技计数器应用
+5. uniq操作,获取某断时间所有数据排重值
+6. 实时系统,反垃圾系统
+7. Pub/Sub构建实时消息系统
+8. 构建队列系统
+9. 缓存
 
 # 配置文件 — redis.conf
 
@@ -141,13 +143,9 @@ key的命名 不能有 **空格,和\n换行** .    key不要太长占内存,也�
 
 string是redis最基本的类型
 
-string可以包含任何数据。包括jpg图片或者序列化的对象。
+string可以包含任何数据。包括jpg图片或者序列化的对象(将对象的状态转换为字符串)。
 
 单个value值最大上限是1G字节。 
-
-什么是序列化?
-
-
 
 ### 常见方法
 
@@ -291,10 +289,6 @@ list的长度 .` llen list02`
 
 
 
-
-
-
-
 该list链表类型应用场合：
 
 获得最新的10个商品：select *from goods order by id desc limit 10;
@@ -303,9 +297,7 @@ list的长度 .` llen list02`
 
 ​       以上两个sql语句可以实现需求，但是数据多的时候，全部数据都要受到影响，对数据库的负载比较高。
 
-​       如果通过list链表实现以上功能，就会极大节省各方面资源消耗，可以在list链表中保留最新的10个数据，旧的数据从链表中给去除。每次从链表中直接获取数据即可。
-
-![](https://ws4.sinaimg.cn/large/006tNc79ly1fh5mlvdsfpj30py06ogm8.jpg)
+​       如果通过list链表实现以上功能，就会极大节省各方面资源消耗，可以在list链表中保留最新的10个数据，旧的数据从链表中给去除。每次从链表中直接获取数据即可
 
 ### list案例：
 
@@ -328,9 +320,7 @@ rpop newgoods; // 删除 huawie
 
 ## Sets - 集合
 
-set是 ***无序集合***
-
-![](https://ws1.sinaimg.cn/large/006tNbRwly1fhcil1r2myj31260hyt9w.jpg)
+set是 ***无序集合***. 对集合可以取并集,交集,差集. 通过这些操作可以实现sns中的好友推荐和blog中的tag功能.qq好友推荐、微博系统的关注关系使用
 
 ###  常用方法
 
@@ -412,25 +402,7 @@ key1 为基准, 与key2的差集.
 
 
 
-
-
-
-
-
-
-该类型应用场合：qq好友推荐、微博系统的关注关系使用
-
-。
-
-关于set集合类型除了基本的添加删除操作，其他有用的操作还包含集合的取并集(union)，交集(intersection)，差集(difference)。通过这些操作可以很容易的实现sns中的好友推荐功能。
-
-![](https://ws1.sinaimg.cn/large/006tNc79ly1fh5nvftz3cj30nh08zdgw.jpg)
-
-
-
 ## Sorted Set 排序集合类型
-
-
 
 
 
@@ -506,10 +478,6 @@ list链表类型：内部元素有彼此的先后顺序，同一个链表允许�
 Sortset类型：排序集合类型，相比set类型有排序功能
 
 ![](https://ws1.sinaimg.cn/large/006tKfTcly1fh6g3s0n8cj30m407wjs6.jpg)
-
-
-
-
 
 
 
@@ -607,7 +575,7 @@ Sortset类型：排序集合类型，相比set类型有排序功能
 
 
 
-## 取消前面所有的事务队列
+## discard 取消前面所有的事务队列
 
 `discard`命令就是清空事务的命令队列并退出事务上下文, 也就是我们常说的事务回滚.
 
@@ -637,17 +605,13 @@ session2
 
 ![](https://ws4.sinaimg.cn/large/006tNbRwly1fhb2vltgnxj30de05ajrg.jpg)
 
+## watch命令
+
 
 
 `watch`命令会监视给定的key
 
 ![](https://ws4.sinaimg.cn/large/006tKfTcly1fhaf05xstaj31080nsjtd.jpg)
-
-
-
-事务回滚
-
-
 
 # 持久化机制
 
@@ -687,7 +651,7 @@ session2
 
 
 
-# 网易云课堂--学习未完成
+# 网易云课堂--学习未完成(案例)
 
 
 
