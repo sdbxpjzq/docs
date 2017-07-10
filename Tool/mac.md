@@ -164,10 +164,9 @@ hosts所在文件夹：
 
 - Windows或Mac系统，访问[https://nodejs.org/](https://nodejs.org/)，安装**LTS**版本的Node，默认安装即可
 
-# 种子下载工具 hardseed
 
-- https://www.oschina.net/p/hardseed
-- https://github.com/yangyangwithgnu/hardseed
+
+
 
 # cmake安装
 
