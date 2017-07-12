@@ -223,9 +223,9 @@ http://blog.csdn.net/suiye/article/details/8742380
 
 属性, 常量 , 方法 
 
-对象创建的基本形式:
+## 对象创建的基本形式:
 
-1. $对象名 = new 类名();
+1. `$对象名 = new 类名()`;
 
 2. 可变类名
 
@@ -234,9 +234,9 @@ http://blog.csdn.net/suiye/article/details/8742380
    $persion1 = new $CName();
    ```
 
-3. $对象名 = new self; //
+3. `$对象名 = new self;` //
 
-self指代类本身,运行代码只能在类内部方法中使用.
+`self`指代类本身,运行代码只能在类内部方法中使用.
 
 4. 通过对象创建类的新对象
 
@@ -244,7 +244,9 @@ self指代类本身,运行代码只能在类内部方法中使用.
 
 
 
+## 值的传递解析 
 
+![](https://ws4.sinaimg.cn/large/006tNc79ly1fhg9fcvjg3j317o0n60uk.jpg)
 
 
 

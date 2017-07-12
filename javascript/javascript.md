@@ -1,3 +1,5 @@
+[TOC]
+
 # 原生js创建和触发自定义事件
 
 使用 Event构造函数创建,dispatchEvent触发
@@ -144,13 +146,19 @@ window.addEventListener('unload', logData, false);
 function logData() {
     navigator.sendBeacon("/log", analyticsData);
 }
-
 ```
 好吧，太简单了，没啥可说的了。哦不，简单确实，但是太简单了，它隐藏了点细节：
 *   `sendBeacon`只能用`POST`请求来发送信息；
 *   `sendBeacon`的第二个参数是可选的，如果提供的话，参数类型可以是ArrayBufferView、Blob、DOMString或者FormData；
 *   `sendBeacon`所收到的HTTP回应会被无视。实际上即使不无视你也不见得能拿到回应，因为整个请求发送或者收到回应的时候，页面可能早就不存在了；
 *   `sendBeacon`是有返回值的，类型为`bool`：`true`表示浏览器已经将这个请求纳入队列稍后处理，`false`表示浏览器无法完成这个请求，其原因不详，不过通常来说就是浏览器的HTTP请求队列已满；
+
+
+
+
+# 页面埋点
+
+http://www.barretlee.com/blog/2016/02/20/navigator-beacon-api/
 
 
 
@@ -176,22 +184,57 @@ $('.onebuy').one('click', function () {
 
 浏览器安全机制中，页面弹窗，必须是在用户触发的，才算合法弹窗；由ajax或定时执行的弹窗均为非用户触发。会被浏览器或相关安全软件理解为广告被拦截掉.
 
-> 解决
+## 解决
+
+但是当遇到错误的时候会打开空白页面
 
 ```js
 xx.addEventListener('click', function () {
-            // 打开页面，此处最好使用提示页面
-            var newWin = window.open('loading page');
+ var url = '';
             ajax().done(function() {
                 // 重定向到目标页面
-                newWin.location.href = 'target url';
+              url = 'target url';
             });
-        });
+  // 先发请求, 等待执行
+  setTimeout(function(){
+    // 打开页面，此处最好使用提示页面
+     var newWin = window.open('loading page');
+     newWin.location.href = ;
+  })
+        },500);
 ```
 
 
 
+# localStorage
 
+
+
+```js
+var localStorage =  window.localStorage;
+    function put(key,sales_id,flag) {
+        // 保存到 localStorage
+        var str = localStorage.getItem(key);
+        if(str) {
+            str += (sales_id+flag);
+            localStorage.setItem(key,str);
+        }else {
+            localStorage.setItem(key,sales_id+flag);
+        }
+    }
+    // 取 storage
+    function get(key,flag) {
+        var uid = localStorage.getItem('promorion_browse_uid_key');
+        if(uid != 0){
+            var str = localStorage.getItem(key);
+            if(str){
+               
+            }
+
+            localStorage.setItem(key,'');
+        }
+    }
+```
 
 
 

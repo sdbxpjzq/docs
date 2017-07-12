@@ -53,6 +53,22 @@ CREATE table sales_activity_honey_center {
 
 
 
+#  列属性
+
+## unsigned
+
+
+
+
+
+
+
+
+
+
+
+
+
 # 索引
 
 ### 主键索引  primary key
@@ -134,14 +150,6 @@ DROP INDEX [indexName] ON mytable;
 
 
 
-
-
-
-
-
-
-
-
 # CURD
 
 ###  插入数据
@@ -180,3 +188,76 @@ select column1,column1,... FROM tb_name
 
 【主键或唯一索引冲突，执行替换，否则插入】
 
+
+
+# 联合查询 - union ,union all
+
+合并两个或多个 SELECT 语句的结果集
+
+`union` 、`union all`
+
+## union和union all的区别
+
+- union all是把结果直接合并在一起
+- union是将union all的后的结果进行一次`distinct`(去重),之后的结果
+
+栗子:
+
+```sql
+(select id from news)
+union all
+(select id from you);//推荐将select语句用（）包起来
+```
+
+```txt
+id  
+--------
+       2
+       3
+       4
+       5
+       2
+       3
+```
+
+```sql
+(select id from news)
+union
+(select id from you);
+```
+
+```txt
+ id  
+--------
+       2
+       3
+       4
+       5
+```
+
+
+
+## 注意事项
+
+1. **子语句的 order by，只有在配合limit时，才会生效**.
+
+原因：union会对没有limit 的 order by 忽略。
+
+```sql
+(SELECT id,name FROM table_name1 order by id limit 100)
+union
+(SELECT id,name FROM table_name2 order by id limit 100);
+```
+
+对union结果排序
+
+```sql
+(SELECT id, name FROM table_name1)
+union
+(SELECT id,name FROM table_name2)order by id asc|desc;
+```
+
+
+
+2. **UNION 内部的 SELECT 语句必须拥有相同数量的列**
+3. **列也必须拥有相似的数据类型。同时，每条 SELECT 语句中的列的顺序必须相同**
