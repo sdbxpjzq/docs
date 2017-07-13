@@ -17,6 +17,7 @@
 
 
 
+
 # git init
 
 初始化`git`库
@@ -61,9 +62,14 @@ http://www.jianshu.com/p/3622ed542c3b
 
 # git remote
 
+## 更改仓库的源 
 
+ `git remote add origin XXX`
 
-- 更改仓库的源  `git remote add origin XXX`
+## Git同时提交到多个远程仓库
+
+http://wonux.tech/git-remote.html
+
 
 
 

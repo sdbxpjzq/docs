@@ -2,13 +2,67 @@
 
 
 
+# 镜像安装
+
+
+
+## CentOS
+
+http://mirror.centos.org/
+
+进入**isos目录**下载
+
+http://1130739.blog.51cto.com/1120739/1738791
+
+### 国内镜像
+
+[http://mirrors.hustunique.com/centos/7/isos/x86_64/ ](http://mirrors.hustunique.com/centos/7/isos/x86_64/) 华中科技大学开源镜像网站
+
+[http://mirrors.cqu.edu.cn/CentOS/7/isos/x86_64/ ](http://mirrors.cqu.edu.cn/CentOS/7/isos/x86_64/) 重庆大学镜像网站
+
+[http://mirrors.nwsuaf.edu.cn/centos/7/isos/x86_64/ ](http://mirrors.nwsuaf.edu.cn/centos/7/isos/x86_64/)  西北农业科技大学镜像网站
+
+[http://mirrors.btte.net/centos/7/isos/x86_64/ ](http://mirrors.btte.net/centos/7/isos/x86_64/)  北京电信通电信工程有线公司镜像网站
+
+[http://mirrors.zju.edu.cn/centos/7/isos/x86_64/ ](http://mirrors.zju.edu.cn/centos/7/isos/x86_64/) 浙江大学开源镜像网站
+
+[http://mirrors.opencas.cn/centos/7/isos/x86_64/ ](http://mirrors.opencas.cn/centos/7/isos/x86_64/)  中科院（中国科学院计算机网络信息中心）开源镜像网站
+
+[http://ftp.sjtu.edu.cn/centos/7/isos/x86_64/ ](http://ftp.sjtu.edu.cn/centos/7/isos/x86_64/)  上海交通大学开源镜像网站
+
+[http://centos.ustc.edu.cn/centos/7/isos/x86_64/ ](http://centos.ustc.edu.cn/centos/7/isos/x86_64/) 中国科学技术大学开源镜像网站
+
+[http://mirrors.yun-idc.com/centos/7/isos/x86_64/ ](http://mirrors.yun-idc.com/centos/7/isos/x86_64/) 北京首都在线科技股份有限公司镜像网站
+
+[http://mirrors.163.com/centos/7/isos/x86_64/ ](http://mirrors.163.com/centos/7/isos/x86_64/)  上海网易163公司开源镜像网站
+
+[http://mirror.neu.edu.cn/centos/7/isos/x86_64/ ](http://mirror.neu.edu.cn/centos/7/isos/x86_64/)  东北大学开源镜像网站
+
+[http://mirrors.neusoft.edu.cn/centos/7/isos/x86_64/ ](http://mirrors.neusoft.edu.cn/centos/7/isos/x86_64/) 大连东软信息学院开源镜像网站
+
+[http://mirror.bit.edu.cn/centos/7/isos/x86_64/ ](http://mirror.bit.edu.cn/centos/7/isos/x86_64/)  北京理工大学开源镜像网站
+
+
+
+
+
+
+
+
+
 #  OneinStack相关启动
 
 https://www.nmfox.com/2015/10/22/370.html
 
-# 启动
+# 启动相关
 
 `shutdown -r now` — 重新启动
+
+`Shutdown  -h  now` --立刻进行关机
+
+`Init  0`--立刻关机
+
+`Halt`—立刻关机
 
 # 配置防火墙
 
@@ -35,6 +89,29 @@ https://www.nmfox.com/2015/10/22/370.html
 `shutdown -r now` #重启系统
 
 
+
+# 切换用户身份 — su
+
+`su root`
+
+`su zongqi`
+
+# 普通用户添加sudo权限
+
+root用户下，
+
+1. 修改文件权限   chmod u+w /etc/sudoers
+
+
+2. "vim /etc/sudoers",进入编辑模式，找到这一 行：
+
+   `root ALL=(ALL)  ALL`
+
+   在起下面添加"
+
+   `xxx ALL=(ALL)  ALL`(这里的xxx是你的用户名)，然后保存退出。
+
+​       3. 撤销文件的写权限。"chmod u-w /etc/sudoers"
 
 # 删除文件和目录
 

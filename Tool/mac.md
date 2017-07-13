@@ -72,7 +72,7 @@ http://browsersync.cn/
 - 免费推荐--http://enjoygineering.com/mounty/
 
 
-
+`brew cask install mounty`
 
 #  Homebrew(推荐安装)
 
