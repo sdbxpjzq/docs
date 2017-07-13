@@ -38,4 +38,4 @@
 
 
 
-<center><p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p><center>
+<center><p>Hosted by <a target="_blank"  href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p><center>
