@@ -64,7 +64,7 @@ http://www.jianshu.com/p/3622ed542c3b
 
 ## 更改仓库的源 
 
- `git remote add origin XXX`
+ `git remote set-url origin XXX`
 
 ## Git同时提交到多个远程仓库
 
