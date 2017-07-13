@@ -24,6 +24,12 @@ https://laravel-china.org/topics/2192/centos-under-the-use-of-webhook-to-achieve
 
 
 
+# webhook
+
+
+
+http://www.gohugo.org/post/coderzh-automated-deploy-hugo/
+
 # echarts
 
 http://echarts.baidu.com/echarts2/doc/example.html
