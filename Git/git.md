@@ -70,7 +70,9 @@ http://www.jianshu.com/p/3622ed542c3b
 
 1. `git remote add all [url]`
 2. `git remote set-url --add all [url]`
-3. `git config branch.master.remote = all`
+3. `git config branch.master.remote  all`
+
+注意:: `all` 是可以随意起名字的.
 
 最后push 的时候
 
