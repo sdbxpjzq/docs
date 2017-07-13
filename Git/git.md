@@ -68,7 +68,13 @@ http://www.jianshu.com/p/3622ed542c3b
 
 ## Git同时提交到多个远程仓库
 
-http://wonux.tech/git-remote.html
+1. `git remote add all [url]`
+2. `git remote set-url --add all [url]`
+3. `git config branch.master.remote = all`
+
+最后push 的时候
+
+`git push all master`
 
 
 
@@ -107,6 +113,12 @@ http://wonux.tech/git-remote.html
 
   彻底回退到某个版本，**不保留修改源码**,本地的源码也会变为上一个版本的内容
 
+
+
+
+# git push
+
+``git push origin branch-name --force` ` —force 强制推送
 
 
 
