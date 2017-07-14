@@ -1,5 +1,33 @@
 [TOC]
 
+
+
+# 跨域
+
+## 什么是跨域
+
+javascript出于安全方面的考虑,不允许跨域调用其他页面的对象.
+
+简单的理解就是:  因为javascript同源策略的限制,a.com域名下的js无法操作b.com或者c.a.com域名下的对象.
+
+![](https://ws3.sinaimg.cn/large/006tNc79ly1fhj6m9h6b9j30zs0kcdgz.jpg)
+
+
+
+## 解决跨域的办法
+
+1. 服务端设置
+2. 是用代理
+3. 使用`jsonp`
+
+![](https://ws1.sinaimg.cn/large/006tNc79ly1fhj6qi6e2ij30xi0gk3yw.jpg)
+
+
+
+
+
+
+
 # 原生js创建和触发自定义事件
 
 使用 Event构造函数创建,dispatchEvent触发

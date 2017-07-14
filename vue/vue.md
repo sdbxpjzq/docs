@@ -1,3 +1,5 @@
+[TOC]
+
 
 
 # **vue 基础指令**
@@ -164,6 +166,18 @@ export default {
                 }
 }
 ```
+
+
+
+另外参考:
+
+1. ![](https://ws2.sinaimg.cn/large/006tNc79ly1fhj661ashij30g605maa4.jpg)
+
+
+
+2. https://segmentfault.com/a/1190000007387556
+
+
 
 
 
