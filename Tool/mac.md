@@ -288,7 +288,7 @@ https://avwo.github.io/whistle/rules/weinre.html
   - [破解网站-参考二](http://www.imsxm.com/jetbrains-license-server.html)
 - 为知笔记,有道笔记,印象笔记
 - 滴答清单
-- Spark -- 邮箱
+- Spark(邮箱), 网易邮箱大师
 - 微信,QQ
 - FileZilla
 - Dash
