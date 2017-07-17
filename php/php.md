@@ -128,7 +128,7 @@ http://blog.csdn.net/suiye/article/details/8742380
 
 
 
-# PHP数组函数
+# Array
 
 
 
@@ -236,6 +236,8 @@ http://blog.csdn.net/suiye/article/details/8742380
 
 3. `$对象名 = new self;` //
 
+![](https://ws3.sinaimg.cn/large/006tKfTcly1fhkpx5iqltj315806kt92.jpg)
+
 `self`指代类本身,运行代码只能在类内部方法中使用.
 
 4. 通过对象创建类的新对象
@@ -247,6 +249,118 @@ http://blog.csdn.net/suiye/article/details/8742380
 ## 值的传递解析 
 
 ![](https://ws4.sinaimg.cn/large/006tNc79ly1fhg9fcvjg3j317o0n60uk.jpg)
+
+
+
+## 静态属性 — static
+
+- 一般属性,他的值是隶属于该类的具体某个对象.(也就是说: 每个对象的相同属性的值,有可能不一样) 
+- 静态属性只隶属于类本身, 也可以看作是所有对象的`共有的数据`
+
+![](https://ws4.sinaimg.cn/large/006tKfTcly1fhkkwqbk47j30zi09cdha.jpg)
+
+
+
+## 静态方法
+
+静态方法同样隶属于类. 
+
+类名::静态方法
+
+![](https://ws2.sinaimg.cn/large/006tKfTcly1fhkojud10aj31c202caag.jpg)
+
+## 构造方法 — __construct
+
+创建对象的时候自动调用
+
+1. 构造函构造方法不要设置成私有的
+2. 必须是普通方法,不能是 static 方法
+3. 名字固定 `__construct` 
+
+```php
+ public function __construct(){
+} 
+```
+
+要执行父类的构造函数，需要在子类的构造函数中调用 parent::__construct() 
+
+
+
+## 析构方法 — __destruct
+
+对象的引用一旦失去，这个对象就成为垃圾，垃圾回收程序就会自动启动并回收对象占用的内存。就会自动去调用析构函数。
+
+1. 析构函数不能有形参
+2. 必须是public
+3. 若一个类中没有定义析构函数,则销毁对象就会调用父类的析构函数(如果有)
+
+```php
+public function __destruct(){
+}
+```
+
+执行父类的析构函数，必须在子类的析构函数体中显式调用 `parent::__destruct()` 。
+
+```php
+function __destruct(){
+echo "hello".$this->name;
+}
+$people1=new people("张三");
+$people1=null;
+$people2=new people("李四");
+$people3= new people("王五");
+执行结果;
+hello 张三
+hello 王五
+hello 李四
+```
+
+$people1 置为null，先失去引用，成为垃圾，第一个调用析构函数。
+
+对象的引用存放在 栈内存中，后进先出的特点，所以最后创建的对象，最先被释放.
+
+$people3 先释放，
+
+$people2 后释放。
+
+
+
+### 对象销毁的几种情况
+
+1. 脚本运行结束,自动销毁
+2. 明确的`unset()`一个对象,被销毁
+3. 改变对象变量的值,被销毁
+
+
+
+## 构造函数和析构函数在集成中的变现
+
+- 子类没有定义`__construct`, 会自动跳用父类的构造方法.
+- 子类定义了`__construct`,则不会自动调用父类的构造函数, 但可以手动调用`parent::__construct`
+- 子类没有定义`__destruct`,会自动跳用父类的析构函数
+- 子类定义了`__destruct`,则不会自动调用父类的析构函数, 但可以手动调用`parent::__destruct`
+
+## 类常量
+
+const 常量名 = 初值;
+
+使用: 类名::常量名
+
+
+
+## 继承 —  extends
+
+php是单继承
+
+### 重写
+
+参数要保持一致
+
+
+
+
+
+
 
 
 
