@@ -36,7 +36,9 @@ utf8mb4兼容utf8，且比utf8能表示更多的字符。在做移动应用时�
 
 
 
-# 创建表
+# 表操作
+
+## 创建表
 
 ```sql
 CREATE table sales_activity_honey_center {
@@ -53,9 +55,99 @@ CREATE table sales_activity_honey_center {
 
 
 
+## 修改表
+
+### add
+
+```sql
+alter table [tb_name] add [字段] [约束条件]
+```
+
+### change
+
+```sql
+alter table [table_name] change [旧字段] [新字段] [约束条件]
+```
+
+### drop
+
+```sql
+alter table [tb_name] drop [字段];
+```
+
+### modify
+
+```sql
+alter table [tb_name] modify [列名] [约束定义];
+```
+
+
+
+## 删除表
+
+```sql
+drop table if exists tb_name;【若存在 删除 推荐】 这样不会报错，只是警告
+```
+
+## 清空表
+
+相当于 delete 语句不写 where 子句一样
+
+```sql
+truncate [table_name];
+```
+
+
+
+
+
+
+
+
+
 #  列属性
 
 ## unsigned
+
+- 只能用于数值类型,表示无符号的。
+- 不允许数据出现负数。
+- 紧跟在 数字类型后面，
+
+```sql
+create table if not exists USER(
+    id int(10) unsigned not null auto_increment primary key ,
+    username varchar(20) not null
+);
+```
+
+
+
+## zerofill
+
+- 只能用于数值类型，在数值之前自动用0  补齐不足的位数
+- 当给一个字段使用`zerofill`修饰时，该字段自动应用`unsigned`。
+
+
+
+## auto_increment
+
+自动增量属性。此字段**不允许重复**，只能修饰**整数类**的字段，
+
+设置auto_increment必须设置一个key
+
+
+
+## null和 not null
+
+  null是特殊的值，代表无值，与0和空字符串都不相同
+
+
+
+## default
+
+指定一个默认值
+
+
 
 
 
