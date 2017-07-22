@@ -201,8 +201,16 @@ insert into t (a ,b ) values (null,null);#可以重复 .
 3. 修改表结构
 
    ```sql
-   ALTER table mytable ADD UNIQUE [indexName] ON (username(length)) 
+   ALTER table mytable ADD UNIQUE [uniq_name] ([字段1,字段2])
    ```
+
+4. 删除索引
+
+   ```sql
+   alter table [table_name] drop key [key_name]
+   ```
+
+   ​
 
 ### 常规索引  index || key
 

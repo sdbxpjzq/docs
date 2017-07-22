@@ -2,6 +2,14 @@
 
 
 
+http://detectmobilebrowsers.com/
+
+![](https://ws2.sinaimg.cn/large/006tNc79gy1fhsefpc5saj315u0viwin.jpg)s
+
+
+
+
+
 # 大转盘插件
 
 jQueryRotate.js

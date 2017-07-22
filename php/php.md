@@ -265,6 +265,8 @@ http://blog.csdn.net/suiye/article/details/8742380
 
 静态方法同样隶属于类. 
 
+静态方法只能访问静态成员
+
 类名::静态方法
 
 ![](https://ws2.sinaimg.cn/large/006tKfTcly1fhkojud10aj31c202caag.jpg)
@@ -354,21 +356,106 @@ php是单继承
 
 ### 重写
 
-参数要保持一致
+参数要保持一致. 但是构造函数可以不用保持一致.
 
 
 
+## final class && final method
+
+- 如果一个`class`被` final` 修饰，这个类`不能被继承`，
+- 如果一个`method`被`final` 修饰，则这个方法`不能被子类重写`
+
+```php
+final class className
+{
+    final public function method()
+    {
+        
+    }
+}
+```
 
 
 
+## clone
+
+```php
+$p1=new people();
+$p2= clone $p1; //复制对象. (生成新的对象)
+```
+
+该方法自动调用 __clone()魔术方法，
 
 
 
+# 设计模式
+
+什么叫设计模式
+
+就是一些解决问题的常规做法, 是一种认为较好的经验总结
+
+## 工厂模式
+
+我们总是需要去实例化很多很多的类, 来的到对象.
 
 
 
+## 单例模式
+
+```php
+class single
+{
+
+  // 禁止 new
+    private function __construct(){}
+    // 禁止 clone
+    public function __clone(){}
+  
+    private static $_oInstance;
+    public static function oInstance()
+    {
+        if (!self::$_oInstance) {
+            self::$_oInstance = new self();
+        }
+        return self::$_oInstance;
+    }
+}
+```
 
 
 
+###  抽象类,抽象方法
 
+abstract
+
+### 抽象类
+
+```
+abstract class className(){}
+```
+
+只要一个类里面有一个方法是抽象方法，那么这个类就要定义为抽象类。
+
+抽象类同样用 abstract 关键字来定义
+
+- 抽象类不能产生实例对象
+
+#### 抽象类有什么用?
+
+抽象类可以用来规范一些类的共同特征, 但又不需要去对其进行实例化.
+
+怎么规范: 继承它. 也就是说,抽象类的使命是专门做"`父类`"
+
+### 抽象方法
+
+1. 方法声明的时候没有 {} 括弧以及其中的内容，
+2. 直接在声明时在方法名后加上分号结束
+
+```php
+abstract function function_name();
+```
+
+抽象方法有什么用?
+
+和抽象类一样,配合抽象类,实现对下级类的"行为规范"
 
