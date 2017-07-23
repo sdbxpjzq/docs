@@ -388,19 +388,19 @@ $p2= clone $p1; //复制对象. (生成新的对象)
 
 
 
-# 设计模式
+## 设计模式
 
 什么叫设计模式
 
 就是一些解决问题的常规做法, 是一种认为较好的经验总结
 
-## 工厂模式
+### 工厂模式
 
 我们总是需要去实例化很多很多的类, 来的到对象.
 
 
 
-## 单例模式
+### 单例模式
 
 ```php
 class single
@@ -424,7 +424,7 @@ class single
 
 
 
-###  抽象类,抽象方法
+##  抽象类,抽象方法
 
 abstract
 
@@ -435,6 +435,8 @@ abstract class className(){}
 ```
 
 只要一个类里面有一个方法是抽象方法，那么这个类就要定义为抽象类。
+
+在抽象类中可以有不是抽象的成员方法和属性，但访问权限不能是private.
 
 抽象类同样用 abstract 关键字来定义
 
@@ -455,7 +457,261 @@ abstract class className(){}
 abstract function function_name();
 ```
 
-抽象方法有什么用?
+#### 抽象方法有什么用?
 
 和抽象类一样,配合抽象类,实现对下级类的"行为规范"
+
+```php
+<?php
+abstract class AbstractClass{
+    // 定义抽象方法
+    abstract protected function getValue();
+    // 普通方法
+    public function printOut(){
+        print $this->getValue()."<br />";
+    }
+}
+class ConcreteClass extends AbstractClass{
+    protected function getValue(){
+        return "抽象方法的实现";
+    }
+}
+
+$class1 = new ConcreteClass;
+$class1->printOut();
+?>
+```
+
+
+
+## 接口技术 interface
+
+接口可以实现多继承
+
+接口中只有2种类型:
+
+1. 常量(public 权限)
+2. 抽象方法(public 权限)
+
+```php
+interface 接口名称{
+        常量成员;
+        抽象方法;  // 可以省略 abstract
+}
+```
+
+接口使用关键字 interface 来定义，并使用关键字 implements 来实现接口中的方法，且必须完全实现。
+
+```php
+<?php
+//定义接口
+interface User{
+    function getDiscount();
+    function getUserType();
+}
+//VIP用户 接口实现
+class VipUser implements User{
+    // VIP 用户折扣系数
+    private $discount = 0.8;
+    function getDiscount() {
+        return $this->discount;
+    }
+    function getUserType() {
+        return "VIP用户";
+    }
+}
+class Goods{
+    var $price = 100;
+    var $vc;
+    //定义 User 接口类型参数，这时并不知道是什么用户
+    function run(User $vc){
+        $this->vc = $vc;
+        $discount = $this->vc->getDiscount();
+	$usertype = $this->vc->getUserType();
+        echo $usertype."商品价格：".$this->price*$discount;
+    }
+}
+
+$display = new Goods();
+$display ->run(new VipUser);	//可以是更多其他用户类型
+?>
+```
+
+该例子演示了一个 PHP 接口的简单应用。该例子中，User 接口实现用户的折扣，而在 VipUser 类里面实现了具体的折扣系数。最后商品类 Goods 根据 User 接口来实现不同的用户报价。
+
+
+
+
+
+## php中的重载技术
+
+通常在面向对象的语言中,同名方法的参数不同.这种现象称为 "重载".
+
+参数不同包括: 个数不同, 类型不同,顺序不同.
+
+![](https://ws3.sinaimg.cn/large/006tNc79ly1fhssnhm9q7j30oo090q31.jpg)
+
+>  但是,在php中, 一个class中, 不可以定义多个同名的函数. — 这是语法错误.
+
+### 属性重载: 
+
+如果使用一个不存在的属性, 就会去自动调用类中预先定义好的某个方法, 来处理数据
+
+有4种情况:
+
+1. 取值: $object->属性;   ==属性不存在时自动调用==>  __get()
+2. 赋值:$object->属性 = XXX; ==属性不存在时自动调用==>  __set()
+3. 判断是否存在:isset($object->属性); ==属性不存在时自动调用==>  __isset()
+4. unset($object->属性); ==属性不存在时自动调用==>  __unset()
+
+> 类中要预先定义好上面的方法. 如果没有,显然是报错的
+
+方法重载:
+
+如果使用一个不存在的方法, 就会去自动调用类中预先定义好的某个方法, 来处理该行为.
+
+2种情况:
+
+1. $object->方法(); === 调用`普通方法`不存在自动调用==> `__call($funcName,$argument)`
+2. $object::方法(); === 调用`静态方法`不存在自动调用==> `__calstaticl($funcName,$argument)`
+
+![](https://ws1.sinaimg.cn/large/006tNc79ly1fhstlxeba7j30vq0r4tam.jpg)
+
+
+
+## 类的自动加载
+
+### __autoload() 
+
+__autoload() 方法接收的一个参数，就是欲加载的类的类名，
+
+>  所以这时候需要类名与文件名对应
+
+Pserson.php
+
+```
+<?php
+<?php
+class Person {
+    private $name;
+    private $age;
+
+    function __construct($name, $age) {
+        $this->name = $name;
+        $this->age = $age;
+    }
+
+    function say() {
+	echo "我的名字叫：".$this->name."<br />";
+	echo " 我的年龄是：".$this->age;
+    }
+}
+?>
+```
+
+test.php
+
+```
+<?php
+function __autoload($class_name) 
+{
+    require_once $class_name.'.php';
+}
+
+//当前页面 Pserson 类不存在则自动调用 __autoload() 方法，传入参数 Person
+$p1 = new Person("张三","20");
+$p1 -> say();
+?>
+
+```
+
+运行 test.php ，输出：
+
+```
+我的名字叫：张三
+我的年龄是：20
+```
+
+
+
+### spl_autoload_register
+
+"注册"一个或者多个函数, 用来代替`__autoload` 函数的作用
+
+![](https://ws4.sinaimg.cn/large/006tKfTcly1fhtupuu7bnj30to0k8761.jpg)
+
+
+
+### spl_autoload_register() 调用静态方法 
+
+```php
+
+class test {
+ public static function loadprint( $class ) {
+  $file = $class . '.class.php';  
+  if (is_file($file)) {  
+   require_once($file);  
+  } 
+ }
+} 
+ 
+spl_autoload_register(  array('test','loadprint')  );
+//另一种写法：spl_autoload_register(  "test::loadprint"  ); 
+ 
+$obj = new PRINTIT();
+$obj->doPrint();
+```
+
+
+
+## 对象的复制
+
+### 浅克隆   clone
+
+浅拷贝, 只能克隆对象中的`非对象非资源`数据
+
+![](https://ws2.sinaimg.cn/large/006tKfTcly1fhtux3r3tgj30rk0aa3z8.jpg)
+
+![](https://ws3.sinaimg.cn/large/006tKfTcly1fhtv0gwz9wj31f00n60ux.jpg)
+
+![](https://ws4.sinaimg.cn/large/006tKfTcly1fhtv1sujjyj31fg0li40n.jpg)
+
+可见并没有实现完全复制.
+
+### 深克隆 __clone
+
+当对象被克隆时，被调用
+
+该方法中自动包含$this 和 $that
+
+$this---副本对象的引用
+
+$that---原本对象的引用
+
+![](https://ws2.sinaimg.cn/large/006tKfTcly1fhtv9wf3dlj31ek0na0us.jpg)
+
+
+
+## 对象遍历
+
+对象可以使用 `foreach`进行遍历
+
+1. 只能遍历属性
+2. 受访问范围的限制
+
+类外遍历:
+
+![](https://ws4.sinaimg.cn/large/006tKfTcly1fhtvfd0o1zj30ts0b2wfb.jpg)
+
+类内遍历
+
+![](https://ws1.sinaimg.cn/large/006tKfTcly1fhtvhdc34zj310a0fkab5.jpg)
+
+
+
+## php内置类  stdClass
+
+
+
+![](https://ws4.sinaimg.cn/large/006tKfTcly1fhtvsr2qxhj30xc0ck755.jpg)
 

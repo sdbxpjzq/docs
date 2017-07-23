@@ -199,7 +199,7 @@ hosts所在文件夹：
 - Adblock Plus
 - LiveReload(配合gulp等自动刷新页面,还需安装 http-server)
 - Nimbus Screenshot & Screen Video Recorder(可以实现滚动截屏)
-- Octotree
+- Octotree,[Insight.io for Github](https://juejin.im/entry/597025d9518825419f7b65ba)
 - Vue.js devtools
 - React Developer Tools
 - 二维码（生成及识别）
