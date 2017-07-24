@@ -217,6 +217,29 @@ http://blog.csdn.net/suiye/article/details/8742380
 
 
 
+# 序列化数据
+
+`serialize` 和 `unserialize`
+
+serialize,会自动调用 `__sleep()`
+
+unserialize,会自动调用 `__wakeup()`
+
+
+
+`json_encode` 和 `json_decode`
+
+```
+$arr  = array('hello','world');
+$str = serialize($arr);
+$arr3 = unserialize($str);
+
+$arr4  = array('hello','world');
+$str2 = json_encode($arr);
+$arr5 = json_decode($str2,true);
+
+```
+
 
 
 # 面向对象
@@ -714,4 +737,108 @@ $that---原本对象的引用
 
 
 ![](https://ws4.sinaimg.cn/large/006tKfTcly1fhtvsr2qxhj30xc0ck755.jpg)
+
+
+
+## 与类有关的魔术方法
+
+`__class__`
+
+`__METHOD__`
+
+```php
+class A
+{
+    function hello()
+    {
+        print_r(__CLASS__); // A
+        print_r(__METHOD__); // A::hello
+    }
+}
+
+$obj = new A();
+$obj->hello();
+```
+
+
+
+## 其他的一些方法和运算符
+
+![](https://ws4.sinaimg.cn/large/006tKfTcly1fhtysvr4x7j317m0d8tab.jpg)
+
+
+
+### instanceof
+
+```php
+class A{}
+class B extends A{}
+$obj = new B;
+var_dump($obj instanceof A); // true
+```
+
+
+
+## 对象向下传递
+
+![](https://ws2.sinaimg.cn/large/006tKfTcly1fhtz3lx37yj311w0i4gn9.jpg)
+
+
+
+## static后期静态绑定特征
+
+
+
+```php
+class A
+{
+    static $p1 = 1;
+    static function show()
+    {
+        // self 永远代表其所在代码的类, 所以永远 1
+        echo self::$p1;
+    }
+    static function show2()
+    {
+        //static 代表调用本方法的类
+        echo static::$p1;
+    }
+}
+class B extends A
+{
+    static $p1 = 10;
+}
+A::show(); // 1
+B::show(); // 1 self 永远代表其所在代码的类, 所以是 1
+A::show2();
+B::show2(); // 10  static 代表调用本方法的类
+```
+
+
+
+
+
+
+
+
+
+# 魔术方法
+
+## __tostring()
+
+ __toString方法在将一个对象转化成字符串时自动调用
+
+## __invoke()
+
+对象当做一个函数的时候, 会自动调用.
+
+```php
+$v1 = $obj(1,2); $obj是一个对象
+```
+
+![](https://ws3.sinaimg.cn/large/006tKfTcly1fhtyhoxpelj30vm0ei0te.jpg)
+
+
+
+
 
