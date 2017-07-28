@@ -2,6 +2,14 @@
 
 
 
+# mac java环境
+
+[jdk下载](http://www.oracle.com/technetwork/java/javase/downloads/)
+
+
+
+
+
 # ngrok
 
 ngrok
@@ -286,6 +294,7 @@ https://avwo.github.io/whistle/rules/weinre.html
 - webstorm
   - [破解网站-参考一](http://idea.lanyus.com/)
   - [破解网站-参考二](http://www.imsxm.com/jetbrains-license-server.html)
+  - [破解网站]— http://xidea.online
 - 为知笔记,有道笔记,印象笔记
 - 滴答清单
 - Spark(邮箱), 网易邮箱大师

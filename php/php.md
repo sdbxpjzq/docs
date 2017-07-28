@@ -42,6 +42,28 @@ $arr5 = json_decode($str2,true);
 
 
 
+# 命名空间
+
+![](https://ws1.sinaimg.cn/large/006tKfTcly1fhwekz0osjj316o0ou0v4.jpg)
+
+
+
+一个php文件中可以存在多个命名空间
+
+受命名空间影响的数据:
+
+类
+
+函数
+
+接口
+
+const定义的常量
+
+
+
+
+
 # 面向对象
 
 属性, 常量 , 方法 

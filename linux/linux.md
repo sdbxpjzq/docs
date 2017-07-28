@@ -247,6 +247,14 @@ nohup php test.php &
 
 
 
+## cron表达式生成
+
+http://cron.qqe2.com/
+
+
+
+
+
 # Yum
 
 自动化升级，安装、移除rpm软件包，收集软件包的相关信息，检查依赖并自动提示用户解决。关键是有可靠的软件池。
@@ -305,7 +313,9 @@ deplist：显示rpm软件包的所有依赖关系。
 - 运行以下命令生成缓存`yum clean all` `yum makecache`
 
 
+## 批量安装开发工具
 
+```yum -y groupinstall "Development Tools"```
 
 
 

@@ -2,6 +2,16 @@
 
 
 
+# js抓取
+
+http://phantomjs.org/
+
+http://javascript.ruanyifeng.com/tool/phantomjs.html
+
+
+
+
+
 http://detectmobilebrowsers.com/
 
 ![](https://ws2.sinaimg.cn/large/006tNc79gy1fhsefpc5saj315u0viwin.jpg)s

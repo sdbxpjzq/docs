@@ -137,6 +137,12 @@ const router = new VueRouter({
 
 # **控制title和分享信息 -- vue-meta**
 
+别人写的:
+
+![](https://ws1.sinaimg.cn/large/006tKfTcly1fhy7rqo67dj30h806qt8u.jpg)
+
+
+
 https://github.com/declandewet/vue-meta
 
 router.js
