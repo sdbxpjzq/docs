@@ -10,18 +10,6 @@ http://javascript.ruanyifeng.com/tool/phantomjs.html
 
 
 
-aa
-
-bb
-
-cc
-
-
-
-
-
-
-
 http://detectmobilebrowsers.com/
 
 ![](https://ws2.sinaimg.cn/large/006tNc79gy1fhsefpc5saj315u0viwin.jpg)s
