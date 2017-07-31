@@ -44,15 +44,19 @@ http://1130739.blog.51cto.com/1120739/1738791
 
 
 
+# LNMP 安装
 
-
-
-
-
-
-#  OneinStack相关启动
+## 安装1 — OneinStack相关启动
 
 https://www.nmfox.com/2015/10/22/370.html
+
+
+
+## 安装2
+
+https://lnmp.org/faq/addons.html
+
+
 
 # 启动相关
 

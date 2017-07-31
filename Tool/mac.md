@@ -247,7 +247,7 @@ https://avwo.github.io/whistle/rules/weinre.html
 
 #  终端 -Oh My Zsh
 
-命令行工具[Oh My Zsh][https://github.com/robbyrussell/oh-my-zsh]---[教程][https://sanwen8.cn/p/1b9NhOn.html]
+命令行工具[Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh)---[教程][https://sanwen8.cn/p/1b9NhOn.html]
 
 **安装**
 
