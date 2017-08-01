@@ -340,3 +340,5 @@ https://avwo.github.io/whistle/rules/weinre.html
 # 推荐下载地址
 
 [史蒂芬周的博客](http://www.sdifenzhou.com/)
+
+[打卡下载](http://digit77.com/en/macos)
