@@ -58,6 +58,29 @@ https://lnmp.org/faq/addons.html
 
 
 
+# Node安装
+
+## 源码安装
+
+1. ` tar -xvf node-v6.11.2.tar.gz `
+2. `cd node-v6.11.2 `
+3. `./configure `
+4. `make `
+5. `make install `
+6. `cp /usr/local/bin/node /usr/sbin/ `
+
+
+
+`查看当前安装的Node的版本 `
+
+`# node -v `
+
+
+
+
+
+
+
 # 启动相关
 
 `shutdown -r now` — 重新启动
@@ -239,11 +262,32 @@ nohup php test.php &
 
 
 
-
 # 压缩和解压
+
+## tar.xz文件
+
+```shell
+# xz -d ***.tar.xz  //先解压xz 
+# tar -xvf  ***.tar //再解压tar
+```
+
+## zip文件
 
 - `zip -r  [压缩文件名][被压缩文件名]` — 压缩成 .zip
 - `unzip  myc.zip  -d  ./unzip/` — 解压缩
+
+
+
+
+# Linux升级安装GCC
+
+https://itbilu.com/linux/management/V1vdnt9ll.html
+
+
+
+## 升级动态库
+
+https://itbilu.com/linux/management/NymXRUieg.html
 
 
 
