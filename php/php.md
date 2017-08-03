@@ -2,6 +2,21 @@
 
 
 
+# 跑数据时常见问题
+
+由于数据量比较大, 可能会遇到执行超时,超出内存等其他问题.
+
+```php
+ini_set('memory_limit', '1024M');
+ini_set('max_execution_time', '0');
+```
+
+
+
+
+
+
+
 # function use 匿名函数(闭包函数)
 
 ```php

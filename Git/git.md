@@ -1,6 +1,6 @@
 [TOC]
 
-### 
+###05-02 
 
 # 更新自己的分支开发(上班第一件事)
 
@@ -15,6 +15,26 @@
 1. `git checkout -b zongqi`
 2. `git pull origin master `
 
+
+
+
+# git config
+
+## 配置文件
+
+~/.gitconfig
+
+` git config --list ` 或者 `cat ~/.gitconfig`
+
+` git config --global user.name 'xxx'`
+
+` git config --global user.emall 'xxx'`
+
+` git config --global color.ui true`
+
+## 设置别名
+
+` git config --global alias.co chechout` — 将`checkout`设置成`co`
 
 
 
@@ -35,11 +55,25 @@
 
 
 
-# 撤销本地的修改
+
+# git mv 
+
+## 重命名
+
+- `git mv [file-oldName][file-newName]` — 改名文件，并且将这个改名放入暂存区
+
+## 移动文件
+
+`git mv [file-oldName_dir][file-newName_dir]`
+
+
+
+# git checkout
 
 - `git checkout --[fileName]` — 撤销某个文件的修改
-- 那撤销全局文件的修改是什么呢?
 
+
+ `git checkout HEAD -- [fileName]` — 恢复到`fileName`最近的一次提交
 
 
 # 撤销git add后的文件
@@ -87,10 +121,7 @@ http://www.jianshu.com/p/3622ed542c3b
 - `git add .` —  添加当前的所有文件到暂存区
 
 
-
-# git mv
-
-- `git mv [file-oldName][file-newName]` — 改名文件，并且将这个改名放入暂存区
+- ​
 
 # git commit
 
@@ -101,7 +132,7 @@ http://www.jianshu.com/p/3622ed542c3b
 
 
 
-# 撤销 commit
+# git reset
 
 - `git reset –mixed`
 
@@ -109,11 +140,25 @@ http://www.jianshu.com/p/3622ed542c3b
 
 - ` git reset –soft`
 
-  回退到某个版本，保留修改源码,回退了commit的信息，不会恢复到index file一级。如果还要提交，直接commit即可(不需要`git add`)
+  回退到某个版本，**保留修改源码**,回退了commit的信息，不会恢复到index file一级。如果还要提交，直接commit即可(不需要`git add`)
 
 - `git reset –hard`
 
   彻底回退到某个版本，**不保留修改源码**,本地的源码也会变为上一个版本的内容
+
+
+不会出现commit
+
+# git revert
+
+会有commit
+
+
+
+#  git diff
+
+
+
 
 
 
@@ -143,6 +188,7 @@ git tag分为两种类型：轻量tag和附注tag。轻量tag是指向提交对�
 - `git stash list`  — 列出git栈信息
 - `git stash pop` — 取出***最近一次保存的内容***
 - `git stash apply stash@{1}`  — 取出指定的内容
+- `git stash drop stash@{1}`  — 删除指定的内容
 - `git stash clear` — 清空git 栈
 
 
@@ -157,9 +203,10 @@ git tag分为两种类型：轻量tag和附注tag。轻量tag是指向提交对�
 -  `git branch [branchName]` — 新建一个,并依然停留在当前
 -  `git checkout -b [branch-name]` — 新建分支,并切换该分支
 -  `git checkout [branch-name]` — 切换分支
--  `git fetch origin branchname:branchname` — 拉取远程分支到本地
+-  `git fetch origin branchname:branchname` — 拉取远程分支到本地 
 -  `git branch -d (-D强制删除) [branch-name]` — 删除本地分支
 -  `git push origin --delete [branch-name]` — 删除远程分支
+-  `git branch -m [old_branch_name] [new_branch_name]`— 重命名分支
 
 
 **切换分支注意事项**
@@ -189,6 +236,21 @@ git tag分为两种类型：轻量tag和附注tag。轻量tag是指向提交对�
 - --oneline- 压缩模式，在每个提交的旁边显示经过精简的提交哈希码和提交信息，以一行显示。
 - --graph- 图形模式，使用该选项会在输出的左边绘制一张基于文本格式的历史信息表示图。如果你查看的是单个分支的历史记录的话，该选项无效。
 - --all- 显示所有分支的历史记录
+- —decorate 
+
+
+
+`git log --oneline -5`
+
+`git log --oneline -5 --author="zongqi"`
+
+`git log --oneline -5 --grep="index.html"`
+
+`git log --oneline -5 --before='2017-07-01'` 1 week, 3 days
+
+`git log --oneline -5 --before='1 week'`
+
+
 
 # tig — 查看小工具
 
