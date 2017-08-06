@@ -108,7 +108,9 @@ http://v.laod.cn/
 
 #  翻墙推荐
 
+## 云末加速
 
+http://www.ymjsq.org/
 
 ## FreeVPN Plus
 

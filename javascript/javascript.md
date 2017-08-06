@@ -2,6 +2,30 @@
 
 
 
+
+
+# for循环 与 setTimeout
+
+每秒输出
+
+```js
+for (var i = 0; i < 5; i++) {
+    setTimeout((function (a) {
+            return function () {
+                console.log(a);
+            }
+        })(i), (function (b) {
+            return b * 1000
+        })(i)
+    );
+}
+
+```
+
+
+
+
+
 # 跨域
 
 ## 什么是跨域
@@ -16,11 +40,82 @@ javascript出于安全方面的考虑,不允许跨域调用其他页面的对象
 
 ## 解决跨域的办法
 
-1. 服务端设置
-2. 是用代理
-3. 使用`jsonp`
+### 服务端设置
+
+背后的基本思想是：
+
+​        使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是 应该失败。
+
+在PHP页面下 写上:
+
+```php
+header("Access-Control-Allow-Origin:*"); 
+header("Access-Control-Allow-Methods","GET,POST");
+```
+
+但是IE并不支持
+
+IE8中引入了XDR(XDomainRequest)类型.
+
+  ![](https://ws1.sinaimg.cn/large/006tKfTcly1fia0tqpwi6j30jq050dfw.jpg)
+
+![](https://ws4.sinaimg.cn/large/006tKfTcly1fia0twuazaj30l907qwew.jpg)
+
+![](https://ws2.sinaimg.cn/large/006tKfTcly1fia0ue5v27j30vh0bpdh0.jpg)
+
+检测浏览器是否支持 cors
+
+检测XHR 是否支持 CORS，就是检测withCreadentials属性。再结合 XDomainRequest对象是否存在.
+
+![](https://ws1.sinaimg.cn/large/006tKfTcly1fia0v0pskrj30k005udg3.jpg)
+
+![](https://ws4.sinaimg.cn/large/006tKfTcly1fia0v61jf8j30rx08u0sy.jpg)
+
+```js
+function createCORS(fn,url){
+			var xhr = new XMLHttpRequest();
+			if('withCredentials' in xhr){
+				xhr.open(fn,url,true);
+			}else if(typeof XDomainRequest() != 'undefined'){
+				cxhr = new XDomainRequest();
+				cxhr.open(fn,url);
+			}
+		}
+```
+
+
+
+### 使用`jsonp`
+
+JSONP的最基本的原理是：动态添加一个<script>标签，而script标签的src属性是没有跨域的限制的。这样说来，这种跨域方式其实与ajax XmlHttpRequest协议无关了.
+
+只支持 GET 请求,不支持 POST 请求
 
 ![](https://ws1.sinaimg.cn/large/006tNc79ly1fhj6qi6e2ij30xi0gk3yw.jpg)
+
+```js
+function getJSON(url,fn){
+				// 创建 script标签
+				var oScript = document.createElement('script');
+				oScript.src = url;
+				document.body.appendChild(oScript);
+				var reg = /callback=([^&]+)/;
+				var fnName = url.match(reg)[1];
+				// 挂载window
+				window[fnName] = fn;   // 函数在服务器端 执行
+				oScript.onload = function(){
+					document.body.removeChild(oScript);
+					delete(window[fnName]);
+				}
+			}
+
+```
+
+```php
+echo $_GET['callback'].'({"name":"hello"})';
+```
+
+![](https://ws1.sinaimg.cn/large/006tKfTcly1fia14ogv14j30j30cndgd.jpg)
 
 
 
