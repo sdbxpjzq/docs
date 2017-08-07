@@ -1,5 +1,59 @@
 [TOC]
 
+
+
+# Nginx解析
+
+http://wp.iyouths.org/343.html
+
+1. root /home/wwwroot/xxx.com/public;
+
+2. /usr/local/nginx/conf/fastcgi.conf,
+
+   添加 `fastcgi_param PHP_ADMIN_VALUE $basedir if_not_empty;`
+
+   $basedir变量就可以在/usr/local/nginx/conf/vhost/xxx.com.conf配置文件里的include enable-php.conf前赋值：
+
+   `set $basedir "open_basedir=/home/wwwroot/dev.yunshare.net/:/tmp/:/proc/";`
+
+**注意rewrite规则：**
+
+```shell
+location / {
+            if (!-e $request_filename){
+                rewrite ^/(.*)$ /index.php?s=/$1 last;
+            }
+}
+```
+
+
+
+https://www.kancloud.cn/manual/thinkphp5/177576
+
+enable-php.conf
+
+```php
+location ~ [^/]\.php(/|$)
+{
+try_files $uri =404;
+fastcgi_pass  unix:/tmp/php-cgi.sock;
+fastcgi_index index.php;
+include fastcgi.conf;
+set $fastcgi_script_name2 $fastcgi_script_name;
+    if ($fastcgi_script_name ~ "^(.+\.php)(/.+)$") {
+        set $fastcgi_script_name2 $1;
+        set $path_info $2;
+    }
+    fastcgi_param   PATH_INFO $path_info;
+   fastcgi_param   SCRIPT_FILENAME   $document_root$fastcgi_script_name2;
+   fastcgi_param   SCRIPT_NAME   $fastcgi_script_name2;
+}
+```
+
+
+
+
+
 ### 目录和文件
 
 - 目录使用小写+下划线；
