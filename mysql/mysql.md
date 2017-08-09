@@ -448,6 +448,18 @@ SET PASSWORD FOR 'pig'@'%' = PASSWORD("123456");
 
  
 
+## 删除用户 
+
+```sql
+DROP USER 'username'@'host'; 
+```
+
+
+
+
+
+
+
 
 
 
