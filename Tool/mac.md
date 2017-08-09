@@ -221,9 +221,13 @@ hosts所在文件夹：
 # 代理工具--whistle
 
 - whistle --跨平台[手册](https://avwo.github.io/whistle/)[教程](https://www.qcloud.com/community/article/151)--(目前只是使用了简单的代理,许多功能还没有用到) 
-- 安装— `npm install -g whistle`
+- 安装(或更新)— `sudo npm install -g whistle`
 - 启动— `w2 start`
 
+
+## 更新日志
+
+https://github.com/avwo/whistle/blob/master/CHANGELOG.md
 
 ## weinre的使用
 

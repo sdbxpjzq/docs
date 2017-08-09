@@ -4,7 +4,7 @@
 
 # **vue 基础指令**
 
-v-for
+## v-for
 
 1. 基本用法
 
@@ -31,11 +31,21 @@ v-for
 </div>
 ```
 
-**ref**
+## **ref**
 
 https://vuefe.cn/v2/api/#ref
 
 http://jingyan.baidu.com/article/acf728fd5ee4acf8e510a3cc.html
+
+
+
+## methods
+
+> **不应该使用箭头函数来定义 method 函数**
+
+
+
+
 
 # **vue2.0生命周期**
 
@@ -195,6 +205,8 @@ https://vuex.vuejs.org/zh-cn/
 
 http://www.jianshu.com/p/df464b26ae58
 
+https://www.kancloud.cn/yunye/axios/234845
+
 **安装**
 
 `npm install axios --save`
@@ -252,6 +264,20 @@ proxyTable: {
 > 以上方法若没解决(就像我😂),使用代理的方式吧
 >
 > 我是用 whistle 代理解决的
+
+## 默认设置
+
+### 全局默认设置
+
+```js
+axios.defaults.baseURL = 'https://api.example.com';
+axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
+axios.defaults.headers.post['Content-Type']='application/x-www-form-urlencoded';
+```
+
+
+
+
 
 # vue-cli
 
