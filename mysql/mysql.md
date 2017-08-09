@@ -214,6 +214,10 @@ insert into t (a ,b ) values (null,null);#可以重复 .
 
    ```sql
    CREATE UNIQUE INDEX indexName ON mytable(username(length)) 
+
+   // length注意: 
+   如果是CHAR，VARCHAR类型，length可以小于字段实际长度；
+   如果是BLOB和TEXT类型，必须指定 length。
    ```
 
 3. 修改表结构
