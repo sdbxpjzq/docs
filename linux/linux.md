@@ -68,24 +68,9 @@ https://lnmp.org/faq/lnmp-vhost-add-howto.html
 
 # Node安装
 
-## 源码安装
+http://nodejs.cn/ 
 
-1. ` tar -xvf node-v6.11.2.tar.gz `
-2. `cd node-v6.11.2 `
-3. `./configure `
-4. `make `
-5. `make install `
-6. `cp /usr/local/bin/node /usr/sbin/ `
-
-
-
-`查看当前安装的Node的版本 `
-
-`# node -v `
-
-
-
-## 编译好的文件安装
+## 编译好的文件安装--推荐
 
 ​    简单说就是解压后，在bin文件夹中已经存在node以及npm，如果你进入到对应文件的中执行命令行一点问题都没有，不过不是全局的，所以将这个设置为全局就好了。
 
@@ -470,4 +455,15 @@ deplist：显示rpm软件包的所有依赖关系。
 
 
 
+# rename
+
+```
+rename [旧名字]  [新名字]  [旧名字]
+```
+
+```
+注意点:
+在mac osx系统中 是没有 rename 命令的
+需要安装: brew install rename
+```
 
