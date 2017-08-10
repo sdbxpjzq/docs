@@ -48,6 +48,10 @@ http://1130739.blog.51cto.com/1120739/1738791
 
 ## 安装1 — OneinStack相关启动
 
+这个比较好用
+
+https://oneinstack.com/
+
 https://www.nmfox.com/2015/10/22/370.html
 
 

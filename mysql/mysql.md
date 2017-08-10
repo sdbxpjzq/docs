@@ -2,12 +2,6 @@
 
 
 
-days8开始学习
-
-
-
-
-
 # 创建数据库
 
 ```sql
@@ -460,7 +454,39 @@ DROP USER 'username'@'host';
 
 
 
+# 模式问题
 
+
+
+## 查看模式
+
+```sql
+select @@sql_mode;
+SELECT @@GLOBAL.sql_mode;
+```
+
+## 修改模式
+
+需要root权限
+
+### 修改配置文件
+
+  `  vim /etc/my.cnf`
+
+在`[mysqld]`下面添加如下列：
+
+`sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES`
+
+### 执行sql
+
+```sql
+SET @@sql_mode="NO_ENGINE_SUBSTITUTION";
+SET @@GLOBAL.sql_mode="NO_ENGINE_SUBSTITUTION";
+```
+
+
+
+http://www.ywnds.com/?p=8865
 
 
 
