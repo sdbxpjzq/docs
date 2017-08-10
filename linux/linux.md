@@ -62,6 +62,10 @@ https://lnmp.org/faq/addons.html
 
 ### 虚拟机配置
 
+创建虚拟主机
+
+`lnmp vhost add [name]`
+
 https://lnmp.org/faq/lnmp-vhost-add-howto.html
 
 

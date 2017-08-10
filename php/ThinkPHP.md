@@ -6,15 +6,14 @@
 
 http://wp.iyouths.org/343.html
 
-1. root /home/wwwroot/xxx.com/public;
+1. 将`root`配置为 `root /home/wwwroot/xxx.com/public;`
+2. `fastcgi.conf`
 
-2. /usr/local/nginx/conf/fastcgi.conf,
+添加: `fastcgi_param PHP_ADMIN_VALUE $basedir if_not_empty;`
 
-   添加 `fastcgi_param PHP_ADMIN_VALUE $basedir if_not_empty;`
+`$basedir`变量就可以在`nginx/conf/vhost/xxx.com.conf`配置文件里的`include enable-php.conf`前(这里可能每个人不同)赋值：
 
-   $basedir变量就可以在/usr/local/nginx/conf/vhost/xxx.com.conf配置文件里的include enable-php.conf前赋值：
-
-   `set $basedir "open_basedir=/home/wwwroot/dev.yunshare.net/:/tmp/:/proc/";`
+`set $basedir "open_basedir=/home/wwwroot/xxx.com/:/tmp/:/proc/";`
 
 **注意rewrite规则：**
 
