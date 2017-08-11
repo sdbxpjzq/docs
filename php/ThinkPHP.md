@@ -51,8 +51,6 @@ set $fastcgi_script_name2 $fastcgi_script_name;
 
 
 
-
-
 ### 目录和文件
 
 - 目录使用小写+下划线；
@@ -82,3 +80,42 @@ set $fastcgi_script_name2 $fastcgi_script_name;
 
 应用类库的根命名空间统一为app（不建议更改，可以设置`app_namespace`配置参数更改，`V5.0.8`版本开始使用`APP_NAMESPACE`常量定义）；
 例如：`app\index\controller\Index`和`app\index\model\User`。
+
+
+
+# Model层
+
+### 连接数据库
+
+```php
+Db::table() 是单例模式
+db() 并不是单例模式,默认每次都会重新连接数据库
+```
+
+### where
+
+```php
+Db::table()->where('name','thinkphp')->select();
+```
+
+数组形式
+
+```php
+$aData = array(
+	'name'=>'thinkphp'
+);
+Db::table()->where($aData)->select();
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
