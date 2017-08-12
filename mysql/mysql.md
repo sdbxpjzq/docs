@@ -268,7 +268,7 @@ DROP INDEX [indexName] ON mytable;
 
 # CURD
 
-###  插入数据
+##  插入数据
 
 ```sql
 insert into [tables_name](column1,column2,...) values(value1, value2,..)
@@ -294,15 +294,103 @@ update emp as a,dept as b set
 
 
 
-### 查询数据
+## 查询数据
 
 ```sql
 select column1,column1,... FROM tb_name
 ```
 
-### 替换数据
+## 替换数据
 
 【主键或唯一索引冲突，执行替换，否则插入】
+
+
+
+# 连表查询
+
+![](https://ws2.sinaimg.cn/large/006tKfTcly1figufzvzo3j30fd09zglt.jpg)
+
+## 内连接
+
+选出两张表中相互匹配的记录，连接的多个数据必须存在才能进行连接 .
+
+方式一:
+
+```sql
+select a.ename, b.deptname from emp as a,dept as b where a.deptno=b.deptno; //在没有用关键字的情况下，使用on条件会报错
+```
+
+方式二:
+
+`inner join`关键字
+
+```sql
+select * from news inner join you on news.id = you.id; 
+```
+
+方式三:
+`using()`关键字
+
+要求：**连接的两个实体之间的字段名称一致**
+
+```sql
+select * from news inner join you using(id); 
+```
+
+
+
+## 外连接
+
+### 左连接(left  outer  join)
+
+包含所有左边表中的记录，甚至是右表中没有和他相匹配的记录.
+
+### 右连接(right outer  join)
+
+包含所有的右边的记录，甚至是左边表中没有与他相匹配的记录
+
+### 注意事项
+
+1. 不支持`where`作为连接条件, 使用 `on`
+2. `using`：会去掉结果中的重复字段，并将判断条件放在第一列
+3. 外连接不能缺少连接条件，否则会报错
+
+```sql
+A left join B ON 条件表达式;
+select * from news left join you on news.id=you.id;
+```
+
+
+
+## 自然连接(natural join)
+
+通过mysql自己的判断完成连接的过程，不需要指定连接条件，mysql会使用多表内的，相同的字段，作为连接条件。
+
+```sql
+select * from  table1  natrual  join  table2;
+```
+
+分类：
+
+- 内连接：`natural join`
+- 左外连接：`natural left join`
+- 右外连接：`natural right join`
+
+
+
+# SQL中on条件与where条件的区别
+
+数据库在通过连接两张或多张表来返回记录时，都会生成一张中间的临时表，然后再将这张临时表返回给用户。 
+
+在使用`left jion`时，`on`和`where`条件的区别如下：
+
+1、 `on`条件是在生成临时表时使用的条件，它不管on中的条件是否为真，都会返回左边表中的记录。
+
+2、`where`条件是在临时表生成好后，再对临时表进行过滤的条件。这时已经没有`left join`的含义（必须返回左边表的记录）了，条件不为真的就全部过滤掉。
+
+
+
+
 
 
 
