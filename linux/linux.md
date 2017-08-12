@@ -95,6 +95,18 @@ ln -s /home/kun/mysofltware/node-v0.10.28-linux-x64/bin/npm /usr/local/bin/npm
 
 
 
+# Linux服务器安装使用PhantomJS
+
+https://icewing.cc/post/linux-install-phantomjs.html
+
+### 直接下载编译好的文件
+
+直接到Bitbucket下载对应的压缩包（链接：[https://bitbucket.org/ariya/phantomjs/downloads](https://bitbucket.org/ariya/phantomjs/downloads)），例如我的是CentOS6.5 64位系统，下载的是phantomjs-1.9.8-linux-x86_64.tar.bz2，下载完成后解压，在 bin 目录内有编译好的 phantomjs 文件，直接用FTP等工具上传到服务器。
+
+## 模拟登录
+
+http://imweb.io/topic/556c287879878a3b386dd026
+
 
 
 # 启动相关
@@ -293,7 +305,13 @@ nohup php test.php &
 - `unzip  myc.zip  -d  ./unzip/` — 解压缩
 
 
+## tar.bz2
 
+- `tar   -jxvf    xx.tar.bz2` — 解压
+
+## tar.gz    
+
+-  `tar   -zxvf   xx.tar.gz` — 解压
 
 # Linux升级安装GCC
 
