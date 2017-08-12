@@ -2,6 +2,26 @@
 
 
 
+# mac内置键盘和触控板失灵的解决办法
+
+下面是Apple给出的解决方案：
+
+1. 重置电源
+   1.1 插上电源
+   1.2 按住左侧的 shift + control + option + 开关键；
+   1.3 15秒后放手见到电源灯转绿色，表示重置完成。
+2. 重置数据
+   2.1 按开机键；
+   2.2 开机亮屏前，同时按住 command + option + p + r；
+   2.3 听到3~4声启动声后（系统会频繁重启，等到3~4次后），双手放开；
+   2.4 等待系统自动开机；
+
+
+
+
+
+
+
 # mac java环境
 
 [jdk下载](http://www.oracle.com/technetwork/java/javase/downloads/)
