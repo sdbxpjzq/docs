@@ -6,13 +6,17 @@
 
 ## cookie
 
-setcookie(key,value) // 增 或者 修改
+setcookie(key,value, 有效期(时间戳)) // 增 或者 修改
 
 setcookie(key,'') // 删除 cookie
 
 获取浏览器在请求时携带的cookie
 
 $_COOKIE[key] // 获取 cookie
+
+有效期
+
+默认: 会话周期结束(关闭浏览器)
 
 
 
