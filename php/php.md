@@ -2,6 +2,32 @@
 
 
 
+# 会话技术
+
+## cookie
+
+setcookie(key,value) // 增 或者 修改
+
+setcookie(key,'') // 删除 cookie
+
+获取浏览器在请求时携带的cookie
+
+$_COOKIE[key] // 获取 cookie
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # 跑数据时常见问题
 
 由于数据量比较大, 可能会遇到执行超时,超出内存等其他问题.
