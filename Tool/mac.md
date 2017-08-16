@@ -2,6 +2,12 @@
 
 
 
+# git 命令补全设置
+
+https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion
+
+
+
 # 护颜色
 
 
@@ -76,16 +82,6 @@ ngrok
 - Remote Desktop Manager   — 功能更多
 
 可以设置成简体中文. 点击“Preference…”，选择“User Interface”，将“Language:”更改为“Chinese”后重启软件完成汉化
-
-
-
-# 删除 .DS_store文件
-
-BlueHarvest 6.4.1 破解版本
-
-
-
-
 
 
 
