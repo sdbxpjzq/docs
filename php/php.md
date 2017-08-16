@@ -6,19 +6,42 @@
 
 ## cookie
 
-setcookie(key,value, 有效期(时间戳)) // 增 或者 修改
+`setcookie(name,value,expire,path,domain,secure)`
 
-setcookie(key,'') // 删除 cookie
+| 参数     | 说明                                       |                                          |
+| ------ | ---------------------------------------- | ---------------------------------------- |
+| name   | cookie 名称                                |                                          |
+| value  | 可选，cookie 值。不要保存敏感数据                     |                                          |
+| expire | 可选，过期时间，时间戳格式                            | 如 time()+60*60*24*7将设定cookie在一周后失效。如果未设置，则在会话结束后立即失效。 |
+| path   | 可选，服务器端有效路径，/ 表示整个域名有效，默认为当前设置 cookie 时页面的路径 |                                          |
+| domain | 可选，该 cookie 有效的域名                        | 要使cookie能在如[www.zongqi.com  域名下的所有子域名都有效的话，该参数应该](http://www.zongqi.com域名下的所有子域名都有效的话，该参数应该) 为 ".zongqi.com"。虽然“.”并不是必须的，但加上他会兼容更多的浏览器。 |
+| secure | 指明cookie是否仅通过安全的HTTPS连接传送                | 设置为true时，cookie仅在安全的连接中设置。默认是false,HTTP和HTTPS上都有效 |
 
-获取浏览器在请求时携带的cookie
-
-$_COOKIE[key] // 获取 cookie
-
-有效期
-
-默认: 会话周期结束(关闭浏览器)
 
 
+### 删除 cookie
+
+设置cookie在当前时间已经过期，系统会自动删除
+
+`setcookie（$name,$value, time()-1）`
+
+### 读取cookie
+
+`$_COOKIE[“name”]`
+
+
+
+### 数组形式的cookie
+
+```php
+setcookie("user[username]","zongqi");  // $_COOKIE["user"]["username"]
+setcookie("user[password]",  md5("123456"));  //$_COOKIE["user"]["password"]
+setcookie("user[email]","1165064143@qq.com");//$_COOKIE["user"]["email"]
+
+foreach($_COOKIE["user"] as key=>val){
+    echo $key.":".$val;
+}
+```
 
 
 
