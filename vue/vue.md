@@ -33,6 +33,17 @@
 
 ## **ref**
 
+在普通的 DOM 元素上使用，引用指向的就是 DOM 元素.
+
+- 绑定`DOM` 
+
+```js
+<!-- vm.$refs.p will be the DOM node -->
+<p ref="p">hello</p>
+```
+
+
+
 https://vuefe.cn/v2/api/#ref
 
 http://jingyan.baidu.com/article/acf728fd5ee4acf8e510a3cc.html
@@ -42,6 +53,31 @@ http://jingyan.baidu.com/article/acf728fd5ee4acf8e510a3cc.html
 ## methods
 
 > **不应该使用箭头函数来定义 method 函数**
+
+
+
+## 全局指令-directive
+
+```vue
+// 注册
+Vue.directive('my-directive', {
+  bind: function () {}, // 在该元素绑定指令时调用且仅调用一次，用于初始化
+  inserted: function () {}, // 当绑定元素时插入DOM中执行
+  update: function () {}, // bind完成之后立刻触发，以后每当参数更新的时候都会触发
+  componentUpdated: function () {}, // 被绑定元素所在模板完成一次更新周期时调用
+  unbind: function () {} // 解除和DOM元素的绑定时触发
+})
+```
+
+
+
+https://www.npmjs.com/package/vue-inputmask
+
+http://www.jb51.net/article/118880.htm
+
+http://www.cnblogs.com/evaling/p/7252500.html
+
+http://www.cnblogs.com/xiaojingyuan/p/6555988.html
 
 
 
