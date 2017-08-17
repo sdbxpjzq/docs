@@ -15,7 +15,12 @@
 * `gem sources -r https://rubygems.org/ `— 删除默认的源
 * `gem sources -a  https://gems.ruby-china.org/ ` -- 使用淘宝源(淘宝给了 Ruby China 镜像 的维护工作中)
 * `gem sources -u `—更新源的缓存后即完成了Ruby的gem源修改。
+> 注意: 切换源的时候可能会报ssl之类的错误, 建议升级 `openssl`
+>
+> `brew install openssl` `brew install ruby`
+
 # 安装sass
+
 `gem install sass`
 `sass -v`
 `gem update sass` --升级
