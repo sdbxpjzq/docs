@@ -58,7 +58,9 @@ http://jingyan.baidu.com/article/acf728fd5ee4acf8e510a3cc.html
 
 ## 指令-directive
 
-### 全局指令
+**`directive` 更趋向于有`dom`操作时使用**
+
+### **全局**指令
 
 ```vue
 // 注册
@@ -106,9 +108,129 @@ Vue.directive('mask', {
 
 https://www.npmjs.com/package/vue-inputmask
 
-http://www.cnblogs.com/evaling/p/7252500.html
-
 http://www.cnblogs.com/xiaojingyuan/p/6555988.html
+
+## 不能用于异步事件
+
+Vue.directive() 的命令一般都是自动运行的或者说初始化等等触发的，并不能用于异步事件.
+
+可以用`mixins`混合命令
+
+
+
+## mixins
+
+### 基础用法
+
+```js
+const myMixin = {
+    methods: {
+        miXinsHello: function () {
+            console.log('hello from miXinsHello!')
+        }
+    }
+}
+const yaoyao = {
+    methods: {
+        yaoyao: function () {
+            console.log('hello from yaoyao!')
+        }
+    }
+}
+// export default myMixin
+export { myMixin,yaoyao}
+```
+
+```vue
+<template>
+    <div class="hello">
+        <button>点我试试</button>
+    </div>
+</template>
+
+<script>
+    import {myMixin,yaoyao} from '../../mixins/test' // 引入
+    export default {
+        name: 'hello',
+        data() {
+            return {
+                msg: ''
+            }
+        },
+        created() {
+            this.miXinsHello(); // 调用
+        },
+        methods: {
+            hello: function () {
+                // code 不能使用箭头函数
+            }
+        },
+        mixins: [myMixin,yaoyao] // mixins
+    }
+</script>
+```
+
+
+
+## 选项合并
+
+1. 如果是vue生命周期里的钩子函数，那将会进行合并，以此执行mixins以及组件的函数.
+2. 如果是methods等方法，（不是钩子函数）那组件中的方法将会覆盖mixins中的方法。
+
+```vue
+import {myMixin,yaoyao} from '../../mixins/test'
+    export default {
+        name: 'hello',
+        data() {
+            return {
+                msg: ''
+            }
+        },
+        created() {
+            this.miXinsHello();
+        },
+        methods: {
+            hello: function () {
+                // code 不能使用箭头函数
+            },
+            miXinsHello: function () {
+                console.log('no hello')
+            }
+        },
+        mixins: [myMixin,yaoyao]
+    }
+```
+
+
+
+```js
+const myMixin = {
+    created: function () {
+      console.log('created mixin')
+    },
+    methods: {
+        miXinsHello: function () {
+            console.log('hello from miXinsHello!')
+        }
+    }
+}
+export default myMixin
+```
+
+输出: 
+
+created mixin
+no hello
+
+
+
+
+
+
+
+
+
+
 
 
 
