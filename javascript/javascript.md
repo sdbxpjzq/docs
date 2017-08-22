@@ -119,6 +119,12 @@ echo $_GET['callback'].'({"name":"hello"})';
 
 
 
+## 纯前端实现
+
+https://juejin.im/entry/599697c06fb9a0249471a7d6?utm_source=gold_browser_extension
+
+
+
 
 
 

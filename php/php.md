@@ -2,6 +2,50 @@
 
 
 
+# 超全局变量
+
+## $_ENV
+
+如果打印输出 `$_ENV` 为空，可以检查一下 php.ini 的配置：
+
+`variables_order = "EGPCS"`
+
+上述配置表示 PHP 接受的外部变量来源及顺序，`EGPCS` 是 `Environment`、`Get`、`Post`、`Cookies` 和 `Server` 的缩写。如果 `variables_order` 的配置中缺少` E` ，则 PHP 无法接受环境变量，那么 `$_ENV `也就为空了。
+
+# 常量
+
+`PHP_INT_SIZE`：表示整数integer值的字长
+
+`PHP_INT_MAX`：表示整数integer值的最大值
+
+> 注意
+
+32位中PHP_INT_SIZE：4，
+
+PHP_INT_MAX：2147483647
+
+64位中
+
+PHP_INT_SIZE：8，
+
+PHP_INT_MAX：9223372036854775807
+
+
+
+# header() 跳转
+
+```
+header(string,replace,http_response_code)
+```
+
+| 参数                 | 描述                                       |
+| ------------------ | ---------------------------------------- |
+| string             | 必需。规定要发送的报头字符串。                          |
+| replace            | 可选。指示该报头是否替换之前的报头，或添加第二个报头。默认是 true（替换）。false（允许相同类型的多个报头）。 |
+| http_response_code | 可选。把 HTTP 响应代码强制为指定的值。（PHP 4 以及更高版本可用）   |
+
+
+
 # 会话技术
 
 ## cookie
@@ -12,12 +56,12 @@
 | ------ | ---------------------------------------- | ---------------------------------------- |
 | name   | cookie 名称                                |                                          |
 | value  | 可选，cookie 值。不要保存敏感数据                     |                                          |
-| expire | 可选，过期时间，时间戳格式                            | 如 time()+60*60*24*7将设定cookie在一周后失效。如果未设置，则在会话结束后立即失效。 |
+| expire | 可选，过期时间，时间戳格式                            | 如 time()+60\*60\*24\*7将设定cookie在一周后失效。如果未设置，则在会话结束后立即失效。若设置`PHP_INT_MAX`表示永久有效 |
 | path   | 可选，服务器端有效路径，/ 表示整个域名有效，默认为当前设置 cookie 时页面的路径 |                                          |
-| domain | 可选，该 cookie 有效的域名                        | 要使cookie能在如[www.zongqi.com  域名下的所有子域名都有效的话，该参数应该](http://www.zongqi.com域名下的所有子域名都有效的话，该参数应该) 为 ".zongqi.com"。虽然“.”并不是必须的，但加上他会兼容更多的浏览器。 |
+| domain | 可选，该 cookie 有效的域名                        | 要使cookie能在如`www.zongqi.com`  域名下的所有子域名都有效的话，该参数应该`http://www.zongqi.com`域名下的所有子域名都有效的话，该参数应该为 "`.zongqi.com`"。虽然“`.`”并不是必须的，但加上他会兼容更多的浏览器。 |
 | secure | 指明cookie是否仅通过安全的HTTPS连接传送                | 设置为true时，cookie仅在安全的连接中设置。默认是false,HTTP和HTTPS上都有效 |
 
-
+不同路径下, 同名cookie可以同时存在浏览器,但是会出现重写, 先查看找当前目录下的cookie,再向上查找. 
 
 ### 删除 cookie
 
@@ -45,11 +89,41 @@ foreach($_COOKIE["user"] as key=>val){
 
 
 
+## HTTPONLY
+
+默认: 
+
+浏览器存储的cookie可以被其他脚本所处理.
+
+设置`HTTPONLY`,表示仅在http请求中使用
+
+http://www.cnblogs.com/milantgh/p/3766967.html
+
+## 注意事项
+
+![](https://ws3.sinaimg.cn/large/006tKfTcly1fipbi9a0o3j31ay0jq0vj.jpg)
 
 
 
+## session
 
+### 开始session
 
+`session_start();` 
+
+或者在配置文件`php.ini`
+
+`session.auto_start`
+
+### 操作session
+
+`$_SESSION`
+
+```php
+$_SESSION['name'] = 'zongqi';
+unset($_SESSION['name'])
+
+```
 
 
 
