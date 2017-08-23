@@ -297,8 +297,54 @@ update emp as a,dept as b set
 ## 查询数据
 
 ```sql
-select column1,column1,... FROM tb_name
+select column1,column1,... FROM tb_name where a =1;
 ```
+
+### where条件
+
+- `like`进行模糊查询
+
+两个通配符 `_ `和`%`
+`%` --表示0个或多个任意字符
+`_`  ----单个任意字符
+
+- 排序
+
+`ASC`--升序【默认】(从小到大)
+`DESC`--降序(从大到小)
+
+- limit
+
+序号从0开始计算
+
+放在sql语句的最后.
+
+- 聚合(having)
+
+```sql
+select  * from tablename where 条件 group by 关键字 having 条件;
+```
+
+`having`和`where` 的区别:
+
+`having`是对聚合后的结果进行条件过滤，`where `是在聚合前对记录进行过滤，
+
+栗子:
+
+Q: 查询table表查询每一个班级中年龄大于20，性别为男的人数.
+
+```sql
+select COUNT(*)as '>20岁人数',classid  from Table1 where sex='男' group by classid,age having age>20;
+```
+
+--需要注意说明：当同时含有where子句、group by 子句 、having子句及聚集函数时，执行顺序如下：
+--执行where子句查找符合条件的数据；
+--使用group by 子句对数据进行分组；对group by 子句形成的组运行聚集函数计算每一组的值；最后用having 子句去掉不符合条件的组。
+--having 子句中的每一个元素也必须出现在select列表中。有些数据库例外，如oracle.
+--having子句和where子句都可以用来设定限制条件以使查询结果满足一定的条件限制。
+--having子句限制的是组，而不是行。where子句中不能使用聚集函数，而having子句中可以
+
+
 
 ## 替换数据
 

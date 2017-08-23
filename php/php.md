@@ -44,6 +44,16 @@ header(string,replace,http_response_code)
 | replace            | 可选。指示该报头是否替换之前的报头，或添加第二个报头。默认是 true（替换）。false（允许相同类型的多个报头）。 |
 | http_response_code | 可选。把 HTTP 响应代码强制为指定的值。（PHP 4 以及更高版本可用）   |
 
+![](https://ws3.sinaimg.cn/large/006tKfTcly1fisuq92eujj30z60remy3.jpg)
+
+
+
+1. `header('Location: url')`
+2. `header('Content-Type: ')`
+3. `header('Refresh: 3; url=www.baidu.com')`— 3s后跳转
+
+跳转之后直接使用`exit()`或者 `die()`退出.
+
 
 
 # 会话技术

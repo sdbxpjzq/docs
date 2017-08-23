@@ -36,3 +36,13 @@ https://github.com/RobinHerbots/Inputmask
 ## 核心API
 
 webpage:如你所见，上面的例子我们已经见识了它的威力了。它的作用主要是提供了一套可以访问和操作web文档的核心方法，包括操作DOM、事件捕获、用户事件模拟等等。
+
+
+
+
+
+# ockr.js 本地储存 localStorage操作js库
+
+http://www.bsfans.com/wenda/?/article/74
+
+https://github.com/tsironis/lockr/blob/master/lockr.js
