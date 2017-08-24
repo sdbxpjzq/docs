@@ -381,7 +381,42 @@ var localStorage =  window.localStorage;
 
 
 
+# location
 
+| 属性                                       | 描述                                       |
+| ---------------------------------------- | ---------------------------------------- |
+| [hash](http://www.w3school.com.cn/jsref/prop_loc_hash.asp) | 设置或返回从井号 (#) 开始的 URL（锚）。                 |
+| [host](http://www.w3school.com.cn/jsref/prop_loc_host.asp) | 设置或返回主机名和当前 URL 的端口号。                    |
+| [hostname](http://www.w3school.com.cn/jsref/prop_loc_hostname.asp) | 设置或返回当前 URL 的主机名。                        |
+| [href](http://www.w3school.com.cn/jsref/prop_loc_href.asp) | 设置或返回完整的 URL。 2> 也可以跳转页面使用 (推荐 在客户端就可以执行) |
+| [pathname](http://www.w3school.com.cn/jsref/prop_loc_pathname.asp) | 设置或返回当前 URL 的路径部分。                       |
+| [port](http://www.w3school.com.cn/jsref/prop_loc_port.asp) | 设置或返回当前 URL 的端口号。                        |
+| [protocol](http://www.w3school.com.cn/jsref/prop_loc_protocol.asp) | 设置或返回当前 URL 的协议。                         |
+| [search](http://www.w3school.com.cn/jsref/prop_loc_search.asp) | 设置或返回从问号 (?) 开始的 URL（查询部分）。              |
+
+
+
+| 属性                                       | 描述                                       |
+| ---------------------------------------- | ---------------------------------------- |
+| [assign()](http://www.w3school.com.cn/jsref/met_loc_assign.asp) | 加载新的文档。                                  |
+| [reload()](http://www.w3school.com.cn/jsref/met_loc_reload.asp)window.location.reload() | 重新加载当前文档。说明如果该方法没有规定参数，或者参数是 false，它就会用 HTTP 头 If-Modified-Since 来检测服务器上的文档是否已改变。如果文档已改变，reload() 会再次下载该文档。如果文档未改变，则该方法将从缓存中装载文档。这与用户单击浏览器的刷新按钮的效果是完全一样的。如果把该方法的参数设置为 true，那么无论文档的最后修改日期是什么，它都会绕过缓存，从服务器上重新下载该文档。 |
+| [replace()](http://www.w3school.com.cn/jsref/met_loc_replace.asp) | 用新的文档替换当前文档。                             |
+
+
+
+url: `http://localhost:8080/#/honey_center`
+
+1. hash:"#/honey_center"
+2. host:"localhost:8080"
+3. hostname:"localhost"
+4. href:"http://localhost:8080/#/honey_center"
+5. origin:"http://localhost:8080"
+6. pathname:"/"
+7. port:"8080"
+8. protocol:"http:"
+9. reload:ƒ reload()
+10. replace:ƒ ()
+11. search:""
 
 
 

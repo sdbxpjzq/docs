@@ -226,6 +226,58 @@ no hello
 
 
 
+# 全局组件
+
+1. 定于模板
+
+```vue
+<template>
+    <div>
+        loading..............
+    </div>
+</template>
+<script>
+    export default {
+
+    }
+</script>
+```
+
+2. 创建index.js
+
+```js
+import loadingComponent from './loading.vue'
+
+const loading={
+    install:function(Vue){
+        Vue.component('Loading',loadingComponent)
+    }  //'Loading'这就是后面可以使用的组件的名字，install是默认的一个方法
+};
+
+export default loading;
+```
+
+只要在index.js中规定了`install`方法，就可以像一些公共的插件一样使用`Vue.use()`来使用.
+
+3. 引入
+
+```js
+import loading from './index.js'
+Vue.use(loading)
+```
+
+
+
+4. 使用
+
+```vue
+<template>
+    <div>
+        <Loading></Loading>
+    </div>
+</template>
+```
+
 
 
 
