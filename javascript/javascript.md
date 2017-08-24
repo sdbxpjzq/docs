@@ -2,6 +2,18 @@
 
 
 
+# ajax
+
+
+
+
+
+# Fetch
+
+https://juejin.im/entry/599cfac56fb9a0249b4841b8?utm_source=gold_browser_extension
+
+
+
 
 
 
