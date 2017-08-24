@@ -280,6 +280,31 @@ Vue.use(loading)
 
 
 
+# 局部组件
+
+
+
+```vue
+<script>
+import loadingComponent from './loading.vue'
+  
+  new Vue({
+  // ...
+  components: {
+    // 只能在父级模板中使用 <my-component>
+    'my-component': loadingComponent
+  }
+})
+</script>
+
+```
+
+
+
+
+
+
+
 
 
 
