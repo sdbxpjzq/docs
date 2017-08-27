@@ -253,13 +253,13 @@ unset($_SESSION["name"]);
 $_SESSION = array(); //清空session数据
 ```
 
+### 垃圾回收 
 
+“垃圾回收程序”就是根据session文件修改时间，将过期的session文件全部删除。通过`session.gc_maxlifetime` = 1440 设置时间，若修改时间距离当前系统时间大于1440秒，就会被删除
 
-### session存储
+垃圾回收机制是在调用session_start()函数启动的，有时很有可能session_start()在一秒内内调用N次，每次都会启动垃圾回收机制，这是合不合理的。
 
-`session.save_handler = files || user || memcache`
-
-
+通过修改`session.gc_probability = 1`和`session.gc_divisor = 1000` ，设置启动垃圾回收程序的概率。 —`1/1000`.
 
 
 
@@ -401,6 +401,65 @@ const定义的常量
 类名::静态方法
 
 ![](https://ws2.sinaimg.cn/large/006tKfTcly1fhkojud10aj31c202caag.jpg)
+
+## self与static区别
+
+`self`情况:
+
+```php
+ class Boo {  
+        
+      protected static $str = "This is class Boo";  
+        
+      public static function get_info(){  
+            
+          echo get_called_class()."<br>";  
+          echo self::$str;   // 使用 self
+      }   
+        
+        
+  }  
+  class Foo extends Boo{  
+        
+      protected static $str = "This is class Foo";  
+        
+  }  
+    
+    
+   Foo::get_info();   // Foo  This is class Boo
+```
+
+
+
+```php
+ class Boo {  
+        
+      protected static $str = "This is class Boo";  
+      public static function get_info(){  
+            
+          echo get_called_class()."<br>";  
+          echo static::$str;   // 使用 static
+      }   
+        
+  }  
+  class Foo extends Boo{  
+        
+      protected static $str = "This is class Foo";  
+        
+  }  
+    
+    
+   Foo::get_info();  // FOO This is class Foo
+
+```
+
+可以发现,结果是不一样的.
+
+self调用的就是本身代码片段这个类，而static调用的是从堆内存中提取出来，访问的是当前实例化的那个类，那么 static 代表的就是那个类.
+
+其实static就是调用的当前调用的类
+
+
 
 ## 构造方法 — __construct
 
