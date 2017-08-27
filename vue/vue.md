@@ -1,4 +1,4 @@
-[TOC]
+### 
 
 
 
@@ -405,7 +405,7 @@ http://www.cnblogs.com/keepfool/p/5690366.html
 - $route.name 
   当前路径的名字，如果没有使用具名路径，则名字为空。
 
-## this.$router
+### this.$router
 
 
 
@@ -539,37 +539,7 @@ https://www.kancloud.cn/yunye/axios/234845
 
 首先说明当前访问的url地址: `http://localhost:8080/#/`
 
-1. 添加`{withCredentials:true}`
-
-```js
-let url = 'https://m.10027.dev/sales/activity/ajax.php?act=aGetCollectionOnlineData';
-            axios.get(url,{withCredentials:true}).then(function (res) {
-                console.log(res)
-            }).catch(function (res) {
-                console.log(res);
-            })
-```
-
-2. 创建一个axios实例，自定义其配置
-
-```js
-const instance = axios.create({
-
-baseURL: 'http://dev.xxxxxxxxxxx.com/',
-headers:{
-    'Content-Type':'application/x-www-form-urlencoded'
-},
-transformRequest: [function (data) {
-    
-    data = Qs.stringify(data);
-    return data;
-}],
-withCredentials:true   //加了这段就可以跨域了 
-});
-```
-
-3. 就是在config这个文件里的index.js这个文件夹了 里面有个proxyTable 这个可以给你代理域名到你想要的域名。 简书搜索 proxyTable 跨域 就可以得到你想要的答案了. **需要配合chrome跨域插件好使(Allow-Control-Allow-Origin: *)**
-
+1. 就是在config这个文件里的index.js这个文件夹了 里面有个proxyTable 这个可以给你代理域名到你想要的域名。 简书搜索 proxyTable 跨域 就可以得到你想要的答案了. **需要配合chrome跨域插件好使(Allow-Control-Allow-Origin: *)**
 
 ```js
 proxyTable: {

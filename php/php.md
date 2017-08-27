@@ -404,6 +404,8 @@ const定义的常量
 
 ## self与static区别
 
+在继承的情况下会有区别:
+
 `self`情况:
 
 ```php
@@ -429,7 +431,7 @@ const定义的常量
    Foo::get_info();   // Foo  This is class Boo
 ```
 
-
+static情况: 
 
 ```php
  class Boo {  
