@@ -23,3 +23,13 @@ HTTP1.1新增了五种请求方法：OPTIONS, PUT, DELETE, TRACE 和 CONNECT 方
 
 http://www.runoob.com/http/http-methods.html
 
+# 跨域相关
+
+浏览器将CORS请求分成两类：
+
+简单请求（simple request）和 非简单请求（not-so-simple request）
+
+根据 CORS 的标准，当浏览器发送跨域请求时，如果请求不是GET或者特定POST（Content-Type只能是 application/x-www-form-urlencoded, multipart/form-data 或 text/plain的一种）时，强烈要求浏览器必须先以 OPTIONS 请求方式发送一个预请求(preflight request)，从而获知服务器端对跨源请求所支持 HTTP 方法。
+
+
+

@@ -571,6 +571,34 @@ axios.defaults.headers.post['Content-Type']='application/x-www-form-urlencoded';
 
 
 
+## 跨域下post请求产生的问题
+
+发送`post`请求时, 你会发现先发送`options`请求(具体可以去看[http基础](HTTP/index)).
+
+https://juejin.im/entry/58eaf351a22b9d0058a8e35c
+
+除了上面这篇文章提到的方法. 还可以使用`proxyTable`解决.
+
+`/api/User/sLogin`
+
+```js
+proxyTable: {
+      '/api':{
+          target: 'http://api.zongqilive.cn',
+          changeOrigin: true,
+          pathRewrite: {
+            '^/api': '/api'
+          }
+     }
+}
+```
+
+又可以爽爽的开发了.
+
+
+
+
+
 
 
 # vue-cli
