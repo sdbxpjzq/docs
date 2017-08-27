@@ -2,6 +2,24 @@
 
 
 
+# Dr.Cleaner Mac下免费实用的清理软件
+
+直接appstroe免费下载
+
+https://itunes.apple.com/cn/app/id921458519?mt=12&at=1001ldFh&ct=pPpWY170823
+
+# http-server 安装
+
+安装
+
+` npm install -g http-server `
+
+运行
+
+` http-server`
+
+http://www.cnblogs.com/lucker/p/4108838.html
+
 # git 命令补全设置
 
 https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion
@@ -114,6 +132,7 @@ http://browsersync.cn/
 - iPic
 - iPic move
 - AIfred(需要破解版本) 设置快捷键
+- https://github.com/chenxtdo/UPImageMacApp
 
 
 

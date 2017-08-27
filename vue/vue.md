@@ -376,9 +376,61 @@ new Vue({
 
 # **vue-router**
 
-**手册**
+## 手册
 
 https://router.vuejs.org/zh-cn/
+
+## 路由对象
+
+在使用了 vue-router 的应用中，路由对象会被注入每个组件中，赋值为 `this.$route` 和`this.$router`，并且当路由切换时，路由对象会被更新。
+
+### this.$route
+
+http://www.cnblogs.com/avon/p/5943008.html
+
+http://www.cnblogs.com/wisewrong/p/6277262.html
+
+http://www.cnblogs.com/keepfool/p/5690366.html
+
+- $route.path 
+  字符串，等于当前路由对象的路径，会被解析为绝对路径，如 `"/home/news"` 。
+- $route.params 
+  对象，包含路由中的动态片段和全匹配片段的键值对
+- $route.query 
+  对象，包含路由中查询参数的键值对。例如，对于 `/home/news/detail/01?favorite=yes` ，会得到`$route.query.favorite == 'yes'` 。
+- $route.router 
+  路由规则所属的路由器（以及其所属的组件）。
+- $route.matched 
+  数组，包含当前匹配的路径中所包含的所有片段所对应的配置参数对象。
+- $route.name 
+  当前路径的名字，如果没有使用具名路径，则名字为空。
+
+## this.$router
+
+
+
+
+
+## v-link
+
+在a元素上使用`v-link`指令跳转到指定路径。
+
+```html
+<div class="list-group">
+    <a class="list-group-item" v-link="{ path: '/home'}">Home</a>
+    <a class="list-group-item" v-link="{ path: '/about'}">About</a>
+</div>
+```
+
+
+
+## \<router-view>标签
+
+
+
+
+
+
 
 ```js
 import Router from 'vue-router'

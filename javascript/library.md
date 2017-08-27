@@ -55,3 +55,19 @@ https://clusterize.js.org/
 
 
 
+# 生成excel表格
+
+https://scarletsky.github.io/2016/01/30/nodejs-process-excel/
+
+http://www.cnblogs.com/sam976/p/5762285.html
+
+https://github.com/SheetJS/js-xlsx
+
+https://github.com/stephenliberty/excel-builder.js
+
+
+
+
+
+https://github.com/jmaister/excellentexport
+

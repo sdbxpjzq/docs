@@ -2,6 +2,85 @@
 
 
 
+# 类型转换
+
+## 强制类型转换
+
+允许的强制转换有：
+
+1.(int), (integer) - 转换为整形 integer  
+
+2.(bool), (boolean) - 转换为布尔类型 boolean  
+
+3.(float), (double), (real) - 转换为浮点型 float  
+
+4.(string) - 转换为字符串 string  
+
+5.(array) - 转换为数组 array  
+
+6.(object) - 转换为对象 object  
+
+7.(unset) - 转换为 NULL  (PHP 5) 
+
+```php
+<?php
+$foo = 10;        // $foo 为整型
+$bar = (boolean) $foo;    // $bar 为布尔型
+?>
+```
+
+
+
+## settype()
+
+```php
+<?php
+$foo  =  "5bar" ;  // string
+ $bar  =  true ;    // boolean
+ 
+ settype ( $foo ,  "integer" );  // $foo 现在是 5   (integer)
+ settype ( $bar ,  "string" );   // $bar 现在是 "1" (string)
+?> 
+```
+
+`type` 的可能值为：
+
+- “boolean” （或为“bool”，从 PHP 4.2.0 起）
+- “integer” （或为“int”，从 PHP 4.2.0 起）
+- “float” （只在 PHP 4.2.0 之后可以使用，对于旧版本中使用的“double”现已停用）
+- "string"
+- "array"
+- "object"
+- “null” （从 PHP 4.2.0 起）
+
+## intval ()和 floatval()和strval()
+
+```php
+$a="12.56hello23";  // string
+$b=12.56;          //float
+var_dump(intval($a)); // int 12
+var_dump(intval($b)); // int 12
+     $c=10;           //int
+     var_dump(floatval($c)); // float 10
+     var_dump(strval($c));   // string '10'
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # 超全局变量
 
 ## $_ENV
@@ -117,6 +196,8 @@ http://www.cnblogs.com/milantgh/p/3766967.html
 
 ## session
 
+默认保存在临时文件中, 文件的形式存在.
+
 ### 开始session
 
 `session_start();` 
@@ -125,7 +206,14 @@ http://www.cnblogs.com/milantgh/p/3766967.html
 
 `session.auto_start`
 
-### 操作session
+`session_start()`函数会创建一个唯一的`session ID`，并自动通过HTTP的响应头，将这个session  ID保存到客户端cookie中。同时也在服务器端创建一个以这个session  ID命名的文件，用于保存这个用户的会话信息。
+当同一个用户再次访问这个网站时，也会自动通过HTTP的请求头将cookie中的session  ID再携带过来，这时`session_start()`就不会再去分配一个新的session  ID，而是在服务器的硬盘里去寻找和这个session  ID同名的session文件，将之前为这个用户保存的会话信息读出，达到在跟踪用户的目的。
+
+
+
+
+
+### 读取session
 
 `$_SESSION`
 
@@ -134,6 +222,52 @@ $_SESSION['name'] = 'zongqi';
 unset($_SESSION['name'])
 
 ```
+
+
+
+### 销毁session
+
+```php
+session_destroy();  //销毁和当前session有关的所有资料
+```
+
+该函数用来删除session文件，如果成功返回true。
+
+但是不会释放和当前session相关的变量，也不会删除保存在客户端cookie中的session  ID。
+
+### 释放session变量
+
+```php
+unset($_SESSION["name"]);
+```
+
+
+
+### 完整销毁session数据
+
+![](https://ws1.sinaimg.cn/large/006tNc79ly1fixbwck65nj30zq0gyabe.jpg)
+
+上面销毁session.
+
+```php
+$_SESSION = array(); //清空session数据
+```
+
+
+
+### session存储
+
+`session.save_handler = files || user || memcache`
+
+
+
+
+
+
+
+
+
+
 
 
 

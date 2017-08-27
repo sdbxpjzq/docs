@@ -299,9 +299,43 @@ function logData() {
 
 
 
+
+
 # 页面埋点
 
 http://www.barretlee.com/blog/2016/02/20/navigator-beacon-api/
+
+## 使用`image`对象
+
+在浏览器中，图片（img标签）是不受[同源策略](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)限制的，因此，我们可以利用这一点来进行跨域通信，这就是图像Ping技术。
+
+```js
+<script>
+    var img = new Image();
+    img.onload = img.onerror = function(){
+         console.log(new Date().getTime());
+    }
+    img.src = "http://test.com?test=true";
+</script>
+```
+
+我们创建一个Image实例，将图片的src属性指向请求的地址，然后将onload和onerror事件指向同一个函数，即可得知响应接受的时间。响应的数据可以是任意内容，但通常是像素图或204
+
+图像Ping的特点
+
+1. 兼容性非常好
+2. 只支持GET请求
+3. 请求只能是单向从客户端发服务器的，浏览器无法得到响应的内容
+
+图像Ping的应用
+
+由于这种图像Ping只能单向由客户端向服务器发送数据，因此主要用于数据统计功能中。
+
+
+
+
+
+
 
 
 
