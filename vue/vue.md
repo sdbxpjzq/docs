@@ -597,6 +597,37 @@ proxyTable: {
 
 
 
+`post`请求:
+
+需要`qs.stringify(params)`
+
+```js
+import qs from 'qs';
+// 数据格式
+var params = {
+    sName: this.userName,
+    sPassWord: this.passWord
+}
+axios.post('/api/User/sLogin',qs.stringify(params)).then((res)=>{});
+```
+
+`get`请求:
+
+```js
+// 数据格式
+var data = {
+       params: {
+          sName: this.userName,
+          sPassWord: this.passWord
+       }
+}
+
+axios.get('/api/User/sLogin',data).then((res)=>{});
+
+```
+
+
+
 
 
 
