@@ -150,13 +150,9 @@ http://v.laod.cn/
 
 #  翻墙推荐
 
-
-
 ## seed
 
 http://www.seednet.me/
-
-
 
 ## 云末加速
 
@@ -170,25 +166,11 @@ https://www.freevpn.pw/
 
 win.mac都有
 
-## 安云加速服务
-
-**安云400元2年,连接数2个,不限流量.速度还不错.
-
-使用下面的注册都有好处呀😙
-
-http://www.ay321.com/union/share/?fuid=11287755
-
-或者推荐注册码: `11287755` 
-
 ## 蓝灯
 
 https://github.com/getlantern/forum
 
-## bcoderSS
 
-99.00/年, 30G/月
-
-http://ss.bcoder.cn/cart.php
 
 ## 一枝红杏
 
