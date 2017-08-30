@@ -6,6 +6,8 @@
 
 ## [String](php/String.md)
 
+## [Filter](php/Filter.md)
+
 ### [TinkPHP](php/ThinkPHP.md)
 
 
