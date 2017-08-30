@@ -48,7 +48,39 @@ http://1130739.blog.51cto.com/1120739/1738791
 
 `yum search java|grep jdk`
 
-`yum install java-1.8.0-openjdk.x86_64`
+`yum -y install java-1.8.0-openjdk.x86_64`
+
+
+
+# Elasticsearch安装
+
+参考:
+
+http://keenwon.com/1359.html
+
+下载
+
+https://www.elastic.co/downloads/elasticsearch
+
+ `wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.5.2.zip`
+
+
+
+运行
+
+不能以 root 用户执行. 需要改一下权限运行.
+
+`./bin/elasticsearch`
+
+
+
+浏览器打开:
+
+`http://localhost:9200/`
+
+
+
+
 
 
 
