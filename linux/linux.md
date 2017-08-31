@@ -47,6 +47,7 @@ http://1130739.blog.51cto.com/1120739/1738791
 # 查看系统信息
 
 - `cat /etc/redhat-release`
+- `more /proc/version`
 
 
 
