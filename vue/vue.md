@@ -597,6 +597,31 @@ proxyTable: {
 
 
 
+## 跨域携带cookie
+
+main.js
+
+```js
+axios.defaults.withCredentials = true; // 跨域发送cookie
+```
+
+php
+
+```php
+header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}"); // // 当跨域携带cookie的时候, 不能使用 *
+header("Access-Control-Allow-Methods: GET,POST");
+header('Access-Control-Allow-Credentials: true'); // 设置cookie
+header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Set-Cookie, sessionId");
+```
+
+
+
+
+
+
+
+
+
 `post`请求:
 
 需要`qs.stringify(params)`
