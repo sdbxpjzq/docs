@@ -1,4 +1,8 @@
-### 
+[TOC]
+
+
+
+ 
 
 
 
@@ -53,6 +57,27 @@ http://jingyan.baidu.com/article/acf728fd5ee4acf8e510a3cc.html
 ## methods
 
 > **不应该使用箭头函数来定义 method 函数**
+
+
+
+## watch
+
+> 不应该是使用 箭头函数来定义`watch`函数
+
+```js
+computed: {
+            a: function () {
+                return this.$store.state.count;
+            }
+        },
+watch: {
+    a: function(val,oldVal) {
+        alert('我 watch 到了 a');
+        alert('currval:'+val);
+        alert('oldVal:'+oldVal);
+	}
+},
+```
 
 
 
@@ -226,7 +251,7 @@ no hello
 
 
 
-# 全局组件
+## 全局组件
 
 1. 定于模板
 
@@ -280,7 +305,7 @@ Vue.use(loading)
 
 
 
-# 局部组件
+## 局部组件
 
 
 
@@ -311,7 +336,7 @@ import loadingComponent from './loading.vue'
 
 
 
-# vue虚拟节点
+## vue虚拟节点
 
 
 
@@ -523,7 +548,108 @@ export default {
 
 # vuex
 
-https://vuex.vuejs.org/zh-cn/
+## 手册
+
+ https://vuex.vuejs.org/zh-cn/
+
+https://etianqq.gitbooks.io/vue2/content/statusmanager/vuex.html
+
+使用`vuex`后,会在每个组件存在`this.$store`这个变量.
+
+栗子:
+
+`this.$store.state.count`
+
+`this.$store.commit('increment');`
+
+## 上手
+
+关键字:
+
+### `state`
+
+
+
+### `getters`
+
+### `mutations`
+
+变化,转换(英文解释). 改变state中变量的状态值. 
+
+使用`this.$store.commit()`调用.
+
+## 常规片段
+
+栗子:
+
+```vue
+//组件内调用
+this.$store.commit('hello'，{amount: 10}); 或者
+this.$store.commit({
+  type: 'hello',
+  amount: 10
+})
+```
+
+
+
+
+
+stroe.js
+
+```js
+import Vue from 'vue'
+import Vuex from 'vuex'
+Vue.use(Vuex);
+
+const store = new Vuex.Store({
+    state: {
+        count: 0
+    },
+    mutations: {
+      //data 是额外的传参
+            hello (state,data) {
+            console.log(data);
+            state.count = data.amount;
+        }
+    }
+})
+export default store;
+```
+
+
+
+xxx.vue
+
+```vue
+<script>
+    export default {
+        name: 'hello',
+        data() {
+            return {
+                msg: ''
+            }
+        },
+        created() {
+
+        },
+        methods: {
+            sendParent: function () {
+                this.$store.commit('hello',{ amount: '2017-08-01'});
+            }
+        }
+    }
+</script>
+
+```
+
+
+
+
+
+
+
+
 
 # axios
 

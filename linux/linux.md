@@ -87,6 +87,36 @@ https://www.elastic.co/downloads/elasticsearch
 
 
 
+# docker
+
+https://www.google.com.hk/search?q=centos7+%E5%AE%89%E8%A3%85docker&oq=centos7+%E5%AE%89%E8%A3%85docker&aqs=chrome..69i57j0.246j0j4&sourceid=chrome&ie=UTF-8
+
+centos7:
+
+## 安装
+
+```
+//centos下docker一键安装脚本
+curl -sSL http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/internet | sh -
+//配置Docker加速器
+
+//系统要求 CentOS 7 以上，Docker 1.9 以上。
+sudo cp -n /lib/systemd/system/docker.service /etc/systemd/system/docker.service
+sudo sed -i "s|ExecStart=/usr/bin/docker daemon|ExecStart=/usr/bin/docker daemon --registry-mirror=https://2h3po24q.mirror.aliyuncs.com|g" /etc/systemd/system/docker.service
+sudo systemctl daemon-reload
+sudo service docker restart
+```
+
+
+
+http://warjiang.github.io/devcat/2016/11/28/%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91Docker%E9%95%9C%E5%83%8F%E5%8A%A0%E9%80%9F/
+
+## 下载镜像
+
+https://dev.aliyun.com/search.html
+
+`docker pull registry.cn-hangzhou.aliyuncs.com/alicloudhpc/toolkit`
+
 
 
 
@@ -193,6 +223,14 @@ http://imweb.io/topic/556c287879878a3b386dd026
 `SELINUX=disabled` #增加
 
 `shutdown -r now` #重启系统
+
+
+
+## centos7关闭防火墙
+
+http://jingyan.baidu.com/article/86112f1362a63e2737978719.html
+
+
 
 
 
