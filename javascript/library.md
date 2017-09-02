@@ -2,6 +2,20 @@
 
 
 
+
+
+TimelineMax 文档
+
+
+
+TweenMax动画库学习
+
+https://www.google.com.hk/search?safe=strict&q=TweenMax%E5%8A%A8%E7%94%BB%E5%BA%93%E5%AD%A6%E4%B9%A0&oq=TweenMax%E5%8A%A8%E7%94%BB%E5%BA%93%E5%AD%A6%E4%B9%A0&gs_l=psy-ab.3...379205.379205.0.379512.1.1.0.0.0.0.134.134.0j1.1.0....0...1.2.64.psy-ab..0.0.0.kYWAbLdIGH8
+
+
+
+http://www.php2000.net/drawing/50622135713484596091.html
+
 # Inputmask
 
 用于输入验证
