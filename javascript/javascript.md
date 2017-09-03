@@ -561,7 +561,7 @@ window.addEventListener('hashchange', function(e) {
 - **title**：新页面的标题，但是所有浏览器目前都忽略这个值，因此这里可以填null。
 - **url**：新的网址，必须与当前页面处在`同一个域`。浏览器的地址栏将显示这个网址。
 
-!> pushState方法不会触发页面刷新.
+> pushState方法不会触发页面刷新.
 
 
 
