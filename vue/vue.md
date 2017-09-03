@@ -554,6 +554,8 @@ export default {
 
 https://etianqq.gitbooks.io/vue2/content/statusmanager/vuex.html
 
+https://juejin.im/entry/59a97a8f518825242238f9d3?utm_source=gold_browser_extension
+
 >  使用`vuex`后,会在每个组件存在`this.$store`这个变量.
 
 vuex的特点是把数据单独隔离，形成一棵树状图。

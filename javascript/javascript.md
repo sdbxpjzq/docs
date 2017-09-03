@@ -1,5 +1,22 @@
 [TOC]
 
+
+
+# 变量命名
+
+1. 第一个字符必须是字母、下划线（_）或美元符号（$）
+
+
+2. 余下的字符可以是下划线、美元符号或任何字母或数字字符 
+
+
+3. 不能以数字开头
+
+
+4. **区分大小写**
+
+
+
 # Object.assign()
 
 `**Object.assign()**` 方法用于将所有可枚举的属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。
@@ -429,7 +446,9 @@ var localStorage =  window.localStorage;
 
 
 
-# location
+# location — url信息
+
+## 属性
 
 | 属性                                       | 描述                                       |
 | ---------------------------------------- | ---------------------------------------- |
@@ -443,6 +462,8 @@ var localStorage =  window.localStorage;
 | [search](http://www.w3school.com.cn/jsref/prop_loc_search.asp) | 设置或返回从问号 (?) 开始的 URL（查询部分）。              |
 
 
+
+## 方法
 
 | 属性                                       | 描述                                       |
 | ---------------------------------------- | ---------------------------------------- |
@@ -465,6 +486,111 @@ url: `http://localhost:8080/#/honey_center`
 9. reload:ƒ reload()
 10. replace:ƒ ()
 11. search:""
+
+
+
+
+## onhashchange() 事件
+
+当url的hash值(#后面的值)发生改变的时候触发. 
+
+hashchange事件触发时，事件对象会有hash改变前的URL（oldURL）和hash改变后的URL（newURL）两个属性
+
+```js
+if ('onhashchange' in window) {
+        window.onhashchange = function (e) {
+            alert('hash变了:'+window.location.hash);
+            alert(e.oldURL);
+            alert(e.newURL);
+        }
+    }
+```
+
+### 实际应用
+
+点击小图时在当前页面上展示大图.
+
+![](https://ws3.sinaimg.cn/large/006tKfTcly1fj6giv8s91j317i10owj9.jpg)
+
+当进入大图展示状态时，如何返回？这是手机的页面，对于用惯APP的用户来说，他很可能会点击左下角的返回键。然而这是个浏览器，返回就意味着**回到上一页**而不是退出大图展示状态.
+
+当URL的hash改变时，虽然页面不会重新加载，但仍然会被记录到浏览器的**历史记录**中。也就是说，如果依次访问a.html、b.html、b.html#abc，然后点击后退，此时会返回b.html而不是a.html。而且，由于hash改变了，所以会触发hashchange事件。这样一来，只要在进入大图展示状态时加上一个特定的hash，点击返回键触发hashchange时退出此状态即可。代码实现也很简单：
+
+```js
+// 假设大图展示状态的hash为imgSlider
+window.addEventListener('hashchange', function(e) {
+    var re = /#imgSlider$/;
+    if ( re.test(e.oldURL) && !re.test(e.newURL) ) {
+        // 假设imgSlider为大图展示组件对象
+        imgSlider.hide();
+    }
+}, false);
+```
+
+
+
+
+
+
+
+# History — url历史纪录
+
+## History 对象属性
+
+| 属性                                       | 描述                  |
+| ---------------------------------------- | ------------------- |
+| [length](http://www.w3school.com.cn/jsref/prop_his_length.asp) | 返回浏览器历史列表中的 URL 数量。 |
+
+## History 对象方法
+
+| 方法                                       | 描述                      |
+| ---------------------------------------- | ----------------------- |
+| [back()](http://www.w3school.com.cn/jsref/met_his_back.asp) | 加载 history 列表中的前一个 URL。 |
+| [forward()](http://www.w3school.com.cn/jsref/met_his_forward.asp) | 加载 history 列表中的下一个 URL。 |
+| [go()](http://www.w3school.com.cn/jsref/met_his_go.asp) | 加载 history 列表中的某个具体页面。  |
+
+> history.go(0); //相当于 刷新当前页面
+
+
+
+## HTML5新增API
+
+### history.pushState(state,title,url)
+
+- **state**：一个与指定网址相关的状态对象，popstate事件触发时，该对象会传入回调函数。如果不需要这个对象，此处可以填null。
+- **title**：新页面的标题，但是所有浏览器目前都忽略这个值，因此这里可以填null。
+- **url**：新的网址，必须与当前页面处在`同一个域`。浏览器的地址栏将显示这个网址。
+
+!> pushState方法不会触发页面刷新.
+
+
+
+
+
+
+
+###  history.replaceState()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
