@@ -93,7 +93,7 @@ https://www.google.com.hk/search?q=centos7+%E5%AE%89%E8%A3%85docker&oq=centos7+%
 
 centos7:
 
-## 安装
+## 安装docker
 
 ```
 //centos下docker一键安装脚本
@@ -115,7 +115,51 @@ http://warjiang.github.io/devcat/2016/11/28/%E4%BD%BF%E7%94%A8%E9%98%BF%E9%87%8C
 
 https://dev.aliyun.com/search.html
 
-`docker pull registry.cn-hangzhou.aliyuncs.com/alicloudhpc/toolkit`
+`docker pull registry.cn-hangzhou.aliyuncs.com/alicloudhpc/toolkit ` [镜像名字]
+
+`docker images ` 查看安装了哪些镜像
+
+`docker ps` 显示当前正在运行容器的列表
+
+## 根据镜像创建并后台运行docker
+
+`docker run -itd --name [dockerName] centos` 运行一个docker容器
+
+- d 表示后台运行docker
+
+
+
+## 查看容器
+
+`docker ps` or `docker ps -a`(可以看到停止运行的)
+
+
+
+栗子:
+
+`docker pull centos`  — 下载镜像
+
+`docker images centos`  --确认下载完成
+
+`docker run -itd  --name [dockerName] centos ` 运行一个docker容器
+
+- d 表示后台运行docker
+
+在 docker 命令中我们使用了 “-i 捕获标准输入输出”和 “-t 分配一个终端或控制台”选项。若要断开与容器的连接，输入 exit。
+
+
+
+## 辅助工具操作容器
+
+` wget -P ~ https://github.com/yeasy/docker_practice/raw/master/_local/.bashrc_docker`
+
+
+
+## 删除容器
+
+`docker rm -f` 
+
+- `-f` 表示强制 ,可以删除正在运行的容器 
 
 
 
