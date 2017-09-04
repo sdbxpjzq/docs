@@ -224,10 +224,6 @@ document.addEventListener('touchstart', function(event) {
 
 
 
-
-
-
-
 # js中的双取反操作-"!!"
 
 首先看看判断`IE`浏览器的`Code`
@@ -492,7 +488,7 @@ url: `http://localhost:8080/#/honey_center`
 
 ## onhashchange() 事件
 
-当url的hash值(#后面的值)发生改变的时候触发. 
+当url的hash值(#后面的值)发生改变的时候触发. .
 
 hashchange事件触发时，事件对象会有hash改变前的URL（oldURL）和hash改变后的URL（newURL）两个属性
 
@@ -562,10 +558,6 @@ window.addEventListener('hashchange', function(e) {
 - **url**：新的网址，必须与当前页面处在`同一个域`。浏览器的地址栏将显示这个网址。
 
 > pushState方法不会触发页面刷新.
-
-
-
-
 
 
 
