@@ -35,6 +35,16 @@ https://github.com/RobinHerbots/Inputmask
 
 
 
+# pjax
+
+https://github.com/defunkt/jquery-pjax
+
+https://github.com/welefen/pjax
+
+
+
+
+
 # moment.js  时间工具
 
 
@@ -55,7 +65,7 @@ webpage:如你所见，上面的例子我们已经见识了它的威力了。它
 
 
 
-# ockr.js 本地储存 localStorage操作js库
+# ockr.js  — localStorage操作库
 
 http://www.bsfans.com/wenda/?/article/74
 
