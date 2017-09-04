@@ -132,7 +132,7 @@ function createCORS(fn,url){
 
 ### 使用`jsonp`
 
-JSONP的最基本的原理是：动态添加一个<script>标签，而script标签的src属性是没有跨域的限制的。这样说来，这种跨域方式其实与ajax XmlHttpRequest协议无关了.
+JSONP的最基本的原理是：动态添加一个`<script>`标签，而script标签的src属性是没有跨域的限制的。这样说来，这种跨域方式其实与ajax XmlHttpRequest协议无关了.
 
 只支持 GET 请求,不支持 POST 请求
 
