@@ -67,7 +67,15 @@ Object.assign(target, ...sources)
 
 
 
-# ajax
+# ajax— XMLHttpRequest 对象
+
+js是单线程的 这意味着只有一个执行栈,但是浏览器在执行时有一个任务队列 ,,,这个队列用来保存异步任务.
+
+
+
+
+
+
 
 
 
