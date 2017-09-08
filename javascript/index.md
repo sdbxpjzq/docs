@@ -2,6 +2,8 @@
 
 ## [Array](javascript/Array.md)
 
+## [Date](javascript/Date.md)
+
 ## [Math](javascript/Math.md)
 
 ## [RegExp ](javascript/regExp.md)
