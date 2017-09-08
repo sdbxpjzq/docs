@@ -642,15 +642,91 @@ history.replaceState(null, "页面标题", "xxx.html");
 
 
 
-| expire | 可选。规定 cookie 的有效期。               |
-| ------ | -------------------------------- |
-| path   | 可选。规定 cookie 的服务器路径。             |
-| domain | 可选。规定 cookie 的域名。                |
-| secure | 可选。规定是否通过安全的 HTTPS 连接来传输 cookie。 |
+|         | 可选。规定 cookie 的有效期。                      |
+| :-----: | --------------------------------------- |
+| expires | 可选.    规定 cookie 的有效期. 支持 `UTC`和`GMT`时间 |
+|  path   | 可选。规定 cookie 的服务器路径。                    |
+| domain  | 可选。规定 cookie 的域名。                       |
+| secure  | 可选。规定是否通过安全的 HTTPS 连接来传输 cookie。        |
 
 
+
+
+
+## 创建cookie
+
+```js
+function setCookie(cname,cvalue,exdays,path)
+{
+  var d = new Date();
+  // 将毫秒设置Date 对象
+  d.setTime(d.getTime()+(exdays*24*60*60*1000));
+  var expires = "expires="+d.toUTCString(); //toGMTString 废弃 ,UTC 和 GMT 一样
+  path = "path="+ path || '/';
+  document.cookie = cname + "=" + cvalue + "; " + expires + ";"+ path;
+}
+```
 
 ​	
+
+## 读取cookie
+
+```js
+function getCookie(cname)
+{
+  var name = cname + "=";
+  var ca = document.cookie.split(';'); // 将cookie分割成数组
+  for(var i=0; i<ca.length; i++) 
+  {
+    var c = ca[i].trim();
+    if (c.indexOf(name)==0)
+      return c.substring(name.length,c.length);
+  }
+  return "";
+}
+```
+
+
+
+## 删除cookie
+
+设置 `expires` 参数为以前的时间即可.将旧的cookie覆盖掉.
+
+```js
+function(c_name){
+	var exdate = new Date();
+	exdate.setDate(exdate.getDate()-1);//昨天日期
+	document.cookie =c_name+"=;expires="+exdate.toGMTString();
+}
+```
+
+
+
+# `|`和`&`运算 — 位运算 
+
+&和|本是位运算符，之所以可以进行"逻辑运算"，是由于JS是无类型的语言、各数据类型可以自由转换这一特性决定的，当用&和|进行"逻辑运算"时，实际上true被转换成1，false被转换成0，再进行逐位运算.
+
+```js
+console.log(3|4); //7
+console.log(4|4);//4
+console.log(8|3);//11
+console.log(5.3|4.1);//5
+console.log(9|3455);//3455
+```
+
+例：
+
+3|4
+
+转换为二进制之后011|100  相加得到111=7
+
+4|4
+
+转换为二进制之后100 |100  相加得到100=4
+
+8|3
+
+转换为二进制之后1000 |011  相加得到1011=11
 
 
 
