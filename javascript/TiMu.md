@@ -6,9 +6,8 @@
 
 ```js
 String.prototype.delete = function (num) {
-            var arr = this.split('');
             var strArr = [];
-            for (var i=0;i < arr.length;i++) {
+            for (var i=0;i < this.length;i++) {
                 var arr = this.split('');
                 arr.splice(i,num,'');
                 strArr.push(arr.join(''));
@@ -23,6 +22,6 @@ String.prototype.delete = function (num) {
             return n.length;
         }
 
-        'ssogou'.delete(3)
+        'sogou'.delete(0) // === 1
 ```
 
