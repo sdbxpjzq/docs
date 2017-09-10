@@ -249,9 +249,9 @@ no hello
 
 
 
+# **组件**
 
-
-## 全局组件
+## **全局**组件
 
 1. 定于模板
 
@@ -326,6 +326,128 @@ import loadingComponent from './loading.vue'
 
 
 
+# 组件传值
+
+## 子组件===> 父组件
+
+`$emit()`
+
+child.vue
+
+```vue
+<template>
+    <div class="hello">
+        <p @click="sendParentMsg">我child要向父元素传值</p>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: 'hello',
+        data() {
+            return {
+                msg: ''
+            }
+        },
+        methods: {
+            sendParentMsg: function () {
+                this.$emit('listenChild','我是subhead.vue');
+            }
+        }
+    }
+</script>
+
+```
+
+APP.vue
+
+```vue
+<template>
+  <div id="app">
+    // 这里将 child.vue 注册成了全局组件(suba),也可以注册成局部组件 
+    <suba @listenChild="showFromChild"></suba>
+    <router-view></router-view>
+  </div>
+</template>
+
+<script>
+    export default {
+        name: 'app',
+        data() {
+            return {
+                msg: '',
+            }
+        },
+        methods: {
+            showFromChild: function (data) {
+                console.log(data)
+            }
+        },
+    }
+</script>
+
+```
+
+总结:
+
+- 子组件中需要以某种方式, 例如, 点击事件的方法来触发一个自定义事件
+- 将需要传的值作为`$emit`的第二个参数，该值将作为实参传给响应自定义事件的方法
+- 在父组件中注册子组件并在子组件标签上绑定对自定义事件的监听
+
+## 父组件 ===> 子组件
+
+`props`
+
+APP.vue
+
+```vue
+<template>
+  <div id="app">
+    <suba :toChild="msg"></suba>
+    <router-view></router-view>
+  </div>
+</template>
+
+<script>
+    export default {
+        name: 'app',
+        data() {
+            return {
+                msg: '我是APP.vue来的信息',
+            }
+        },
+    }
+</script>
+```
+
+child.vue
+
+```vue
+<template>
+    <div class="hello">
+        <p>来自父元素的信息: {{toChild}}</p>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: 'hello',
+        data() {
+            return {
+            }
+        },
+        props: ['toChild'],
+    }
+</script>
+
+```
+
+总结:
+
+- 子组件在props中创建一个属性，用以接收父组件传过来的值
+- 父组件中注册子组件
+- 在子组件标签中添加子组件props中创建的属性
+- 把需要传给子组件的值赋给该属性
 
 
 
@@ -335,8 +457,9 @@ import loadingComponent from './loading.vue'
 
 
 
+# vue虚拟节点
 
-## vue虚拟节点
+
 
 
 
