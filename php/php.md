@@ -1011,6 +1011,14 @@ $v1 = $obj(1,2); $obj是一个对象
 
 
 
+
+
+
+
+
+
+
+
 # 网址收藏
 
 https://laravel-china.github.io/php-the-right-way/
