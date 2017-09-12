@@ -2,6 +2,28 @@
 
 
 
+
+
+# include 和 require
+
+## `include`
+
+当引入的文件不存在时, 代码会继续执行
+
+
+
+## `require`
+
+当引入的文件不存在时, 代码会停止运行 , 并抛出一个致命错误.
+
+
+
+
+
+
+
+
+
 # 类型转换
 
 ## 强制类型转换
@@ -111,6 +133,40 @@ PHP_INT_MAX：9223372036854775807
 
 
 
+## 定义常量
+
+### `const` 和 `define`区别
+
+1. `const`用于类成员变量的定义，一经定义，不可修改。
+
+   `define`不可以用于类成员变量的定义，可用于全局常量.
+
+2. Const可在类中使用，define不能
+
+3. Const不能再条件语句中定义常量. define() 可以.
+
+4. const只能接受静态的标量，define可以采用表达式作为名称
+
+```php
+const  FOO = 'BAR';
+for ($i = 0; $i < 32; ++$i) {
+define('BIT_' . $i, 1 << $i);
+}
+
+const BIT_5 = 1 << 5;    // 无效的invalid (php5.6+ 支持)
+define('BIT_5', 1 << 5); // 有效的valid
+```
+
+5. const定义的常量时大小写敏感，而define可以通过第三个参数（为true表示大小写不敏感）来指定大小写是否敏感。
+
+```php
+define('FOO', 'BAR', true);
+echo FOO; // BAR
+echo foo; // BAR
+```
+
+
+
 # header() 跳转
 
 ```
@@ -132,6 +188,28 @@ header(string,replace,http_response_code)
 3. `header('Refresh: 3; url=www.baidu.com')`— 3s后跳转
 
 跳转之后直接使用`exit()`或者 `die()`退出.
+
+
+
+# 变量作用域
+
+和`javascript`大不同 
+
+```php
+$v = 100; // 此变量 除了函数内部  , 全局可见
+function test()
+{
+    $a = 200; // 函数内局部变量, 函数内可见
+  // $v 先找函数内部的, 没找到 undefined, 不可访问
+    print_r($v); // 函数内部 不可访问
+}
+test();
+
+print_r($v); // 100
+print_r($a); // 函数外部 不可访问
+```
+
+
 
 
 

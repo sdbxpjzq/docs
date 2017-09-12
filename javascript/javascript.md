@@ -18,6 +18,21 @@
 
 
 
+# 序列化
+
+```
+var data = 'name=王硕&age=20岁&beizhu=测试反序列化';
+var targetObj = { };
+data.split('&').forEach(function (item) {  //js的forEach()方法
+    item = item.split('=');
+    var name = item[0],
+        val = item[1];
+    Object.assign(targetObj,targetObj,{name: val});
+});
+```
+
+
+
 
 # for in循环
 
