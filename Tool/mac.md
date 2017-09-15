@@ -265,6 +265,8 @@ hosts所在文件夹：
 - 启动— `w2 start`
 
 
+https://mp.weixin.qq.com/s/Dehz2FhFriNBVseRlyAwzw
+
 ## 更新日志
 
 https://github.com/avwo/whistle/blob/master/CHANGELOG.md
