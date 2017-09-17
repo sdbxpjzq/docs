@@ -150,9 +150,7 @@ http://v.laod.cn/
 
 #  翻墙推荐
 
-## seed
-
-http://www.seednet.me/
+http://blog.sina.com.cn/s/blog_170550d8a0102wzr2.html
 
 
 
