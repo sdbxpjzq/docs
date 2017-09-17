@@ -99,6 +99,22 @@ var_dump(intval($b)); // int 12
 
 
 
+# 三目运算符
+
+通常我们这么写:
+
+```php
+$num = 100;
+$safe = $num? $num :'zongqi';
+```
+
+在php高版本中(5.6+) 可以这么写:
+
+```php
+$num = 100;
+$safe = $num?:'zongqi';
+```
+
 
 
 
@@ -658,42 +674,6 @@ $p2= clone $p1; //复制对象. (生成新的对象)
 
 
 
-## 设计模式
-
-什么叫设计模式
-
-就是一些解决问题的常规做法, 是一种认为较好的经验总结
-
-### 工厂模式
-
-我们总是需要去实例化很多很多的类, 来的到对象.
-
-
-
-### 单例模式
-
-```php
-class single
-{
-
-  // 禁止 new
-    private function __construct(){}
-    // 禁止 clone
-    public function __clone(){}
-  
-    private static $_oInstance;
-    public static function oInstance()
-    {
-        if (!self::$_oInstance) {
-            self::$_oInstance = new self();
-        }
-        return self::$_oInstance;
-    }
-}
-```
-
-
-
 ##  抽象类,抽象方法
 
 abstract
@@ -836,7 +816,7 @@ $display ->run(new VipUser);	//可以是更多其他用户类型
 
 > 类中要预先定义好上面的方法. 如果没有,显然是报错的
 
-方法重载:
+### 方法重载:
 
 如果使用一个不存在的方法, 就会去自动调用类中预先定义好的某个方法, 来处理该行为.
 
@@ -1084,6 +1064,16 @@ $v1 = $obj(1,2); $obj是一个对象
 ```
 
 ![](https://ws3.sinaimg.cn/large/006tKfTcly1fhtyhoxpelj30vm0ei0te.jpg)
+
+
+
+
+
+# 异常处理
+
+![](https://ws1.sinaimg.cn/large/006tNc79ly1fjmjgf2bauj317c0s8dh9.jpg)
+
+
 
 
 
