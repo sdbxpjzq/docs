@@ -22,6 +22,18 @@ https://www.google.com.hk/search?safe=strict&q=TweenMax%E5%8A%A8%E7%94%BB%E5%BA%
 
 http://www.php2000.net/drawing/50622135713484596091.html
 
+
+
+动画相关
+
+http://animejs.com/
+
+http://code.ciaoca.com/jquery/transit/
+
+
+
+
+
 # Inputmask
 
 用于输入验证
