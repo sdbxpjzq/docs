@@ -651,6 +651,37 @@ session2
 
 
 
+
+
+# 业务场景
+
+
+
+- 取13w数据
+
+```php
+$iCursor = 0;
+do {
+    $aUserInfo = $redis->vHScan('key', $iCursor, 100);
+    foreach ($aUserInfo as $uid =>$val) {
+        $iUid = $uid;
+        $sTitle = '蜂蜜可以兑换手机流量包啦！';
+        $sUrl = 'https://m.mafengwo.cn/sales/activity/honey_center/';
+        // 发送通知
+        \apps\sales\apps\activity\MFacade_Api::iSendMsg($iUid,$sTitle,$sContent,$sUrl,
+            $iMsgType,$iActivityId);
+    }
+} while($iCursor!=0);
+```
+
+使用游标的方式`scan`, 每次读取100条
+
+
+
+
+
+
+
 # 网易云课堂--学习未完成(案例)
 
 

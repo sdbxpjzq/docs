@@ -28,3 +28,9 @@
 
 `nrm test`
 
+
+
+# now
+
+`npm i -g --unsafe-perm now`
+

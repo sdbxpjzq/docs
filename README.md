@@ -40,6 +40,8 @@
 
 
 
+<center>**没有人天生很幸运，只有越努力的才越幸运**</cneter>
+
 ## 友链
 
 - [weianke](https://weianke.github.io/)

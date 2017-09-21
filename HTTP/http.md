@@ -45,6 +45,28 @@ http://www.runoob.com/http/http-methods.html
 
 
 
+## 持久连接有两种类型:
+
+keep-alive 
+
+属于HTTP/1.0
+
+
+
+persistent
+
+属于HTTP/1.1
+
+
+
+
+
+
+
+
+
+
+
 
 
 
