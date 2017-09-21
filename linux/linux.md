@@ -240,7 +240,9 @@ http://imweb.io/topic/556c287879878a3b386dd026
 
 `Halt`—立刻关机
 
-# 配置防火墙
+# 防火墙
+
+## iptables防火墙
 
 `vim /etc/sysconfig/iptables`
 
@@ -270,9 +272,39 @@ http://imweb.io/topic/556c287879878a3b386dd026
 
 
 
-## centos7关闭防火墙
+## centos7+防火墙
 
 http://jingyan.baidu.com/article/86112f1362a63e2737978719.html
+
+centos7采用`firewall`
+
+### 切换为iptables防火墙
+
+1. 关闭firewall
+
+`service firewalld stop`
+
+`systemctl disable firewalld.service`#禁止firewall开机启动
+
+`firewall-cmd --state` # 查看状态
+
+2. 安装iptables
+
+`yum install iptables-services `
+
+3. 编辑iptables防火墙配置
+
+`vim /etc/sysconfig/iptables`
+
+4. 启动&&开机启动
+
+`service iptables start`
+
+`systemctl enable iptables.service`#设置防火墙开机启动
+
+
+
+
 
 
 
@@ -362,11 +394,25 @@ K开头的脚本文件代表运行级别加载时需要关闭的，S开头的代
 
 若该账户只是暂时不用，可以更改`/etc/shadow`倒数第二个字段设置为`0`
 
-
-
 ## 修改用户名
 
-`usermod-l  新用户名  旧用户名`
+`usermod -l  新用户名  旧用户名`
+
+## 修改密码
+
+`passwd 用户名`-----修改某个用户的密码
+
+`passwd -d  用户名`—删除某个用户名的密码
+
+`passwd -l  用户名`---锁定某个账号的密码
+
+`passwd -U  用户名-`--解锁某个账号的密码
+
+
+
+## 其他命令
+
+- `whoami` # 查看当前用户
 
 
 
@@ -392,6 +438,26 @@ root用户下，
    `xxx ALL=(ALL)  ALL`(这里的xxx是你的用户名)，然后保存退出。
 
 ​       3. 撤销文件的写权限。"chmod u-w /etc/sudoers"
+
+
+
+## 用户组
+
+- `groups  用户名`  or  `id  用户名` # 查看当前用户属于哪个组
+
+
+- `cat /etc/group`  # 查看所有的组信息
+- `usermod  -G  组名  用户名`# 将用户添加到某个组里
+
+
+
+| Groupadd   组名          | 创建一个组 |
+| ---------------------- | ----- |
+| Groupmod  -n  新组名  旧组名 | 更改组名  |
+| Groupdel   组名          | 删除一个组 |
+|                        |       |
+
+
 
 # 删除文件和目录
 
