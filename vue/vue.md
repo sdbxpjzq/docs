@@ -297,6 +297,7 @@ no hello
 
 ```js
 import loadingComponent from './loading.vue'
+import loadingComponent2 from './loading2.vue'
 
 const loading={
     install:function(Vue){
@@ -304,7 +305,15 @@ const loading={
     }  //'Loading'这就是后面可以使用的组件的名字，install是默认的一个方法
 };
 
-export default loading;
+const loading2={
+    install:function(Vue){
+        Vue.component('Loading2',loadingComponent2)
+    }  //'Loading'这就是后面可以使用的组件的名字，install是默认的一个方法
+};
+
+
+//  export default loading;
+export {loading,loading2} ; // 多组件导出
 ```
 
 只要在index.js中规定了`install`方法，就可以像一些公共的插件一样使用`Vue.use()`来使用.
@@ -312,8 +321,11 @@ export default loading;
 3. 引入
 
 ```js
-import loading from './index.js'
-Vue.use(loading)
+// import loading from './index.js'
+import {loading, loading2} from './index.js'  // 多组件引入
+
+Vue.use(loading);
+Vue.use(loading2);
 ```
 
 
@@ -324,6 +336,7 @@ Vue.use(loading)
 <template>
     <div>
         <Loading></Loading>
+      	<Loading2></Loading2>
     </div>
 </template>
 ```
