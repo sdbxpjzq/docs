@@ -35,6 +35,27 @@
 </div>
 ```
 
+
+
+## 下拉绑定
+
+```vue
+<select v-model="selected">
+       <option v-for="(val, key) in areaCode"  :value="key">{{val}} +{{key}}</option>
+</select>
+
+var vm = new Vue({
+       el: '#app',
+       data: {
+           selected: 86, // 默认选中的
+       },
+}
+```
+
+https://segmentfault.com/q/1010000007314174/a-1020000007315511
+
+
+
 ## **ref**
 
 在普通的 DOM 元素上使用，引用指向的就是 DOM 元素.
@@ -53,23 +74,6 @@ https://vuefe.cn/v2/api/#ref
 http://jingyan.baidu.com/article/acf728fd5ee4acf8e510a3cc.html
 
 
-
-# 下拉绑定
-
-```vue
-<select v-model="selected">
-       <option v-for="(val, key) in areaCode"  :value="key">{{val}} +{{key}}</option>
-</select>
-
-var vm = new Vue({
-       el: '#app',
-       data: {
-           selected: 86, // 默认选中的
-       },
-}
-```
-
-https://segmentfault.com/q/1010000007314174/a-1020000007315511
 
 
 
