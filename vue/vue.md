@@ -54,6 +54,27 @@ http://jingyan.baidu.com/article/acf728fd5ee4acf8e510a3cc.html
 
 
 
+# 下拉绑定
+
+```vue
+<select v-model="selected">
+       <option v-for="(val, key) in areaCode"  :value="key">{{val}} +{{key}}</option>
+</select>
+
+var vm = new Vue({
+       el: '#app',
+       data: {
+           selected: 86, // 默认选中的
+       },
+}
+```
+
+https://segmentfault.com/q/1010000007314174/a-1020000007315511
+
+
+
+
+
 ## methods
 
 > **不应该使用箭头函数来定义 method 函数**
@@ -451,6 +472,34 @@ child.vue
 
 
 
+
+# props
+
+
+
+## props验证
+
+```js
+props: {
+           iTimeStamp: {
+               required: true, // 必须传递的
+               type: Number, // 类型
+               default : 100 // 默认值
+           },
+       },
+```
+
+`type` 可以是以下原生构造函数之一：
+
+- String
+- Number
+- Boolean
+- Function
+- Object
+- Array
+- Symbol
+
+除了以上这些，`type` 还可以是一个自定义构造函数，在通过 `instanceof` 检测时，此构造函数会被用于进行类型推断。
 
 
 
