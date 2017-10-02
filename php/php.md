@@ -1093,6 +1093,48 @@ $v1 = $obj(1,2); $obj是一个对象
 
 
 
+# 锁机制
+
+解决并发造成数据更新错误.
+
+`-> % ab -c 10 -n 10 http://dev.zongqilive.cn/api/Net/type3`
+
+现在有2种锁机制: mysql中的表锁 和 php 的文件锁
+
+## mysql表锁
+
+语法: 
+
+ LOCK TABLE [table_name]  READ| WRITE
+
+UNLOCK TABLES
+
+![](https://ws3.sinaimg.cn/large/006tNc79ly1fk41zpav9lj31kw0iomzj.jpg)
+
+
+
+## php文件锁
+
+并发读写数据. 更**推荐使用**
+
+![](https://ws2.sinaimg.cn/large/006tNc79gy1fk485ynuevj30x00hoq48.jpg)
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1113,3 +1155,4 @@ https://laravel-china.github.io/php-the-right-way/
 
 
 
+http://www.cnblogs.com/52fhy/p/6931261.html

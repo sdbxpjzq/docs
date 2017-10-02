@@ -390,3 +390,5 @@ https://avwo.github.io/whistle/rules/weinre.html
 [打卡下载](http://digit77.com/en/macos)
 
 https://www.waitsun.com/
+
+http://xclient.info/

@@ -745,6 +745,31 @@ console.log(9|3455);//3455
 
 
 
+#  熄屏或后台运行检测
+
+`倒计时程序在页面息屏(锁屏状态下) js执行有问题` 
+
+**解决方法** 
+`visibilitychange` -- 当浏览器的某个标签页切换到后台，或从后台切换到前台时就会触发该消息.
+
+```js
+function ajaxTime(){
+    $.ajax({
+        success: function(data, status, xhr) {
+            var time = (xhr.getResponseHeader('Date'));
+            var curDate = new Date(time);
+            window.nowTime = curDate.getTime() /1000;
+        }
+    });
+}
+document.addEventListener("visibilitychange",ajaxTime);
+document.addEventListener("webkitvisibilitychange", ajaxTime);
+document.addEventListener("msvisibilitychange", ajaxTime);
+document.addEventListener("mozvisibilitychange", ajaxTime);
+
+
+```
+
 
 
 
