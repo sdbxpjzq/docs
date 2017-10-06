@@ -1061,6 +1061,12 @@ B::show2(); // 10  static 代表调用本方法的类
 
 
 
+### static仿单例
+
+![](https://ws1.sinaimg.cn/large/006tKfTcly1fk4rn0ls4fj31kw0mc0u9.jpg)
+
+
+
 
 
 
