@@ -18,7 +18,25 @@
 
 
 
+# empty, isset, is_null
 
+## isset
+
+检测一个变量是否已经声明,并且值**不为**`NULL`.
+
+## empty
+
+检测变量是否为空.
+
+空字符串, `false`, 0, 空数组(`array()`), `NULL` , `unset`删除之后的变量 — 返回`true`.
+
+## is_null
+
+判断变量值是否为`NULL`
+
+`is_null()`是`isset()`的反函数. 
+
+区别: `is_null()`只能检测已经存在的变量.`isset()`可以检测未知变量.
 
 
 
@@ -117,7 +135,11 @@ $safe = $num?:'zongqi';
 
 
 
-# 超全局变量
+# 超全局数组变量
+
+![](https://ws3.sinaimg.cn/large/006tNc79gy1fkcvf9w5ibj31f60o042h.jpg)
+
+
 
 ## $_ENV
 
@@ -215,13 +237,53 @@ function test()
 {
     $a = 200; // 函数内局部变量, 函数内可见
   // $v 先找函数内部的, 没找到 undefined, 不可访问
-    print_r($v); // 函数内部 不可访问
+  print_r($v); // 函数内部,不可访问.
+  // 要想使用 global
+    global $v;
+    print_r($v); // 100
+  // 或者使用 超全局数组 $GLOBALS[]
+  print_r($GLOBALS['v']);  // 100
 }
 test();
 
 print_r($v); // 100
 print_r($a); // 函数外部 不可访问
 ```
+
+
+
+## $GLOBALS[] 和 global 有什么区别呢
+
+`$GLOBALS['v']` 是外部的全局变量本身.
+
+`global $v` 是外部`$v`的同名引用或者指针.
+
+`global $v` 和 `&$GLOBALS['v']` 是等价的.
+
+```php
+$v = 100; // 此变量 除了函数内部  , 全局可见
+function test()
+{
+   unset($GLOBALS['v']);
+}
+test();
+echo @$v; // 空
+```
+
+```php
+$v = 100; // 此变量 除了函数内部  , 全局可见
+function test()
+{
+    global $v;
+    unset($v);
+}
+test();
+echo @$v; // 100
+```
+
+
+
+
 
 
 

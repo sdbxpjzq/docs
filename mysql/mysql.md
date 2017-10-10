@@ -395,6 +395,15 @@ select COUNT(*)as '>20岁人数',classid  from Table1 where sex='男' group by c
 
 
 
+## 查找重复数据
+
+```sql
+select id,uid,count(*) as count from sales_photopk_list group by activity_id having count>1;
+
+```
+
+
+
 # 连表查询
 
 ![](https://ws2.sinaimg.cn/large/006tKfTcly1figufzvzo3j30fd09zglt.jpg)
