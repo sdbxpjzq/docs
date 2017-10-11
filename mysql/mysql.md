@@ -202,11 +202,11 @@ create table if not exists USER(
 
 # 索引
 
-### 主键索引  primary key
+## 主键索引  primary key
 
 一个表只能指定一个主键，且主键的值不能为空。
 
-### 唯一索引  unique
+## 唯一索引  unique
 
 一个表中可以有多个唯一索引。
 主要是为了避免数据出现重复。
@@ -255,7 +255,7 @@ insert into t (a ,b ) values (null,null);#可以重复 .
 
    ​
 
-### 常规索引  index || key
+## 常规索引  index || key
 
 关键字 index 或 key
 索引应该建立在搜索，排序，分组等操涉及的数据列上，就是在 where字句，from字句，order by字句，group by字句
@@ -283,7 +283,7 @@ ALTER TABLE user_info ADD INDEX indexName(user_name);// name都不要用引号
 
 
 
-### 全文索引
+## 全文索引
 
 `fulltext索`引只能用于`myisam`表.
 
@@ -295,11 +295,7 @@ ALTER TABLE user_info ADD INDEX indexName(user_name);// name都不要用引号
  SELECT * FROM sales_goods WHERE match(goods_name) AGAINST('xxx');
 ```
 
-
-
-
-
-### 删除索引
+## 删除索引
 
 ```sql
 DROP INDEX [indexName] ON mytable; 

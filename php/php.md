@@ -1189,6 +1189,43 @@ UNLOCK TABLES
 
 
 
+# 执行命令
+
+## 反引号
+
+```php
+
+$out = `ls -al`;
+echo $out;
+```
+
+
+
+## shell_exec()
+
+```php
+$out = shell_exec('ls');
+echo $out;
+```
+
+
+
+# is_callable() 与 method_exists()
+
+![](https://ws1.sinaimg.cn/large/006tKfTcgy1fkejg5xaadj31io0pywhg.jpg)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
  
