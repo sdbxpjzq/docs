@@ -370,8 +370,63 @@ https://avwo.github.io/whistle/rules/weinre.html
 
 1. 转大小写(Toggle Case) — `Command+Shift+U`
 2. 列出左侧文件（command + 1）
-3. 格式化代码（command + option + l）
-4. ​
+3. ​
+
+## 自动代码
+
+- `alt + 回车` 导入包，自动修正
+- `command + n` 快事为每个成员属性生成 getter 及 setter 方法
+- `ctrl + i` 快速生成插入魔术方法
+- `ctrol + o` 复写父类方法
+- `command + alt + l` 对当前文件进行格式化排版
+- `command + d` 复制当前行
+- `command + /` // 注释
+- `command + shift + /` // 注释
+
+
+
+## 查询相关
+
+- `command + f` 查找当前文件
+- `command + r` 查找替换
+- `command + e` 打开最近的文件
+- `command + shift + o` 快速查询文件
+- `command + shift + f` 关键字查找,更强大的查询器(机器不好的，最好还是先确定一下目录)
+- `command + shift + r` 高级替换
+- `command + alt + b` 找到当剪类的所有子类
+- `alt + shift + c` 查找最近修改的文件
+- `alt + f7` 直接查询选中的字符
+- `ctrl + f7` 文件中查询选中字符
+- `command + 鼠标点击` 跳到类或方法或变量等声明处
+- `command + shift + tab` 切换tab页文件
+- `command + shift + +,-` 展开或缩起
+- `command + .` 折叠或展开选中的代码
+
+
+
+
+
+# SecureCRT快捷键
+
+**编辑命令**
+
+Ctrl + a ：移到命令行首
+Ctrl + e ：移到命令行尾
+Ctrl + xx：在命令行首和光标之间移动
+
+Ctrl + u ：从光标处删除至命令行首
+Ctrl + k ：从光标处删除至命令行尾
+Ctrl + w ：从光标处删除至字首
+
+command + 1/2/3... ： 在多个不同的session标签之间切换
+
+
+
+
+
+
+
+
 
 # mac键盘图标
 

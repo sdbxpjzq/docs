@@ -273,14 +273,12 @@ index indexname(youname(20))
 
 2. 创建索引
 
-   ```sql
-   CREATE INDEX indexName ON mytable(username(length)); 
-   ```
-
-3. 修改表结构
+```sql
+CREATE INDEX indexName ON mytable(user_name); // name都不要用引号
+```
 
 ```sql
-ALTER mytable ADD INDEX [indexName] ON (username(length)) 
+ALTER TABLE user_info ADD INDEX indexName(user_name);// name都不要用引号
 ```
 
 
@@ -317,7 +315,7 @@ DROP INDEX [indexName] ON mytable;
 insert into [tables_name](column1,column2,...) values(value1, value2,..)
 ```
 
-### 更新数据
+## 更新数据
 
 ```sql
 update [tables_name]set column1 = new_value1,column2 = new_value2,… WHERE definition
