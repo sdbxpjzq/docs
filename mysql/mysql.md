@@ -301,6 +301,16 @@ ALTER TABLE user_info ADD INDEX indexName(user_name);// name都不要用引号
 DROP INDEX [indexName] ON mytable; 
 ```
 
+```sql
+ALTER TABLE table_name DROP INDEX index_name
+```
+
+
+
+## 最左原则
+
+
+
 
 
 # CURD

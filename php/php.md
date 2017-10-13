@@ -1216,6 +1216,17 @@ echo $out;
 
 
 
+# 输出缓冲控制(ob缓存)
+
+php缓冲区是默认开启的. `php.ini` 中  `output_buffering`.默认值是 `4096`
+
+```
+output_buffering = On
+output_buffering = 4096
+```
+
+php一旦调用了`ob_start()`函数,就会将php缓冲区扩展到足够大,直到调用`ob_end_flush()`或者脚本运行结束, 才将php缓冲区的数据发送到浏览器.
+
 
 
 
