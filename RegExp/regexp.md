@@ -1,5 +1,11 @@
 [TOC]
 
+![](https://ws2.sinaimg.cn/large/006tKfTcly1fkj0vt36khj30xb10ejvs.jpg)
+
+
+
+
+
 # 字符类型
 
 
