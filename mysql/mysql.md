@@ -719,6 +719,16 @@ mysql_real_escape_string(string,connection)
 
 
 
+# MySQL 5.7全新功能
+
+http://www.jb51.net/article/87092.htm
+
+## **JSON**
+
+`MySQL`数据库从`5.7.8`版本开始，也提供了对`JSON`的支持.
+
+
+
 
 
 
