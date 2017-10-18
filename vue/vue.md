@@ -75,6 +75,53 @@ http://jingyan.baidu.com/article/acf728fd5ee4acf8e510a3cc.html
 
 
 
+## v-bind:style
+
+### 对象语法
+
+每一个都是`javascript`对象. 
+
+可以用`驼峰式 (camelCase) `名称,例如`fontSize` 
+
+可以用`短横线分隔` 例如`'font-size'`. 必须使用`单引号`括起来
+
+```vue
+<div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>
+<div v-bind:style="{ color: activeColor, 'font-size': fontSize + 'px' }"></div>
+<script>
+  data: {
+  activeColor: 'red',
+  fontSize: 30
+}
+</script>
+```
+
+### 数组语法
+
+```vue
+<div v-bind:style="[baseStyles, overridingStyles]"></div>
+```
+
+
+
+### 自动添加前缀
+
+当 `v-bind:style` 使用需要添加[浏览器引擎前缀](https://developer.mozilla.org/zh-CN/docs/Glossary/Vendor_Prefix)的 CSS 属性时，如 `transform`，Vue.js 会自动侦测并添加相应的前缀.
+
+
+
+### 多值
+
+从 2.3.0 起你可以为 `style` 绑定中的属性提供一个包含多个值的数组，常用于提供多个带前缀的值
+
+```vue
+<div :style="{ display: ['-webkit-box', '-ms-flexbox', 'flex'] }"></div>
+```
+
+这样写只会渲染数组中最后一个被浏览器支持的值.
+
+
+
 
 
 
