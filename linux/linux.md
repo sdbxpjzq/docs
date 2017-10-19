@@ -463,6 +463,18 @@ root用户下，
 | Groupdel   组名          | 删除一个组 |
 |                        |       |
 
+## 修改文件的拥有者
+
+`chown yangzongde testfile` //修改文件拥有者为 yangzongde 
+
+## 修改文件的所属用户组
+
+`chgrp yangzongde testfile` //修改拥有者组为 yangzongde 
+
+## 一次修改文件的拥有者和所属组
+
+ `chown root:root testfile` // 使用 `chown` 一次性修改拥有者及组 
+
 
 
 # 删除文件和目录

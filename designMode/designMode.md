@@ -155,6 +155,14 @@ public static function oInstance()
 
 
 
+# 门面模式 (Facade Pattern 外观模式)
+
+http://blog.csdn.net/xingjiarong/article/details/50066133
+
+
+
+
+
 
 
 # 设计模式学习资料

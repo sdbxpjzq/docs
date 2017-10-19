@@ -44,6 +44,14 @@
 
 
 
+# git clone
+
+`git clone xxxx`  — 默认拉取`master`分支
+
+`git clone -b branchName  xxxx`  — 拉取指定分支
+
+
+
 #  git cherry-pick
 
 当你通过一番挣扎终于搞定一个bug,顺手提交到 git 服务器,心里一阵暗爽. 这时发现你当前所在的分支是 master !!!这个分支不是开发者用来提交代码的,可惜现在剁手也晚了.
@@ -174,6 +182,10 @@ http://www.jianshu.com/p/3622ed542c3b
 用于把一个分支的修改合并到当前分支
 
 
+
+
+
+`git rebase --abort`
 
 # 给分支打标签-git tag
 
