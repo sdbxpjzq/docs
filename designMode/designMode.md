@@ -159,6 +159,16 @@ public static function oInstance()
 
 http://blog.csdn.net/xingjiarong/article/details/50066133
 
+http://blog.csdn.net/psp0001060/article/details/50749267
+
+
+
+
+
+
+
+![](https://ws2.sinaimg.cn/large/006tNc79ly1fkohjlb7vdj30il0fjdg0.jpg)
+
 
 
 

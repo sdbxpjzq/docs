@@ -132,6 +132,8 @@ http://jingyan.baidu.com/article/acf728fd5ee4acf8e510a3cc.html
 
 
 
+
+
 ## watch
 
 > 不应该是使用 箭头函数来定义`watch`函数
@@ -150,6 +152,55 @@ watch: {
 	}
 },
 ```
+
+
+
+## .sync
+
+字组件去改变`pros`里的变量.
+
+父组件 ==> 字组件 传值, 我们会用到 `props`传值. 但是父组件传通过`props`传过来的值, 字组件并不能修改. `.sync`语法糖来做.
+
+父组件:
+
+```vue
+<suba :toChild.sync="msg"></suba>
+export default {
+        name: 'app',
+        data() {
+            return {
+                msg: '我是APP.vue来的信息', // 传给字组件
+            }
+        },
+}
+```
+
+子组件:
+
+```vue
+<p>来自父元素的信息: {{toChild}}</p>
+<p @click="hello">点击我</p>
+
+export default {
+        name: 'hello',
+        data() {
+            return {
+            }
+        },
+        props: ['toChild'],
+        methods: {
+            hello() {
+                this.$emit('update:toChild','我是subhead.vue');  // update: 是固定的
+            }
+        }
+    }
+```
+
+
+
+
+
+
 
 
 

@@ -214,21 +214,25 @@ ln -s /home/kun/mysofltware/node-v0.10.28-linux-x64/bin/npm /usr/local/bin/npm
 
 ​    这里/home/kun/mysofltware/这个路径是你自己放的，你将node文件解压到哪里就是哪里。
 
+  8989  
+
+# nmap 探测端口占用情况
+
+`yum -y install namp`
+
+`nmap 127.0.0.1`
 
 
-# Linux服务器安装使用PhantomJS
 
-https://icewing.cc/post/linux-install-phantomjs.html
+# root 不能远程登录
 
-### 直接下载编译好的文件
+vi /etc/ssh/sshd_config，将PermitRootLogin的值改成yes，并保存
 
-直接到Bitbucket下载对应的压缩包（链接：[https://bitbucket.org/ariya/phantomjs/downloads](https://bitbucket.org/ariya/phantomjs/downloads)），例如我的是CentOS6.5 64位系统，下载的是phantomjs-1.9.8-linux-x86_64.tar.bz2，下载完成后解压，在 bin 目录内有编译好的 phantomjs 文件，直接用FTP等工具上传到服务器。
+`PermitRootLogin yes `
 
-## 模拟登录
+`service sshd restart`
 
-http://imweb.io/topic/556c287879878a3b386dd026
-
-
+这样，就能用root直接ssh登录了
 
 # 启动相关
 
