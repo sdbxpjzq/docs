@@ -22,12 +22,6 @@ https://teddysun.com/486.html
 
 [windows版本](https://github.com/shadowsocks/shadowsocks-windows)
 
-## 使用chrome插件配合
-
-`whistle的Chrome插件`. 使用系统代理就行
-
-[chrome商城](https://chrome.google.com/webstore/detail/whistle/bokhoonoeoodkdhbdhlgaodjdcnbcpdl?hl=zh-CN)
-
 
 
 [ShadowsocksR Windows版下载](http://pan.baidu.com/s/1geQD7Xp)（密码: rbzg ）
@@ -36,9 +30,18 @@ https://teddysun.com/486.html
 
 [ShadowsocksR Mac版下载](http://pan.baidu.com/s/1miqRJ7M)（密码: gnti）
 
+## 使用chrome插件配合
+
+`whistle的Chrome插件`. 使用系统代理就行. 可以随时调整代理方式.
+
+[chrome商城](https://chrome.google.com/webstore/detail/whistle/bokhoonoeoodkdhbdhlgaodjdcnbcpdl?hl=zh-CN)
+
+
+
 
 
 - [参考](https://www.diycode.cc/topics/738)
+- https://github.com/gfwlist/gfwlist
 
 
 
