@@ -256,6 +256,42 @@ hosts所在文件夹：
 
 也可以去 [插件网](http://www.cnplugins.com/)看看😜😜😜
 
+
+
+# 如何导出 chrom 插件
+
+## MAC
+
+http://blog.csdn.net/kid_2412/article/details/51008156
+
+- 拷贝ID
+
+![](https://ws3.sinaimg.cn/large/006tNc79gy1fks4yw174rj30x40d0dge.jpg)
+
+- 切换目录:
+
+`cd ~/Library/Application\ Support/Google/Chrome/Default/Extensions/{拷贝的ID值}`
+
+- 选择版本
+
+注意可能会有很多版本，cd进入到自己想打包的文件夹.
+
+`cd 1.0.2_0`
+
+- 拷贝路径
+
+然后执行`pwd`. 拷贝目录信息.
+
+- 打包
+
+在chrome的扩展程序中点击打包扩展程序，把刚刚复制的全路径拷贝到扩展程序根目录中。
+
+![](https://ws1.sinaimg.cn/large/006tNc79gy1fks539jx3lj318u138aci.jpg)
+
+
+
+
+
 # 代理工具--whistle
 
 - whistle --跨平台[手册](https://avwo.github.io/whistle/)[教程](https://www.qcloud.com/community/article/151)--(目前只是使用了简单的代理,许多功能还没有用到) 
