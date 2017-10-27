@@ -2,6 +2,89 @@
 
 
 
+# PHP数据类型
+
+整型(int)
+
+浮点型(float)
+
+复合数据类型
+
+​	数组(Array)
+
+​	对象(Object)
+
+NULL
+
+资源(resource)
+
+
+
+# 数据类型转换
+
+## 自动数据类型转换
+
+```php
+echo 2 + '1个苹果';  // 12
+echo 2 + '个苹果'; // 2
+```
+
+php解释器会从左到右扫描, 如果最左侧有相邻的数字字符,将被认为是个数字,否则为0.
+
+## 强制类型转换
+
+### int && settype
+
+```php
+$num = 2.535;
+echo (int)$num;
+echo settype($num, 'int');
+```
+
+`settype`的`type` 的可能值为：
+
+- “boolean” （或为“bool”，从 PHP 4.2.0 起）
+- “integer” （或为“int”，从 PHP 4.2.0 起）
+- “float” （只在 PHP 4.2.0 之后可以使用，对于旧版本中使用的“double”现已停用）
+- "string"
+- "array"
+- "object"
+- “null” （从 PHP 4.2.0 起）
+
+`int`和`settype`在转换机制上有一点区别:
+
+![](https://ws3.sinaimg.cn/large/006tKfTcly1fkusr4mct3j31hi068dh8.jpg)
+
+![](https://ws1.sinaimg.cn/large/006tKfTcly1fkussmr6h8j31cy0hwmyo.jpg)
+
+
+
+## intval ()和 floatval()和strval()
+
+去掉小数部分,直接取整.
+
+```php
+intval(22.56); //22
+intval('30 days'); // 30
+intval('hi 1024'); // 0
+```
+
+
+
+
+
+# 超全局数组变量
+
+![](https://ws3.sinaimg.cn/large/006tNc79gy1fkcvf9w5ibj31f60o042h.jpg)
+
+
+
+
+
+
+
+
+
 # include 和 require
 
 ## `include`
@@ -40,81 +123,6 @@
 
 
 
-# 类型转换
-
-## 强制类型转换
-
-允许的强制转换有：
-
-1.(int), (integer) - 转换为整形 integer  
-
-2.(bool), (boolean) - 转换为布尔类型 boolean  
-
-3.(float), (double), (real) - 转换为浮点型 float  
-
-4.(string) - 转换为字符串 string  
-
-5.(array) - 转换为数组 array  
-
-6.(object) - 转换为对象 object  
-
-7.(unset) - 转换为 NULL  (PHP 5) 
-
-```php
-<?php
-$foo = 10;        // $foo 为整型
-$bar = (boolean) $foo;    // $bar 为布尔型
-?>
-```
-
-
-
-## settype()
-
-```php
-<?php
-$foo  =  "5bar" ;  // string
- $bar  =  true ;    // boolean
- 
- settype ( $foo ,  "integer" );  // $foo 现在是 5   (integer)
- settype ( $bar ,  "string" );   // $bar 现在是 "1" (string)
-?> 
-```
-
-`type` 的可能值为：
-
-- “boolean” （或为“bool”，从 PHP 4.2.0 起）
-- “integer” （或为“int”，从 PHP 4.2.0 起）
-- “float” （只在 PHP 4.2.0 之后可以使用，对于旧版本中使用的“double”现已停用）
-- "string"
-- "array"
-- "object"
-- “null” （从 PHP 4.2.0 起）
-
-## intval ()和 floatval()和strval()
-
-```php
-$a="12.56hello23";  // string
-$b=12.56;          //float
-var_dump(intval($a)); // int 12
-var_dump(intval($b)); // int 12
-     $c=10;           //int
-     var_dump(floatval($c)); // float 10
-     var_dump(strval($c));   // string '10'
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
 # 三目运算符
 
 通常我们这么写:
@@ -135,9 +143,7 @@ $safe = $num?:'zongqi';
 
 
 
-# 超全局数组变量
 
-![](https://ws3.sinaimg.cn/large/006tNc79gy1fkcvf9w5ibj31f60o042h.jpg)
 
 
 

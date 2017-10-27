@@ -46,6 +46,102 @@ https://teddysun.com/486.html
 
 
 
+# vps
+
+## digitalocean
+
+https://m.do.co/c/cde1066a7a8f
+
+
+
+## VPS
+
+https://www.vps.net/products/ssd-vps/
+
+
+
+## vultr
+
+https://www.vultr.com/
+
+## linode
+
+https://www.linode.com/
+
+[参考](http://www.laozuo.org/linode)
+
+## hostdare
+
+https://manage.hostdare.com/cart.php?a=confproduct&i=2
+
+## 搬瓦工
+
+http://banwagong.cn/
+
+# vps加速
+
+## 锐速破解版
+
+```shell
+yum -y install wget
+
+wget -N --no-check-certificate https://raw.githubusercontent.com/wn789/serverspeeder/master/serverspeeder.sh
+
+bash serverspeeder.sh
+```
+
+### 内核不合适问题
+
+centos6
+
+```shell
+uname -r #查看当前内核版本
+
+rpm -ivh http://xz.wn789.com/CentOSkernel/kernel-firmware-2.6.32-504.3.3.el6.noarch.rpm
+
+rpm -ivh http://xz.wn789.com/CentOSkernel/kernel-2.6.32-504.3.3.el6.x86_64.rpm --force
+```
+
+安装完成后
+
+```shell
+reboot
+uname -r #当前使用内核版本
+```
+
+https://www.wn789.com/4689.html
+
+
+
+## BBR
+
+https://teddysun.com/489.html
+
+
+
+
+
+# ssh加速
+
+`FinalShell`
+
+Windows版下载地址:
+<http://www.hostbuf.com/downloads/finalshell_install.exe>
+
+Mac一键安装脚本
+
+```shell
+curl -o finalshell_install.sh http://www.hostbuf.com/downloads/finalshell_install.sh;
+chmod +x finalshell_install.sh;
+sudo  ./finalshell_install.sh
+```
+
+
+
+http://www.hostbuf.com/t/988.html
+
+
+
 
 
 
