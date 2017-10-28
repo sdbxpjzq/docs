@@ -50,9 +50,9 @@ https://teddysun.com/486.html
 
 ## digitalocean
 
-https://m.do.co/c/cde1066a7a8f
+**http://www.digitalocean.com/?refcode=cde1066a7a8f**
 
-
+[测速](http://speedtest-nyc3.digitalocean.com/)
 
 ## VPS
 
@@ -63,6 +63,8 @@ https://www.vps.net/products/ssd-vps/
 ## vultr
 
 https://www.vultr.com/
+
+[测速](https://www.vultrvps.com/test-server)
 
 ## linode
 
@@ -77,6 +79,18 @@ https://manage.hostdare.com/cart.php?a=confproduct&i=2
 ## 搬瓦工
 
 http://banwagong.cn/
+
+
+
+# 测速
+
+http://ping.chinaz.com/
+
+https://www.ipip.net/traceroute.php
+
+
+
+
 
 # vps加速
 
@@ -113,7 +127,7 @@ https://www.wn789.com/4689.html
 
 
 
-## BBR
+## BBR [推荐使用]
 
 https://teddysun.com/489.html
 
