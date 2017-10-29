@@ -77,7 +77,13 @@ intval('hi 1024'); // 0
 
 ![](https://ws3.sinaimg.cn/large/006tNc79gy1fkcvf9w5ibj31f60o042h.jpg)
 
+## $_ENV
 
+如果打印输出 `$_ENV` 为空，可以检查一下 php.ini 的配置：
+
+`variables_order = "EGPCS"`
+
+上述配置表示 PHP 接受的外部变量来源及顺序，`EGPCS` 是 `Environment`、`Get`、`Post`、`Cookies` 和 `Server` 的缩写。如果 `variables_order` 的配置中缺少` E` ，则 PHP 无法接受环境变量，那么 `$_ENV `也就为空了。
 
 
 
@@ -123,22 +129,20 @@ intval('hi 1024'); // 0
 
 
 
-# 三目运算符
+# 魔术常量
 
-通常我们这么写:
 
-```php
-$num = 100;
-$safe = $num? $num :'zongqi';
-```
 
-在php高版本中(5.6+) 可以这么写:
-
-```php
-$num = 100;
-$safe = $num?:'zongqi';
-```
-
+| 名称             | 说明                            |
+| -------------- | ----------------------------- |
+| \__LINE__      | 返回运行中php脚本的当前行号               |
+| \__FFILE__     | 当前执行的php文件的完整路径和文件名,包含一个绝对路径  |
+| \__FUNCTION__  | 函数名称.(大小写敏感)                  |
+| \__CLASS__     | 类名称.(大小写敏感)                   |
+| \__METHOD__    | 类的成员方法名称.返回该方法被定义时的名称.(大小写敏感) |
+| \__DIR__       | 当前php文件的目录.(PHP5.3+)          |
+| \__NAMESPACE__ | 命名空间(PHP5.3+)                 |
+|                |                               |
 
 
 
@@ -147,13 +151,6 @@ $safe = $num?:'zongqi';
 
 
 
-## $_ENV
-
-如果打印输出 `$_ENV` 为空，可以检查一下 php.ini 的配置：
-
-`variables_order = "EGPCS"`
-
-上述配置表示 PHP 接受的外部变量来源及顺序，`EGPCS` 是 `Environment`、`Get`、`Post`、`Cookies` 和 `Server` 的缩写。如果 `variables_order` 的配置中缺少` E` ，则 PHP 无法接受环境变量，那么 `$_ENV `也就为空了。
 
 # 常量
 
@@ -206,6 +203,10 @@ define('FOO', 'BAR', true);
 echo FOO; // BAR
 echo foo; // BAR
 ```
+
+
+
+
 
 
 

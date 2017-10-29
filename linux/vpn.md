@@ -16,7 +16,9 @@ https://teddysun.com/486.html
 
 配置多客户端: https://teddysun.com/342.html
 
-## 下载Shadowsocks客户端
+## 方式一:
+
+### 下载Shadowsocks客户端
 
 [mac版本](https://github.com/shadowsocks/ShadowsocksX-NG)
 
@@ -29,6 +31,16 @@ https://teddysun.com/486.html
 [ShadowsocksR Android版下载](http://pan.baidu.com/s/1jH6oGIi)（密码: 5c2j）
 
 [ShadowsocksR Mac版下载](http://pan.baidu.com/s/1miqRJ7M)（密码: gnti）
+
+
+
+## 方式二
+
+### 服务端安装L2TP
+
+https://github.com/hwdsl2/setup-ipsec-vpn/blob/master/README-zh.md
+
+
 
 ## 使用chrome插件配合
 
@@ -54,21 +66,7 @@ https://teddysun.com/486.html
 
 [测速](http://speedtest-nyc3.digitalocean.com/)
 
-
-
-speedtest-nyc3.digitalocean.com   n0
-
-speedtest-nyc2.digitalocean.com 350+
-
-speedtest-nyc1.digitalocean.com  320+
-
-
-
-speedtest-sfo1.digitalocean.com   能到500 还丢包
-
-speedtest-sfo2.digitalocean.com  比1强点
-
-speedtest-sgp1.digitalocean.com   100+   比较好啊
+推荐: 日本 旧金山
 
 
 
@@ -118,7 +116,9 @@ https://indovirtue.com/premium-singapore-ssd-vps
 
 https://www.gigsgigscloud.com/singapore-cloud-vps-kvm/ — 看评论说服务不好,可以先试试
 
+ZQzxcvbnm,./123456
 
+https://rectified.net/ddos-protected-vps.php
 
 
 
@@ -129,6 +129,10 @@ http://virpus.com/ssd-cache-vps.php
 优惠码: `P17`
 
 
+
+## 适合搭梯子:
+
+https://rectified.net/vpn-tunnel.php
 
 ## 更多查看	
 
@@ -180,6 +184,38 @@ https://www.wn789.com/4689.html
 
 
 ## BBR [推荐使用]
+
+```shell
+wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
+
+chmod +x bbr.sh
+
+./bbr.sh
+```
+
+
+
+开启:
+
+```shell
+sysctl -p
+```
+
+
+
+測試:
+
+```shell
+sysctl net.ipv4.tcp_available_congestion_control
+
+sysctl net.core.default_qdisc
+
+lsmod | grep bbr
+```
+
+
+
+
 
 https://teddysun.com/489.html
 
@@ -293,7 +329,11 @@ curl -o finalshell_install.sh http://www.hostbuf.com/downloads/finalshell_instal
 
 
 
+# DNS污染问题
 
+https://dnscrypt.org/
+
+https://www.logcg.com/archives/981.html
 
 
 
