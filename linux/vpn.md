@@ -118,6 +118,8 @@ https://www.gigsgigscloud.com/singapore-cloud-vps-kvm/ — 看评论说服务不
 
 ZQzxcvbnm,./123456
 
+http://rentvps.com/
+
 https://rectified.net/ddos-protected-vps.php
 
 
@@ -334,6 +336,16 @@ curl -o finalshell_install.sh http://www.hostbuf.com/downloads/finalshell_instal
 https://dnscrypt.org/
 
 https://www.logcg.com/archives/981.html
+
+
+
+参考DNS配置
+
+http://www.ip.cn/dns.html
+
+
+
+360 网站卫士、百度云加速、加速乐等全站 cdn,又拍云
 
 
 
