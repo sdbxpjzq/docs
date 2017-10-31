@@ -40,6 +40,18 @@ https://teddysun.com/486.html
 
 https://github.com/hwdsl2/setup-ipsec-vpn/blob/master/README-zh.md
 
+```shell
+service ipsec start       
+chkconfig ipsec on 
+
+service xl2tpd start        
+chkconfig xl2tpd on 
+```
+
+
+
+
+
 
 
 ## 使用chrome插件配合
@@ -347,6 +359,11 @@ http://www.ip.cn/dns.html
 
 360 网站卫士、百度云加速、加速乐等全站 cdn,又拍云
 
+# 买VPN
+
+https://www.fastwebcn.com/5-best-vpn-in-china.html
+
+https://ssrcenter.net/
 
 
 
@@ -354,6 +371,9 @@ http://www.ip.cn/dns.html
 
 
 
+# 国内
+
+[景安云](https://www.zzidc.com/)
 
 
 
