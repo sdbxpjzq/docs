@@ -1,18 +1,18 @@
-### [javascript](javascript/javascript.md)
+### [javascript](base/javascript/javascript.md)
 
-### [Array](javascript/Array.md)
+### [Array](base/javascript/Array.md)
 
-### [Date](javascript/Date.md)
+### [Date](base/javascript/Date.md)
 
-### [Math](javascript/Math.md)
+### [Math](base/javascript/Math.md)
 
-### [RegExp ](javascript/regExp.md)
+### [RegExp ](base/javascript/regExp.md)
 
-### [常见事件](javascript/常用事件.md)
+### [常见事件](base/javascript/常用事件.md)
 
-### [ES6](javascript/ES6.md)
+### [ES6](base/javascript/ES6.md)
 
-### [js库](javascript/library.md)
+### [js库](base/javascript/library.md)
 
-### [题目](javascript/TiMu.md)
+### [题目](base/javascript/TiMu.md)
 

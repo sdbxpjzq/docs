@@ -1,6 +1,6 @@
-## [Linux](linux/linux.md)
+## [Linux](base/linux/linux.md)
 
-## [VPN搭建](linux/vpn.md)
+## [VPN搭建](base/linux/vpn.md)
 
 
 

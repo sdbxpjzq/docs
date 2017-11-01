@@ -1,1 +1,1 @@
-## [Mysql基础](mysql/mysql.md)
+## [Mysql基础](base/mysql/mysql.md)
