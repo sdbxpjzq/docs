@@ -4,7 +4,7 @@
 
 # vue2.0手册
 
-- https://vuefe.cn/v2/api/ 
+- https://vuefe.cn/v2/guide/
 
 
 

@@ -144,3 +144,42 @@ export default {
 
 1. https://segmentfault.com/a/1190000007387556
 
+
+
+
+# 懒加载
+
+我们我要路由对应的组件定义成异步组件
+
+```js
+const SendMsg  = resolve => {
+  // require.ensure 是 Webpack 的特殊语法，用来设置 code-split point
+  // （代码分块）
+    require.ensure(['@/components/page/SendMsg.vue'],()=>{
+        resolve(require('@/components/page/SendMsg.vue'))
+    })
+}
+```
+
+```js
+{
+    path: '/sendmsg',
+    component: SendMsg
+}
+```
+
+还有一种简单的写法:
+
+```js
+{
+	path: '/sendmsg',
+    component: resolve => require(['../components/page/SendMsg.vue'], resolve)
+                }
+```
+
+
+
+
+
+
+
