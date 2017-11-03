@@ -352,6 +352,12 @@ centos7采用`firewall`
 
 ## ln -s 
 
+```shell
+ ln -s 源文件 目标文件
+ demo:
+ ln -s /node/bin/pm2 /usr/local/bin/pm2
+```
+
 在/etc/rc.d/rc*.d目录中建立/etc/init.d/服务的软链接(*代表0～6七个运行级别之一）
 
 在Linux中有7种运行级别（可在*/etc/inittab*文件设置），每种运行级别分别对应着*/etc/rc.d/rc[0~6].d*这7个目录
