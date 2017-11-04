@@ -210,7 +210,7 @@ echo foo; // BAR
 
 
 
-# header() 跳转
+# header() 
 
 ```
 header(string,replace,http_response_code)
@@ -228,9 +228,19 @@ header(string,replace,http_response_code)
 
 1. `header('Location: url')`
 2. `header('Content-Type: ')`
-3. `header('Refresh: 3; url=www.baidu.com')`— 3s后跳转
 
 跳转之后直接使用`exit()`或者 `die()`退出.
+
+## 延时跳转
+
+```php
+header("refresh:3;url=https://m.mafengwo.cn");
+echo "正在加载,3秒后自动跳转...";
+```
+
+
+
+
 
 
 

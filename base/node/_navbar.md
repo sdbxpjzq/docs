@@ -1,4 +1,4 @@
 - [返回首页](/)
-- [返回导航目录](node/index)
+- [返回导航目录](base/node/index)
 
 
