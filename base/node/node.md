@@ -1,3 +1,44 @@
+[TOC]
+
+
+
+
+
+
+
+
+
+https://github.com/Molunerfinn/vue-koa-demo/blob/master/Vue%2BKoa.md
+
+
+
+
+
+# url模块
+
+```js
+const url = require('url');
+
+```
+
+
+
+# http模块
+
+
+
+
+
+
+
+# module.exports与exports
+
+http://weizhifeng.net/node-js-exports-vs-module-exports.html
+
+
+
+
+
 
 
 # nrm 源管理

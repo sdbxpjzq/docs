@@ -216,6 +216,26 @@ ln -s /home/kun/mysofltware/node-v0.10.28-linux-x64/bin/npm /usr/local/bin/npm
 
   8989  
 
+
+
+# curl
+
+http://www.cnblogs.com/gbyukg/p/3326825.html
+
+```
+1 # 将文件下载到本地并命名为mygettext.html
+2 curl -o mygettext.html http://www.gnu.org/software/gettext/manual/gettext.html
+3 
+4 # 将文件保存到本地并命名为gettext.html
+5 curl -O http://www.gnu.org/software/gettext/manual/gettext.html
+```
+
+**同时获取多个文件**
+
+```
+ curl -O URL1 -O URL2
+```
+
 # nmap 探测端口占用情况
 
 `yum -y install namp`
@@ -555,16 +575,6 @@ nohup php test.php &
 ## tar.gz    
 
 -  `tar   -zxvf   xx.tar.gz` — 解压
-
-# Linux升级安装GCC
-
-https://itbilu.com/linux/management/V1vdnt9ll.html
-
-
-
-## 升级动态库
-
-https://itbilu.com/linux/management/NymXRUieg.html
 
 
 

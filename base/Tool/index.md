@@ -1,10 +1,10 @@
-## [代码工具库](Tool/code.md)
+## [代码工具库](base/Tool/code.md)
 
-## [mac软件推荐](Tool/mac.md)
+## [mac软件推荐](base/Tool/mac.md)
 
-## [业务代码总结](Tool/dailySummary.md)
+## [业务代码总结](base/Tool/dailySummary.md)
 
-## [监控工具](Tool/jianKongTool.md)
+## [监控工具](base/Tool/jianKongTool.md)
 
 
 

@@ -189,7 +189,7 @@ https://ithelp.ithome.com.tw/articles/10138150
 
 # git push
 
-``git push origin branch-name --force` ` —force 强制推送
+`git push origin branch-name --force` —force 强制推送
 
 
 
