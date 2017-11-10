@@ -2,6 +2,16 @@
 
 
 
+# 公司排名
+
+![](https://ws4.sinaimg.cn/large/006tNc79gy1flcririmr9j30k0478123.jpg)
+
+
+
+
+
+
+
 # 图片的存储问题
 
 **存储物理地址**
