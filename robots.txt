@@ -1,0 +1,6 @@
+# robots.txt generated at http://tool.chinaz.com/robots/
+User-agent: *
+Disallow:
+Disallow: /base/
+Sitemap: https://docs.zongqilive.cn/sitemap.html
+Sitemap: https://docs.zongqilive.cn/sitemap.xml
