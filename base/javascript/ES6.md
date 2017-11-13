@@ -1,3 +1,280 @@
+[TOC]
+
+# Generator 函数
+
+从语法上，首先可以把它理解成，Generator 函数是一个状态机，封装了多个内部状态。
+
+形式上，Generator 函数是一个普通函数，但是有两个特征。
+
+- `function`关键字与函数名之间有一个星号(`*`)
+- 函数体内部使用`yield`表达式，定义不同的内部状态（`yield`在英语里的意思就是“产出”）
+
+```js
+function* helloWorldGenerator() {
+  yield 'hello';
+  yield 'world';
+  return 'ending';
+}
+
+var hw = helloWorldGenerator();
+```
+
+Generator 函数的调用方法与普通函数一样，也是在函数名后面加上一对圆括号。不同的是，调用 Generator 函数后，该函数并不执行，返回的也不是函数运行结果，而是一个指向内部状态的指针对象.
+
+必须调用遍历器对象的`next`方法，使得指针移向下一个状态。也就是说，每次调用`next`方法，内部指针就从函数头部或上一次停下来的地方开始执行，直到遇到下一个`yield`表达式（或`return`语句）为止。
+
+换言之，Generator 函数是分段执行的，`yield`表达式是暂停执行的标记，而`next`方法可以恢复执行.
+
+```js
+hw.next()
+// { value: 'hello', done: false }
+
+hw.next()
+// { value: 'world', done: false }
+
+hw.next()
+// { value: 'ending', done: true }
+
+hw.next()
+// { value: undefined, done: true }
+```
+
+每次调用遍历器对象的`next`方法，就会返回一个有着`value`和`done`两个属性的对象。`value`属性表示当前的内部状态的值，是`yield`表达式后面那个表达式的值；`done`属性是一个布尔值，表示是否遍历结束。
+
+
+
+## yield 表达式
+
+`yield`表达式就是暂停标志.
+
+遍历器对象的`next`方法的运行逻辑如下。
+
+（1）遇到`yield`表达式，就暂停执行后面的操作，并将紧跟在`yield`后面的那个表达式的值，作为返回的对象的`value`属性值。
+
+（2）下一次调用`next`方法时，再继续往下执行，直到遇到下一个`yield`表达式。
+
+（3）如果没有再遇到新的`yield`表达式，就一直运行到函数结束，直到`return`语句为止，并将`return`语句后面的表达式的值，作为返回的对象的`value`属性值。
+
+（4）如果该函数没有`return`语句，则返回的对象的`value`属性值为`undefined`。
+
+
+
+
+
+
+
+# async/await 
+
+async 函数是什么？一句话，它就是 Generator 函数的语法糖。
+
+```
+let foo = await getFoo();
+let bar = await getBar();
+```
+
+`getFoo`和`getBar`是两个独立的异步操作（即互不依赖），被写成继发关系。这样比较耗时，因为只有`getFoo`完成以后，才会执行`getBar`，完全可以让它们同时触发。
+
+```
+// 写法一
+let [foo, bar] = await Promise.all([getFoo(), getBar()]);
+
+// 写法二
+let fooPromise = getFoo();
+let barPromise = getBar();
+let foo = await fooPromise;
+let bar = await barPromise;
+```
+
+上面两种写法，`getFoo`和`getBar`都是同时触发，这样就会缩短程序的执行时间。
+
+
+
+[参考](http://es6.ruanyifeng.com/#docs/async)
+
+
+
+# class
+
+- 类的数据类型就是函数，类本身就指向构造函数。
+- 前面不需要加上`function`这个关键字，直接把函数定义放进去了就可以了
+- 方法之间不需要逗号分隔，加了会报错
+- `constructor`方法是类的默认方法，通过`new`命令生成对象实例时，自动调用该方法。一个类必须有`constructor`方法，如果没有显式定义，一个空的`constructor`方法会被默认添加。
+- 类必须使用`new`调用，否则会报错。
+
+```js
+class Bar {
+  constructor() {
+      // 构造方法
+  }
+  
+  doStuff() {
+    console.log('stuff');
+  }
+  hello() {
+    console.log('hello');
+  }
+}
+
+var b = new Bar();
+b.doStuff() // "stuff"
+
+typeof Bar // "function"
+Bar === Bar.prototype.constructor // true
+```
+
+## constructor 方法
+
+```js
+class Point {
+}
+
+// 等同于
+class Point {
+  constructor() {}
+}
+```
+
+## 私有方法
+
+- 在命名上加以区别 , 添加`_`下划线
+
+```js
+class Widget {
+
+  // 公有方法
+  foo (baz) {
+    this._bar(baz);
+  }
+
+  // 私有方法
+  _bar(baz) {
+    return this.snaf = baz;
+  }
+
+  // ...
+}
+```
+
+- 将私有方法移出模块
+
+```js
+class Widget {
+  foo (baz) {
+    bar.call(this, baz);
+  }
+
+  // ...
+}
+
+function bar(baz) {
+  return this.snaf = baz;
+}
+```
+
+- 利用`Symbol`值的唯一性，将私有方法的名字命名为一个`Symbol`值
+
+```js
+const bar = Symbol('bar');
+const snaf = Symbol('snaf');
+
+export default class myClass{
+
+  // 公有方法
+  foo(baz) {
+    this[bar](baz);
+  }
+
+  // 私有方法
+  [bar](baz) {
+    return this[snaf] = baz;
+  }
+
+  // ...
+};
+```
+
+
+
+## 私有属性和私有方法
+
+在属性名和方法名之前，使用`#`表示.
+
+```js
+class Point {
+  #x;
+
+  constructor(x = 0) {
+    #x = +x; // 写成 this.#x 亦可
+  }
+
+  get x() { return #x }
+  set x(value) { #x = +value }
+}
+```
+
+
+
+## 静态方法
+
+如果在一个方法前，加上`static`关键字，就表示该方法不会被实例继承，而是直接通过类来调用，这就称为“静态方法”。
+
+```js
+class Foo {
+  static classMethod() {
+    return 'hello';
+  }
+}
+
+Foo.classMethod() // 'hello'
+```
+
+
+
+## 静态属性
+
+ES6中可以定义静态方法，但是不能直接定义静态属性（ES7已经提了关于静态属性语法的草案）.
+
+- ### 在类定义完毕之后赋值
+
+```js
+class DB {
+ static initPool () {
+   return DB.msg;
+ }
+}
+DB.msg = 'hello world';
+```
+
+- ### 使用ES7最新的静态属性语法（目前还是草案，但可用babel编译）
+
+```js
+class DB {
+  static msg = 'hello world';
+ static initPool () {
+   return DB.msg;
+ }
+}
+```
+
+- ### 使用静态getter
+
+```js
+class DB {
+    static get pool () {
+        return DB.initPool()
+    }
+    static initPool () {
+        return 'hello world';
+    }
+}
+```
+
+
+
+[参考](http://es6.ruanyifeng.com/#docs/class)
+
+
+
 # Promise
 
 http://www.jianshu.com/p/063f7e490e9a
@@ -42,7 +319,7 @@ XHR.onreadystatechange = function() {
         result = XHR.response;
         console.log(result);
 
-        // 伪代码
+        //  参数依赖上次的返回值
         var url2 = 'http:xxx.yyy.com/zzz?ddd=' + result.someParams;
         var XHR2 = new XMLHttpRequest();
         XHR2.open('GET', url, true);

@@ -369,6 +369,12 @@ https://avwo.github.io/whistle/rules/weinre.html
 2. 新建窗口— `tmux new -n <窗口名>`
 3. 装了 oh-my-zsh 的话，自定义窗口名不起作用,修改zsh的配置文件,打开`DISABLE_AUTO_TITLE="true"`
 
+# 文件同步
+
+https://syncthing.net/
+
+
+
 # 其他工具
 
 - 微信开发者工具
