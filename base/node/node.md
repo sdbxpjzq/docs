@@ -81,6 +81,84 @@ Basic认证（基本身份验证），这个值将被计算成请求头中的 Au
 
 
 
+# Buffer
+
+http://www.runoob.com/nodejs/nodejs-buffer.html
+
+JavaScript 语言自身只有字符串数据类型，没有二进制数据类型。
+
+但在处理像TCP流或文件流时，必须使用到二进制数据。因此在 Node.js中，定义了一个 Buffer 类，该类用来创建一个专门存放二进制数据的缓存区。
+
+## 创建 Buffer 类
+
+- 创建长度为 10 字节的 Buffer 实例：
+
+```js
+var buf = new Buffer(10);
+```
+
+- 通过给定的数组创建 Buffer 实例：
+
+```js
+ var buf = new Buffer([1,3.14]);
+buf[0]; // 1
+buf[1]; // 3 并不是 3.14,
+```
+
+
+
+![](https://ws1.sinaimg.cn/large/006tKfTcly1flhdc4f6zsj30po0gkdgg.jpg)
+
+
+
+![](https://ws3.sinaimg.cn/large/006tKfTcly1flhdbnybvlj314o0kwdjt.jpg)
+
+
+
+# fs 模块  — 文件系统
+
+fs 模块）模块中的方法均有异步和同步版本.例如读取文件内容的函数有异步的 fs.readFile() 和同步的 fs.readFileSync()。
+
+异步的方法函数最后一个参数为回调函数，回调函数的第一个参数包含了错误信息(error)。
+
+![](https://ws1.sinaimg.cn/large/006tKfTcly1fliimiz92kj31900sudnz.jpg)
+
+
+
+
+
+# Stream 流
+
+`Stream` 有四种流类型：
+
+- **Readable** - 可读操作。
+- **Writable** - 可写操作。
+- **Duplex** - 可读可写操作.
+- **Transform** - 操作被写入数据，然后读出结果
+
+![](https://ws3.sinaimg.cn/large/006tKfTcgy1fliplexywej30ys0ewabe.jpg)
+
+
+
+所有的 `Stream` 对象都是` EventEmitter` 的实例。常用的事件有：
+
+- **data** - 当有数据可读时触发。
+- **end** - 没有更多的数据可读时触发。
+- **error** - 在接收和写入过程中发生错误时触发。
+- **finish** - 所有数据已被写入到底层系统时触发。
+
+
+
+
+
+![](https://ws1.sinaimg.cn/large/006tKfTcgy1flijcpy0shj313a0s2tex.jpg)
+
+
+
+
+
+
+
 
 
 
