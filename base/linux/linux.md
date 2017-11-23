@@ -214,7 +214,15 @@ ln -s /home/kun/mysofltware/node-v0.10.28-linux-x64/bin/npm /usr/local/bin/npm
 
 ​    这里/home/kun/mysofltware/这个路径是你自己放的，你将node文件解压到哪里就是哪里。
 
-  8989  
+ 
+
+# MongoDB 安装
+
+官网: `https://www.mongodb.com`
+
+
+
+
 
 
 

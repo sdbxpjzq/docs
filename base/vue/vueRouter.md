@@ -179,6 +179,29 @@ const SendMsg  = resolve => {
 
 
 
+# 路由守卫
+
+https://router.vuejs.org/zh-cn/advanced/navigation-guards.html
+
+每次每一个路由改变的时候都得执行一遍.
+
+```js
+router.beforeEach(function (to,from,next) {
+//    每次每一个路由改变的时候都得执行一遍
+    next(); // 必须调通
+});
+```
+
+afterEach 没有 next 方法，不能改变导航，代表已经确定好了导航怎么去执行后，附带的一个执行钩子函数.
+
+```js
+router.afterEach(function (to, from) {
+    // todo
+});
+```
+
+
+
 
 
 

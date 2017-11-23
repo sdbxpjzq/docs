@@ -130,9 +130,11 @@ app.listen(3000);
 
 
 
+# 跨域问题
 
+https://github.com/zadzbw/koa2-cors
 
-
+http://www.jianshu.com/p/d7fcd17d79a9
 
 
 

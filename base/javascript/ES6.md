@@ -1,5 +1,26 @@
 [TOC]
 
+
+
+# Symbol数据类型
+
+凡是属性名属于 Symbol 类型，就都是独一无二的，可以保证不会与其他属性名产生冲突。
+
+```js
+let s = Symbol();
+typeof s; // "symbol"
+```
+
+> `Symbol`函数前不能使用`new`命令，否则会报错。这是因为生成的 Symbol 是一个原始类型的值，不是对象.
+
+
+
+[参考](http://es6.ruanyifeng.com/#docs/symbol)
+
+
+
+
+
 # Generator 函数
 
 从语法上，首先可以把它理解成，Generator 函数是一个状态机，封装了多个内部状态。
