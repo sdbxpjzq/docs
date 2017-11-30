@@ -30,3 +30,20 @@ function checkout($scope){
 
 
 如果想 ng-change 触发的函数里获取到该触发该函数的元素不能直接传入 this ，而需要传入 $event 。因为在 Angularjs 里面，这个地方的 this 是 $scope 。我们可以传入 $event ，然后在 函数里面通过 $event.target 来获取到该元素。
+
+
+
+# ng-style
+
+条件判断
+
+```js
+<h1 ng-style="{'color': true ? 'green' : 'red' }">菜鸟教程</h1
+```
+
+
+
+
+
+
+

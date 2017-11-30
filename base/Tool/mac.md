@@ -421,7 +421,6 @@ https://www.mockplus.cn/
 
 1. 转大小写(Toggle Case) — `Command+Shift+U`
 2. 列出左侧文件（command + 1）
-3. ​
 
 ## 自动代码
 
@@ -452,6 +451,19 @@ https://www.mockplus.cn/
 - `command + shift + tab` 切换tab页文件
 - `command + shift + +,-` 展开或缩起
 - `command + .` 折叠或展开选中的代码
+
+
+
+
+## 插件推荐
+
+- `Scroll From Source`  — 自动文件定位
+- `dash`
+- `CodeGlance`
+- `IdeaVim`
+- `WakaTime`
+
+
 
 
 

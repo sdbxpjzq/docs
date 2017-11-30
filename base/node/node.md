@@ -259,6 +259,14 @@ http://bubkoo.com/2014/12/02/use-nodemon-with-node-applications/#undefined
 
 
 
+# 发送请求的模块
+
+[SuperAgent](http://www.jianshu.com/p/98b854322260)
+
+request模块
+
+
+
 很好的聊天方式啊
 
 http://zhangwenli.com/#ovilia-home
