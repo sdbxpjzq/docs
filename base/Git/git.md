@@ -195,8 +195,6 @@ https://ithelp.ithome.com.tw/articles/10138150
 
 # git rebase
 
-用于把一个分支的修改合并到当前分支
-
 
 
 # git merge

@@ -2,6 +2,62 @@
 
 
 
+[ECMAScript 6 入门](http://es6.ruanyifeng.com/)
+
+
+
+# 展开运算符 `...`
+
+[参考](https://segmentfault.com/a/1190000007022442)
+
+## 函数传参
+
+ES5写法:
+
+```js
+function myFunction(x, y, z) { }
+var args = [0, 1, 2];
+myFunction.apply(null, args);
+```
+
+ES6写法:
+
+```js
+function myFunction(x, y, z) { }
+var args = [0, 1, 2];
+myFunction(...args);
+```
+
+
+
+## 数据构造
+
+- 两个对象连接返回新的对象
+
+```js
+let a = {aa:'aa'}
+let b = {bb:'bb'}
+let c = {...a,...b}
+console.log(c)
+// {"aa":"aa","bb":"bb"}
+```
+
+- 数组+字符串
+
+```js
+let j = ['jj']
+let k = 'kk'
+let l = [...j,k]
+console.log(l)
+// ["jj","kk"]
+```
+
+
+
+
+
+
+
 # Symbol数据类型
 
 凡是属性名属于 Symbol 类型，就都是独一无二的，可以保证不会与其他属性名产生冲突。
