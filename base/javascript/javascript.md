@@ -772,6 +772,24 @@ document.addEventListener("mozvisibilitychange", ajaxTime);
 
 
 
+# 前端创建文件和下载
+
+## download属性
+
+HTML5中给`a`标签增加了一个`download`属性，只要有这个属性，点击这个链接时浏览器就不在打开链接指向的文件，而是改为下载. 适合从服务端下载文件
+
+```html
+download=“not-a-file.js”
+```
+
+## DataURI
+
+```js
+ <img src=”data:image/gif;base64,R0lGOXXXXX">
+```
+
+[关于DataURI](https://sjolzy.cn/What-is-the-data-URI-scheme-and-how-to-use-the-data-URI-scheme.html)
+
 
 
 

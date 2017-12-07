@@ -1,6 +1,6 @@
 # 基础命令
 
-##### checkbox
+## checkbox
 
 `<input type="checkbox" ng-mudel="name" ng-true-value="yes" ng-false-value="no" ng-change="fn()">`
 
@@ -33,7 +33,7 @@ function checkout($scope){
 
 
 
-# ng-style
+## ng-style
 
 条件判断
 
@@ -42,6 +42,23 @@ function checkout($scope){
 ```
 
 
+
+## ng-options
+
+填充下拉列表
+
+```js
+<select ng-model="one" 
+		ng-options="item.k as item.v for item in [{k:'type',v:'品类'},{k:'mdd',v:'目的地'}]">
+	<option value="" selected>选择tag</option>
+</select>
+```
+
+设置默认值:
+
+```js
+$scope.one = 'type';
+```
 
 
 
