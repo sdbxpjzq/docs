@@ -466,6 +466,12 @@ https://www.mockplus.cn/
 
 
 
+## 忽略 `node_module`文件
+
+`File -> Setting -> Editor -> File types -> Ignore files and folders`
+
+在`Ignore files and folders`最后加上`node_modules`;保存就可以了，然后重启WebStorm一切就将改变。
+
 
 
 
@@ -510,3 +516,5 @@ command + 1/2/3... ： 在多个不同的session标签之间切换
 https://www.waitsun.com/
 
 http://xclient.info/
+
+http://www.amegaz.com/

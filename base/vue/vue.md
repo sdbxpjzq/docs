@@ -130,6 +130,14 @@ http://jingyan.baidu.com/article/acf728fd5ee4acf8e510a3cc.html
 
 
 
+## keep-alive
+
+<keep-alive>是Vue的内置组件，能在组件切换过程中将状态保留在内存中，防止重复渲染DOM。
+
+
+
+
+
 
 
 
@@ -596,6 +604,14 @@ child.vue
 - 父组件中注册子组件
 - 在子组件标签中添加子组件props中创建的属性
 - 把需要传给子组件的值赋给该属性
+
+
+
+
+
+
+
+
 
 
 
