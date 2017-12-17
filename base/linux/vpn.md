@@ -343,6 +343,14 @@ curl -o finalshell_install.sh http://www.hostbuf.com/downloads/finalshell_instal
 
 
 
+
+
+# 免费的ss
+
+[freess](https://get.freess.today/)
+
+
+
 # DNS污染问题
 
 https://dnscrypt.org/

@@ -179,17 +179,7 @@ https://www.nmfox.com/2015/10/22/370.html
 
 ## 安装2
 
-https://lnmp.org/faq/addons.html
-
-### 虚拟机配置
-
-创建虚拟主机
-
-`lnmp vhost add [name]`
-
-https://lnmp.org/faq/lnmp-vhost-add-howto.html
-
-
+https://lamp.sh/
 
 # Node安装
 
