@@ -6,6 +6,23 @@
 
 
 
+# ES6==>ES5
+
+在线转换
+
+1. Babel，[在线转换地址](https://babeljs.io/repl/#?babili=false&evaluate=true&lineWrap=false&presets=es2015,react,stage-2&targets=&browsers=&builtIns=false&debug=false&code=) 
+2. Traceur，Google公司出品，[在线转换地址](http://google.github.io/traceur-compiler/demo/repl.html#)
+
+
+
+Babel-cli
+
+`npm install -g babel-cli`
+
+
+
+
+
 # 展开运算符 `...`
 
 [参考](https://segmentfault.com/a/1190000007022442)
@@ -72,6 +89,85 @@ typeof s; // "symbol"
 
 
 [参考](http://es6.ruanyifeng.com/#docs/symbol)
+
+
+
+# 函数扩展
+
+## 函数参数的默认值
+
+ES5:
+
+```js
+function calc(x, y) {
+  x = x || 0;
+  y = y || 0;
+  // to do with x, y
+   return x+y
+}
+```
+
+ES6:
+
+```js
+function calc(x = 0, y = 0) {
+  x = x || 0;
+  y = y || 0;
+  // to do with x, y
+  // return x/y
+}
+```
+
+以下几点需要注意：
+
+1.  定义了默认参数后，函数的length属性会减少，即有几个默认参数不包含在length的计算当中.
+
+```js
+function calc(x=0, y=0) {
+  // ...
+  console.log(x, y)
+}
+function ajax(url, async=true, dataType="JSON") {
+  // ...
+  console.log(url, async, dataType)
+}
+console.log(calc.length); // 0
+console.log(ajax.length); // 1
+```
+
+2. 不能用`let`和`const`再次声明默认值，`var`可以
+
+```js
+function ajax(url="../user.action", async=true, success) {
+  var url = ''; // 允许
+  let async = 3; // 报错
+  const success = function(){}; // 报错
+}
+
+```
+
+3. 默认参数可以不是一个值类型，它可以是一个函数调用
+
+```js
+例如，利用这个特性可以强制指定某参数必须传，不传就报错
+function throwIf() {
+  throw new Error('少传了参数');
+}
+ 
+function ajax(url=throwIf(), async=true, success) {
+  return url;
+}
+ajax(); // Error: 少传了参数
+
+```
+
+
+
+
+
+
+
+
 
 
 

@@ -166,6 +166,16 @@ https://www.ipip.net/traceroute.php
 
 ## 锐速破解版
 
+https://www.91yun.co/archives/683
+
+检测是不是kvm
+
+```shell
+wget -N --no-check-certificate https://raw.githubusercontent.com/91yun/code/master/vm_check.sh && bash vm_check.sh
+```
+
+
+
 ```shell
 yum -y install wget
 
@@ -176,22 +186,7 @@ bash serverspeeder.sh
 
 ### 内核不合适问题
 
-centos6
-
-```shell
-uname -r #查看当前内核版本
-
-rpm -ivh http://xz.wn789.com/CentOSkernel/kernel-firmware-2.6.32-504.3.3.el6.noarch.rpm
-
-rpm -ivh http://xz.wn789.com/CentOSkernel/kernel-2.6.32-504.3.3.el6.x86_64.rpm --force
-```
-
-安装完成后
-
-```shell
-reboot
-uname -r #当前使用内核版本
-```
+https://www.91yun.co/serverspeeder91yun
 
 https://www.wn789.com/4689.html
 

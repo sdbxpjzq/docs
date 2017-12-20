@@ -86,6 +86,20 @@
 
 
 
+# 原型模式 prototype
+
+是指用原型实例指向创建对象的种类, 并且通过拷贝这些原型创建新的对象.
+
+![](https://ws2.sinaimg.cn/large/006tNc79ly1fmjwzzliepj31kw0gln4k.jpg)
+
+
+
+
+
+
+
+
+
 
 
 # 工厂方法模式 Factory

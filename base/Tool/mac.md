@@ -417,6 +417,12 @@ https://www.mockplus.cn/
 
 
 
+# Sublime汉化
+
+http://www.sdifen.com/sublimetextlanguage.html
+
+
+
 # phpstrom 快捷键
 
 1. 转大小写(Toggle Case) — `Command+Shift+U`
