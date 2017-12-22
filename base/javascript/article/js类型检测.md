@@ -10,14 +10,22 @@ js中有7种类型:
 
 ```js
 typeof(function)  // function
+
 typeof(undefined)  // undefined
+
 typeof(null) // object
+
 typeof([1,23]) // object
 typeof({a:'hello'}) // object
 typeof (/\d/) // object
+
 typeof(1) // number
+typeof(NaN)// number // NaN 还是number
+
 typeof('hello') // string
+
 typeof(false) // boolean
+
 
 ```
 
@@ -167,6 +175,20 @@ o.constructor == C; // true
 o.constructor == D.prototype.constructor;//true
 o.constructor == Object.prototype.constructor;// false
 ```
+
+
+
+## Array.isArray()
+
+新版本js自带的方法`Array.isArray()`. 判断是否是数组.
+
+```js
+Array.isArray(obj)
+```
+
+
+
+
 
 # 参考
 
