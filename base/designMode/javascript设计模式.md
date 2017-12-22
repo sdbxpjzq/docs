@@ -86,11 +86,221 @@
 
 
 
-# 原型模式 prototype
+# 原型模式 — Object.create 与 prototype
 
-是指用原型实例指向创建对象的种类, 并且通过拷贝这些原型创建新的对象.
+## 说明
 
-![](https://ws2.sinaimg.cn/large/006tNc79ly1fmjwzzliepj31kw0gln4k.jpg)
+使用原型实例来 拷贝 创建新的可定制的对象；新建的对象，不需要知道原对象创建的具体过程
+
+过程：`Prototype => new ProtoExam => clone to new Object`
+
+## 应用场景
+
+原型模式，一般用于 抽象结构复杂，但内容组成差不多，抽象内容可定制，新创建只需在原创建对象上稍微修改即可达到需求的情况；
+
+## 相关代码:
+
+```js
+function UserInfo() {
+        this.name = '';
+        this.age = 0;
+        this.sex = '';
+    }
+    UserInfo.prototype.listInfo = function () {
+        let info = '个人信息, 姓名: '+this.name+', 年龄: '+this.age+', 性别:'+this.sex;
+        console.log(info)
+    }
+
+    let _userInfo = new UserInfo(); // 原型实例
+    let person_01 = Object.create(_userInfo);
+    person_01.name = '小明';
+    person_01.age = 20;
+    person_01.sex = '男';
+    person_01.listInfo();
+
+    let  person_02 = Object.create(_userInfo);
+    person_02.name = '小红';
+    person_02.age = 25;
+    person_02.sex = '女';
+    person_02.listInfo();
+```
+
+输出:
+
+```js
+个人信息, 姓名: 小明, 年龄: 35, 性别: 男
+个人信息, 姓名: 小华, 年龄: 33, 性别: 女
+```
+
+
+
+## 作用和注意:
+
+![](https://ws2.sinaimg.cn/large/006tKfTcgy1fmoeml3zzlj31gc0f0777.jpg)
+
+## 深拷贝和浅拷贝
+
+ js中`基本类型的赋值`为深拷贝，而`引用类型的赋值`为浅拷贝.
+
+###### 浅拷贝:
+
+就是把**数据的地址**赋值给对应变量，而没有把具体的数据复制给变量，变量会随数据值的变化而变化。
+
+```js
+var myobj = {
+        str: 'zongqi',
+        num:1,
+        myarr:[30,{
+            arrgo: 'i am arr'
+        }],
+        myobj:{
+            innerobj:{
+                test:25
+            },
+            innerstr:"innerstrzongqi"
+        }
+    }
+
+    // 浅拷贝
+    function clone(obj) {
+        var ret = {};
+        for (var k in obj){
+            ret[k] = obj[k]
+        }
+        return ret;
+    }
+
+var res = clone(myobj);
+    res.myobj.innerstr = 6000; // 将原型给改了  这浅拷贝
+    console.log('outres');
+    console.log(res);
+    console.log('myobj');
+    console.log(myobj);
+```
+
+
+
+###### 深拷贝:
+
+就是把数据赋值给对应的变量，从而产生一个与源数据不相干的新数据(数据地址已变化)。
+
+```js
+var myobj = {
+        str: 'zongqi',
+        num:1,
+        myarr:[30,{
+            arrgo: 'i am arr'
+        }],
+        myobj:{
+            innerobj:{
+                test:25
+            },
+            innerstr:"innerstrzongqi"
+        }
+    }
+
+// 深拷贝
+    function clone2(obj) {
+        var ret,b;
+        if ( (b = obj instanceof Array) || obj instanceof Object){
+            ret = b? []: {};
+            for (var k in obj){
+                if (obj[k] instanceof Array || obj[k] instanceof Object){
+                    ret[k] = clone2(obj[k]);
+                }else {
+                    ret[k] = obj[k];
+                }
+            }
+        }
+        return ret;
+    }
+
+var res2 = clone2(myobj);
+    res2.myobj.innerstr = 6000; // 只是修改了res2的数据, myobj数据没有修改
+    console.log('outres2');
+    console.log(res2);
+    console.log('myobj');
+    console.log(myobj);
+```
+
+[设计模式 JavaScript 之 原型模式 : Object.create 与 prototype](http://www.cnblogs.com/editor/p/4167653.html)
+
+
+
+# 责任链模式
+
+## 定义
+
+责任链接模式又称职责链模式，是一种对象的行为模式；它是一种链式结构，每个节点都有可能两种操作，要么处理该请求停止该请求操作，要么把请求转发到下一个节点，让下一个节点来处理请求；该模式定义了一些可能的处理请求的节点对象，请求的起点跟顺序都可能不一样，处理的节点根据请求的不一样而不同；请求者不必知道数据处理完成是由谁来操作的，内部是一个黑箱的操作过程，这是它的一个核心内容；
+
+demo解读:
+
+ BOSS要用php实现一段功能, 但是BOSS可不会写代码, 然后交给了项目经理, 项目经理也不会写代码, 最终交给了Coder来实现.
+
+BOSS —> 项目经理 —> Coder
+
+类似于 DOM冒泡
+
+```js
+
+ // 程序员
+    function Coder() {}
+    Coder.prototype.writeCode = function (code) {
+        console.log('ing....'+code);
+    }
+
+    // 项目经理
+    function XiangMuVp() {
+        this.Coder = new Coder;
+    }
+    XiangMuVp.prototype.writeCode = function (code) {
+        this.Coder.writeCode(code);
+    }
+
+    // 老板
+    function Boss() {
+        this.XiangMuVp = new XiangMuVp;
+    }
+    // 老板的需求
+    Boss.prototype.writeCode = function (code) {
+        // 用代码实现功能
+        // 找项目经理实现一个功能
+        this.XiangMuVp.writeCode(code);
+    }
+
+
+    var  begain = new Boss(new XiangMuVp(new Coder()));
+    begain.writeCode('php');
+
+```
+
+[javascript 之 责任链模式](http://www.cnblogs.com/editor/p/5679552.html)
+
+# 迭代器模式
+
+
+
+jquery中的each
+
+
+
+![](https://ws4.sinaimg.cn/large/006tNc79ly1fmpjs0ri4aj31kw0skqda.jpg)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
