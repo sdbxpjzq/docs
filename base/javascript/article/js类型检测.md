@@ -76,12 +76,14 @@ toString.call(Math.sin);
 function myType_01(obj) {
         if (obj == null) {
             console.log(obj + "") ;
+          return obj + "";
         }
        let i = 0,
            aType = ["Boolean", "Number", "String", "Function", "Array", "Date", "RegExp", "Object", "Error", "Symbol"];
        for (;i<aType.length;i++){
            if (toString.call(obj) === "[object " + aType[i] + "]"){
                console.log(aType[i]);
+             return aType[i];
                break;
            }
        }
@@ -165,6 +167,10 @@ o.constructor == C; // true
 o.constructor == D.prototype.constructor;//true
 o.constructor == Object.prototype.constructor;// false
 ```
+
+# 参考
+
+[JavaScript中typeof、toString、instanceof、constructor与in](http://www.cnblogs.com/strick/p/4979949.html)
 
 
 
