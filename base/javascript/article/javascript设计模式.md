@@ -274,17 +274,206 @@ BOSS —> 项目经理 —> Coder
 
 ```
 
+参考:
+
 [javascript 之 责任链模式](http://www.cnblogs.com/editor/p/5679552.html)
 
 # 迭代器模式
 
+## 定义
+
+迭代子模式，又称游标模式，是一种用于对聚集进行顺序访问规则的模式，是一种行为模式；它用于提供对聚集对象的一种统一的访问接口，使客户能够在不了解聚集对象内部结构的情况对聚集对象进行访问。它涉及两个部分，一个是聚集对象，一个迭代子对象，迭代对象(Iterator)用于提供访问聚集对象的标题访问方法；
+
+## 主要组成角色:
+
+- 抽象迭代子角色：用于定义访问聚集的标准方法
+- 具体迭代子角色：用于实现访问聚集的访问方法
+- 抽象聚集角色：用于定义公共的聚集对象访问方法，主要的有迭代对象，当前元素获取，聚集对象大小;
+- 具体聚集角色：用于实现聚集对象的公共访问;
 
 
-jquery中的each
+
+代码实例:
+
+```js
+// 抽象迭代角色
+    function abstractIterator() {
+        this.prev = function(){}
+
+        this.next = function() {
+
+        };
+
+        this.first = function() {
+
+        };
+
+        this.hasNext = function() {
+
+        };
+
+        this.get = function() {
+
+        };
+    }
+
+//具体迭代角色
+    function Inteator(colls) {
+        this.colls = colls;
+        this.index = 0;
+    };
+
+    Inteator.prototype = abstractIterator.prototype;
+
+    Inteator.prototype.prev = function() {
+        if (this.index > 0)
+            this.index --;
+    };
+
+    Inteator.prototype.next = function() {
+        if (this.index < this.colls.size()) {
+            this.index++;
+        }
+    };
+
+    Inteator.prototype.first = function() {
+        this.index = 0;
+    };
+
+    Inteator.prototype.hasNext = function() {
+        return this.index < this.colls.size();
+    };
+
+    Inteator.prototype.get = function() {
+        return this.colls.get(this.index);
+    };
+
+    // 抽象聚集角色
+    function abstractCollection() {
+        this.iterator = function() {
+            return null;
+        };
+    }
+
+    // 具体实现聚集角色公共方法
+    function Collection() {
+        this.array = ['XXX', 'yyy', 'ZZZ'];
+    };
+
+    Collection.prototype = abstractCollection.prototype;
+
+    Collection.prototype.iterator = function() {
+        return new Inteator(this);
+    };
+
+    Collection.prototype.size = function() {
+        return this.array.length;
+    };
+
+    Collection.prototype.get = function(index) {
+        return this.array[index];
+    };
+
+
+    function Client() {
+        var colls = new Collection();
+        var iterator = colls.iterator();
+        while ( iterator.hasNext() ){
+            console.log(iterator.get());
+            iterator.next();
+        }
+    }
+    Client();
+```
+
+参考:
+
+[javascript 之 迭代子模式](http://www.cnblogs.com/editor/p/5672800.html)
 
 
 
-![](https://ws4.sinaimg.cn/large/006tNc79ly1fmpjs0ri4aj31kw0skqda.jpg)
+# 观察者模式
+
+## 定义
+
+定义对象间的一种一对多的关系，当一个对象状态改变时 (一般称为被观察者)，依赖于该对象的对象被通知，并更新;
+
+
+
+## 实景描述
+
+比如说母亲通知孩子吃饭的例子，一个家里有一两个孩子，这两个小孩子有点调皮，喜欢乱跑，妈妈把饭煮好了，但是看不到小孩的身影，叫也没见小孩回应回来的，所以妈妈就在小孩身上装了个 通知设备，一到把饭煮好，妈妈就在一个通知设备上按个按钮，就可以小孩身上的设备上发出声音：‘饭煮好了，快点回来吃饭’，然后小孩就可以马上回来吃刚上桌温热的饭菜了；
+
+## 观察者模式主要组成
+
+ 被观察对象(目标对象, 具体对象, 主题), 观察者 (订阅者, 监听者), 事件(更新方法);
+
+
+
+代码实例:
+
+```js
+// jQuery版
+(function ($) {
+    var o = $({});
+    $.subscribe = function () {
+        o.on.apply(o, arguments);
+    };
+
+    $.unsubscribe = function () {
+        o.off.apply(o, arguments);
+    };
+
+    $.publish = function () {
+        o.trigger.apply(o, arguments);
+    };
+
+} (jQuery));
+```
+
+
+
+```js
+//回调函数
+function handle(e, a, b, c) {
+    // `e`是事件对象，不需要关注
+    console.log(a + b + c);
+};
+
+//订阅
+$.subscribe("/some/topic", handle);
+//发布
+$.publish("/some/topic", ["a", "b", "c"]); // 输出abc
+        
+
+$.unsubscribe("/some/topic", handle); // 退订
+
+//订阅
+$.subscribe("/some/topic", function (e, a, b, c) {
+    console.log(a + b + c);
+});
+
+$.publish("/some/topic", ["a", "b", "c"]); // 输出abc
+
+//退订（退订使用的是/some/topic名称，而不是回调函数哦，和版本一的例子不一样
+$.unsubscribe("/some/topic"); 
+```
+
+
+
+
+
+参考:
+
+[ Javascript 之 观察者模式](http://www.cnblogs.com/editor/p/4783551.html)
+
+http://www.cnblogs.com/TomXu/archive/2012/03/02/2355128.html
+
+
+
+
+
+
 
 
 
