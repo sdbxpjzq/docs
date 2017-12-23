@@ -408,9 +408,7 @@ BOSS —> 项目经理 —> Coder
 
  被观察对象(目标对象, 具体对象, 主题), 观察者 (订阅者, 监听者), 事件(更新方法);
 
-
-
-代码实例:
+## 代码实例
 
 ```js
 // jQuery版
@@ -465,29 +463,323 @@ $.unsubscribe("/some/topic");
 
 参考:
 
-[ Javascript 之 观察者模式](http://www.cnblogs.com/editor/p/4783551.html)
-
 http://www.cnblogs.com/TomXu/archive/2012/03/02/2355128.html
 
+# 模板方法模式
+
+## 定义
+
+模板方法（TemplateMethod）定义了一个操作中的算法的骨架，而将一些步骤延迟到子类中。模板方法使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。
+
+模板方法是一种代码复用的基本技术，在类库中尤为重要，因为他们提取了类库中的公共行为。模板方法导致一种反向的控制结构，这种结构就是传说中的“好莱坞法则”，即“别找找我们，我们找你”，这指的是父类调用一个类的操作，而不是相反。具体体现是面向对象编程编程语言里的抽象类（以及其中的抽象方法），以及继承该抽象类（和抽象方法）的子类。
+
+## 场景描述
+
+举个例子，泡茶和泡咖啡有同样的步骤，比如烧开水（boilWater）、冲泡（brew）、倒在杯子里（pourOnCup），加小料（addCondiments）等等。但每种饮料冲泡的方法以及所加的小料不一样，所以我们可以利用模板方法实现这个主要步骤。
+
+## 代码实例
+
+```js
+var CaffeineBeverage = function () {
+
+    };
+    CaffeineBeverage.prototype.prepareRecipe = function () {
+        this.boilWater();
+        this.brew();
+        this.pourOnCup();
+        if (this.customerWantsCondiments()) {
+            // 如果可以想加小料，就加上
+            this.addCondiments();
+        }
+    };
+    CaffeineBeverage.prototype.boilWater = function () {
+        console.log("将水烧开!");
+    };
+    CaffeineBeverage.prototype.pourOnCup = function () {
+        console.log("将饮料到再杯子里!");
+    };
+    CaffeineBeverage.prototype.brew = function () {
+        throw new Error("该方法必须重写!");
+    };
+    CaffeineBeverage.prototype.addCondiments = function () {
+        throw new Error("该方法必须重写!");
+    };
+    // 默认加上小料
+    CaffeineBeverage.prototype.customerWantsCondiments = function () {
+        return true;
+    };
+
+    // 冲咖啡
+    var Coffee = function () {
+        CaffeineBeverage.apply(this);
+    };
+    Coffee.prototype = new CaffeineBeverage();
+    Coffee.prototype.brew = function () {
+        console.log("从咖啡机想咖啡倒进去!");
+    };
+    Coffee.prototype.addCondiments = function () {
+        console.log("添加糖和牛奶");
+    };
+    Coffee.prototype.customerWantsCondiments = function () {
+        return confirm("你想添加糖和牛奶吗？");
+    };
+    
+
+
+    //冲茶叶
+    var Tea = function () {
+        CaffeineBeverage.apply(this);
+    };
+    Tea.prototype = new CaffeineBeverage();
+    Tea.prototype.brew = function () {
+        console.log("泡茶叶!");
+    };
+    Tea.prototype.addCondiments = function () {
+        console.log("添加柠檬!");
+    };
+    Tea.prototype.customerWantsCondiments = function () {
+        return confirm("你想添加柠檬嘛？");
+    };
+```
+
+模板方法应用于下列情况：
+
+1. 一次性实现一个算法的不变的部分，并将可变的行为留给子类来实现
+2. 各子类中公共的行为应被提取出来并集中到一个公共父类中的避免代码重复，不同之处分离为新的操作，最后，用一个钓鱼这些新操作的模板方法来替换这些不同的代码
+3. 控制子类扩展，模板方法只在特定点调用“hook”操作，这样就允许在这些点进行扩展
 
 
 
+# 适配器模式
+
+## 定义
+
+适配器模式（Adapter）是将一个类（对象）的接口（方法或属性）转化成客户希望的另外一个接口（方法或属性），适配器模式使得原本由于接口不兼容而不能一起工作的那些类（对象）可以一些工作。速成包装器（wrapper）。
 
 
 
+## 代码实例
+
+```js
+
+var aa = {
+        test:function () {
+            console.log('test')
+        },
+        go: function () {
+            console.log('go')
+        }
+    }
+//    有一天别人要重写了你的方法
+    function pp() {
+        this.test = function () {
+            console.log('新的 test')
+        }
+        this.gogo = function () {
+            console.log('新的 gogo')
+        }
+    }
+
+    // 这时你要修改所有的aa.xx 的调用 , 恐怕你都改乱了~~
+    // 引入适配器模式
+    function shipeiqi() {
+        var _s = new  pp();
+        var aa = {
+            test: function () {
+                _s.test();
+            },
+            go: function () {
+                _s.gogo();
+            }
+        }
+        return aa;
+    }
+
+    var aa = shipeiqi();
+
+// 调用方式不需要修改
+    aa.test();
+    aa.go();
+```
 
 
 
+http://www.cnblogs.com/TomXu/archive/2012/04/11/2435452.html
 
 
 
+# 命令模式
+
+## 定义
+
+用于将一个请求封装成一个对象，从而使你可用不同的请求对客户进行参数化；对请求排队或者记录请求日志，以及执行可撤销的操作。也就是说改模式旨在将函数的调用、请求和操作封装成一个单一的对象，然后对这个对象进行一系列的处理。此外，可以通过调用实现具体函数的对象来解耦命令对象与接收对象。
+
+## 代码实例
+
+```js
+// 一个连队
+    var lian = function () {
+
+    }
+    // 炮兵
+    lian.paobing = function (pao_num) {
+        console.log(pao_num+'正在作战')
+    }
+    // 步兵
+    lian.bubing = function (bubing_num) {
+        console.log(bubing_num+'正在作战')
+    }
+
+    // 连长
+    lian.lianzhang = function (mingling) {
+        lian[mingling.type](mingling.num)
+    }
+
+    // 总司令下命令
+    lian.lianzhang({
+        type:'paobing',
+        num: 50
+    });
+    lian.lianzhang({
+        type:'bubing',
+        num: 500
+    })
+```
+
+http://www.cnblogs.com/TomXu/archive/2012/03/08/2358593.html
 
 
 
+# 策略模式
+
+## 定义
+
+策略模式定义了算法家族，分别封装起来，让他们之间可以互相替换，此模式让算法的变化不会影响到使用算法的客户。
+
+策略模式 使用要注意它 "变化" 的一面，策略模式就是来解决这个 变化 问题的。
+
+## 代码实例
+
+比如商场买卖的价格或促销问题，如果不使用模式，就可能只是 把“所有”的情况用 if else 类似“硬编码” 的开式写在一起，或是传个传个参数，稍加点内部逻辑代码，最好就是一同写在一个类里面；
+
+```js
+ function Price(personType, price) {
+        //大客户 5 折
+        if (personType == 'vip') {
+            return price * 0.5;
+        }
+        else if (personType == 'old'){ //老客户 3 折
+            return price * 0.3;
+        } else {
+            return price; //其他都全价
+        }
+    }
+    // 如果要扩展一种价格手段，就得在 Price 里添加新的 else if，或是修改某个算法逻辑，
+    // 就得某个 if 或 else if 里修改， 这是对单个类的修改，
+    // 而且这种情况势必得经常修改这个类，
+    // 这违反了设计模式的一个原则：对修改关闭，对扩展开放的原则；
+
+
+//    策略模式
+    // vip
+    function vipPrice() {
+        this.discount = 0.5;
+    }
+
+    vipPrice.prototype.getPrice = function(price) {
+        return price * this.discount;
+    }
+
+    // 老客户
+    function oldPrice() {
+        this.discount = 0.3;
+    }
+
+    oldPrice.prototype.getPrice = function(price) {
+        return price * this.discount;
+    }
+
+    // 普通用户
+    function Price() {
+        this.discount = 1;
+    }
+
+    Price.prototype.getPrice = function(price) {
+        return price ;
+    }
+
+    // 对外使用上下文
+    function Context() {
+        this.name = '';
+        this.strategy = null;
+        this.price = 0;
+    }
+
+    Context.prototype.set = function(name, strategy, price) {
+        this.name = name;
+        this.strategy = strategy;
+        this.price = price;
+    }
+
+    Context.prototype.getResult = function() {
+        console.log(this.name + ' 的结账价为: ' + this.strategy.getPrice(this.price));
+    }
+
+    // 上下文
+    var context = new Context();
+
+    //vip客户
+    var vip = new vipPrice();
+    context.set ('vip客户', vip, 200);
+    context.getResult();
+
+    //老客户
+    var old = new oldPrice();
+    context.set ('老客户', old, 200);
+    context.getResult();
+
+```
 
 
 
+http://www.cnblogs.com/TomXu/archive/2012/03/05/2358552.html
 
+http://www.cnblogs.com/editor/p/4272655.html
+
+
+
+# 代理模式
+
+顾名思义就是用一个类来代替另一个类来执行方法功能，这个模式跟装饰模式有点相似，不一样的是，代理模式是代替客户初始化被代理对象类，而装饰模式采用接口或初装饰者参数引用的方式来执行的。
+
+在动态面向对象语言里，代理模式即起到控制修饰被代理类的作用，也对被代理类起到了充分的隐藏保护作用；被代理类只到我们需要时，才被间接初始化调用；
+
+```js
+// 房东
+function Fangdong() {
+    this.room = '房间名';
+}
+Fangdong.prototype.chuzu = function() {
+    console.log('房东出租房间: ' + this.room);
+}
+
+// 中介
+function Proxy() {
+    this.fangdong = new Fangdong();
+}
+
+Proxy.prototype.chuzu = function() {
+    this.fangdong.chuzu();
+    console.log('出租后收中介费');
+}
+
+//房客请中介帮找房子;
+var proxy = new Proxy();
+proxy.chuzu();
+
+```
+
+http://www.cnblogs.com/editor/p/4185706.html
 
 
 
