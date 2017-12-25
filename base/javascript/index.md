@@ -1,5 +1,8 @@
 ### 基础
-
+[event.preventDefault报错问题](base/javascript/article/event.preventDefault报错问题.md)  
+[input的compositionstart和compositionend事件](base/javascript/article/input的compositionstart和compositionend事件.md)  
+[跨域](base/javascript/article/跨域.md)  
+[for循环与setTimeout输出](base/javascript/article/for循环与setTimeout输出.md)  
 [js类型检测](base/javascript/article/js类型检测.md)  
 [null和undefined](base/javascript/article/null和undefined.md)  
 [for...in循环](base/javascript/article/for...in循环.md)  
