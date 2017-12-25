@@ -7,7 +7,9 @@
 [isNaN](base/javascript/article/isNaN.md)  
 [ajax](base/javascript/article/ajax.md)  
 [web worker](base/javascript/article/web-worker.md)  
-[js自执行函数](base/javascript/article/js自执行函数.md)
+[js自执行函数](base/javascript/article/js自执行函数.md)  
+[熄屏或后台运行检测](base/javascript/article/熄屏或后台运行检测.md)  
+[判断一个dom元素是否已经绑定事件](base/javascript/article/判断一个dom元素是否已经绑定事件.md)
 
 
 
