@@ -1,4 +1,12 @@
 ### 基础
+[前端创建文件和下载](base/javascript/article/前端创建文件和下载.md)  
+[|和&运算-位运算](base/javascript/article/|和&运算-位运算.md)  
+[document.cookie](base/javascript/article/document.cookie.md)  
+[History-url历史纪录](base/javascript/article/History-url历史纪录.md)  
+[window.open被浏览器拦截](base/javascript/article/window.open被浏览器拦截.md)  
+[location](base/javascript/article/location.md)  
+[ios和safari下new Date()格式问题](base/javascript/article/ios和safari下new Date()格式问题.md)  
+[js中的双取反操作](base/javascript/article/js中的双取反操作.md)  
 [event.preventDefault报错问题](base/javascript/article/event.preventDefault报错问题.md)  
 [input的compositionstart和compositionend事件](base/javascript/article/input的compositionstart和compositionend事件.md)  
 [跨域](base/javascript/article/跨域.md)  
@@ -22,6 +30,9 @@
 ### 事件
 [自定义事件](base/javascript/article/自定义事件.md)  
 [addEventListener和attachEvent](base/javascript/article/addEventListener和attachEvent.md)  
+
+### ES6
+[ES6基础](base/javascript/article/ES6基础.md)  
 
 
 ### 推荐

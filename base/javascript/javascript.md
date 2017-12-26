@@ -73,63 +73,6 @@ https://juejin.im/entry/599cfac56fb9a0249b4841b8?utm_source=gold_browser_extensi
 
 
 
-
-
-
-
-# js中的双取反操作-"!!"
-
-首先看看判断`IE`浏览器的`Code`
-
-```js
-function ie(){
-    //ie版本
-    var agent = navigator.userAgent.toLowerCase();
-    return (!!window.ActiveXObject || "ActiveXObject" in window) ? (
-        (agent.match(/msie\s(\d+)/) || [])[1] || '11' //由于ie11并没有msie的标识
-    ) : false;
-};
-```
-竟然用到了"!!", 这个东东.
-这里出现了两个感叹号"!!"，其实它不是一个操作符，而是我们熟悉的取反操作“!”执行了两次.
-
-**why**
-为什么要这么写呢?
-其实就是将目标对象转变成对应的boolean类型而已.
-在非`IE`浏览器中,执行
-
-* `window.ActiveXObject`, 返回`undefined`
-* `!window.ActiveXObject`, 返回`true`
-* `!!window.ActiveXObject`, 返回`false`
-* `Boolean(window.ActiveXObject)`, 返回`false`
-
-也就是说, 执行`Boolean(xx)`和`!!xx`是一样的.只是编程技巧而已~
-
-# ios和safari下new Date()格式问题
-
-1. 在`chrome`浏览器下,我们通常会使用:
-
-```js
-new Date('2017-03-07');
-new Date('2017-03-13 00:00:00')
-```
-
-![](http://img.zongqilive.cn/1488853743879.jpg)
-
-2. `safari`浏览器下
-
-![](http://img.zongqilive.cn/1488853840321.jpg)
-
-可见在`Safari`下会报错.
-
-> **解决办法**: 将`-` 替换成`/`
->
-> ```
-> sFormalDay.replace(/-/g, "/");
-> ```
-
-
-
 # Beacon API
 
 Beacon API是W3C仍在草案阶段的一项新API，这个API主要用于发送不需要服务器回应的HTTP请求或强制浏览器发送一个请求。
@@ -219,47 +162,7 @@ http://www.barretlee.com/blog/2016/02/20/navigator-beacon-api/
 
 
 
-# window.open被浏览器拦截
 
-```js
-$('.onebuy').one('click', function () {
-     $.post('', function (res) {
-         if (res.data.code == 1000) {
-              window.open(res.data.url)
-         } else {
-             return;
-         }
-      }, 'json');
-           
-        });
-    }
-```
-
-可惜不幸的是被浏览器拦截了.😂
-
-**被拦截的原因：**
-
-浏览器安全机制中，页面弹窗，必须是在用户触发的，才算合法弹窗；由ajax或定时执行的弹窗均为非用户触发。会被浏览器或相关安全软件理解为广告被拦截掉.
-
-## 解决
-
-但是当遇到错误的时候会打开空白页面
-
-```js
-xx.addEventListener('click', function () {
- var url = '';
-            ajax().done(function() {
-                // 重定向到目标页面
-              url = 'target url';
-            });
-  // 先发请求, 等待执行
-  setTimeout(function(){
-    // 打开页面，此处最好使用提示页面
-     var newWin = window.open('loading page');
-     newWin.location.href = ;
-  })
-        },500);
-```
 
 
 
@@ -295,257 +198,22 @@ var localStorage =  window.localStorage;
 
 
 
-# location — url信息
 
-## 属性
 
-| 属性                                       | 描述                                       |
-| ---------------------------------------- | ---------------------------------------- |
-| [hash](http://www.w3school.com.cn/jsref/prop_loc_hash.asp) | 设置或返回从井号 (#) 开始的 URL（锚）。                 |
-| [host](http://www.w3school.com.cn/jsref/prop_loc_host.asp) | 设置或返回主机名和当前 URL 的端口号。                    |
-| [hostname](http://www.w3school.com.cn/jsref/prop_loc_hostname.asp) | 设置或返回当前 URL 的主机名。                        |
-| [href](http://www.w3school.com.cn/jsref/prop_loc_href.asp) | 设置或返回完整的 URL。 2> 也可以跳转页面使用 (推荐 在客户端就可以执行) |
-| [pathname](http://www.w3school.com.cn/jsref/prop_loc_pathname.asp) | 设置或返回当前 URL 的路径部分。                       |
-| [port](http://www.w3school.com.cn/jsref/prop_loc_port.asp) | 设置或返回当前 URL 的端口号。                        |
-| [protocol](http://www.w3school.com.cn/jsref/prop_loc_protocol.asp) | 设置或返回当前 URL 的协议。                         |
-| [search](http://www.w3school.com.cn/jsref/prop_loc_search.asp) | 设置或返回从问号 (?) 开始的 URL（查询部分）。              |
 
 
 
-## 方法
 
-| 属性                                       | 描述                                       |
-| ---------------------------------------- | ---------------------------------------- |
-| [assign()](http://www.w3school.com.cn/jsref/met_loc_assign.asp) | 加载新的文档。                                  |
-| [reload()](http://www.w3school.com.cn/jsref/met_loc_reload.asp)window.location.reload() | 重新加载当前文档。说明如果该方法没有规定参数，或者参数是 false，它就会用 HTTP 头 If-Modified-Since 来检测服务器上的文档是否已改变。如果文档已改变，reload() 会再次下载该文档。如果文档未改变，则该方法将从缓存中装载文档。这与用户单击浏览器的刷新按钮的效果是完全一样的。如果把该方法的参数设置为 true，那么无论文档的最后修改日期是什么，它都会绕过缓存，从服务器上重新下载该文档。 |
-| [replace()](http://www.w3school.com.cn/jsref/met_loc_replace.asp) | 用新的文档替换当前文档。                             |
 
 
 
-url: `http://localhost:8080/#/honey_center`
 
-1. hash:"#/honey_center"
-2. host:"localhost:8080"
-3. hostname:"localhost"
-4. href:"http://localhost:8080/#/honey_center"
-5. origin:"http://localhost:8080"
-6. pathname:"/"
-7. port:"8080"
-8. protocol:"http:"
-9. reload:ƒ reload()
-10. replace:ƒ ()
-11. search:""
 
 
 
 
-## onhashchange() 事件
 
-当url的hash值(#后面的值)发生改变的时候触发. .
 
-hashchange事件触发时，事件对象会有hash改变前的URL（oldURL）和hash改变后的URL（newURL）两个属性
-
-```js
-if ('onhashchange' in window) {
-        window.onhashchange = function (e) {
-            alert('hash变了:'+window.location.hash);
-            alert(e.oldURL);
-            alert(e.newURL);
-        }
-    }
-```
-
-### 实际应用
-
-点击小图时在当前页面上展示大图.
-
-![](https://ws3.sinaimg.cn/large/006tKfTcly1fj6giv8s91j317i10owj9.jpg)
-
-当进入大图展示状态时，如何返回？这是手机的页面，对于用惯APP的用户来说，他很可能会点击左下角的返回键。然而这是个浏览器，返回就意味着**回到上一页**而不是退出大图展示状态.
-
-当URL的hash改变时，虽然页面不会重新加载，但仍然会被记录到浏览器的**历史记录**中。也就是说，如果依次访问a.html、b.html、b.html#abc，然后点击后退，此时会返回b.html而不是a.html。而且，由于hash改变了，所以会触发hashchange事件。这样一来，只要在进入大图展示状态时加上一个特定的hash，点击返回键触发hashchange时退出此状态即可。代码实现也很简单：
-
-```js
-// 假设大图展示状态的hash为imgSlider
-window.addEventListener('hashchange', function(e) {
-    var re = /#imgSlider$/;
-    if ( re.test(e.oldURL) && !re.test(e.newURL) ) {
-        // 假设imgSlider为大图展示组件对象
-        imgSlider.hide();
-    }
-}, false);
-```
-
-
-
-
-
-
-
-# History — url历史纪录
-
-## History 对象属性
-
-| 属性                                       | 描述                  |
-| ---------------------------------------- | ------------------- |
-| [length](http://www.w3school.com.cn/jsref/prop_his_length.asp) | 返回浏览器历史列表中的 URL 数量。 |
-
-## History 对象方法
-
-| 方法                                       | 描述                      |
-| ---------------------------------------- | ----------------------- |
-| [back()](http://www.w3school.com.cn/jsref/met_his_back.asp) | 加载 history 列表中的前一个 URL。 |
-| [forward()](http://www.w3school.com.cn/jsref/met_his_forward.asp) | 加载 history 列表中的下一个 URL。 |
-| [go()](http://www.w3school.com.cn/jsref/met_his_go.asp) | 加载 history 列表中的某个具体页面。  |
-
-> history.go(0); //相当于 刷新当前页面
-
-
-
-## HTML5新增API
-
-### history.pushState(state,title,url)
-
-- **state**：一个与指定网址相关的状态对象，popstate事件触发时，该对象会传入回调函数。如果不需要这个对象，此处可以填null。
-- **title**：新页面的标题，但是所有浏览器目前都忽略这个值，因此这里可以填null。
-- **url**：新的网址，必须与当前页面处在`同一个域`。浏览器的地址栏将显示这个网址。
-
-> **pushState方法不会触发页面刷新.**
-
-如果 pushState 的url参数，设置了一个当前网页的`#`号值（即`hash`），并不会触发`hashchange`事件。如果设置了一个非同域的网址，则会报错。
-
-```js
-// 报错history.pushState(null, null, 'https://twitter.com/hello');
-
-```
-
-
-
-###  history.replaceState(state,title,url)
-
-```js
-history.replaceState(null, "页面标题", "xxx.html");
-```
-
-
-
-栗子:
-
-[demo](http://www.zhangxinxu.com/study/201306/ajax-page-html5-history-api.html?area=pudong)
-
-
-
-# document.cookie
-
-
-
-|         | 可选。规定 cookie 的有效期。                      |
-| :-----: | --------------------------------------- |
-| expires | 可选.    规定 cookie 的有效期. 支持 `UTC`和`GMT`时间 |
-|  path   | 可选。规定 cookie 的服务器路径。                    |
-| domain  | 可选。规定 cookie 的域名。                       |
-| secure  | 可选。规定是否通过安全的 HTTPS 连接来传输 cookie。        |
-
-
-
-
-
-## 创建cookie
-
-```js
-function setCookie(cname,cvalue,exdays,path)
-{
-  var d = new Date();
-  // 将毫秒设置Date 对象
-  d.setTime(d.getTime()+(exdays*24*60*60*1000));
-  var expires = "expires="+d.toUTCString(); //toGMTString 废弃 ,UTC 和 GMT 一样
-  path = "path="+ path || '/';
-  document.cookie = cname + "=" + cvalue + "; " + expires + ";"+ path;
-}
-```
-
-​	
-
-## 读取cookie
-
-```js
-function getCookie(cname)
-{
-  var name = cname + "=";
-  var ca = document.cookie.split(';'); // 将cookie分割成数组
-  for(var i=0; i<ca.length; i++) 
-  {
-    var c = ca[i].trim();
-    if (c.indexOf(name)==0)
-      return c.substring(name.length,c.length);
-  }
-  return "";
-}
-```
-
-
-
-## 删除cookie
-
-设置 `expires` 参数为以前的时间即可.将旧的cookie覆盖掉.
-
-```js
-function(c_name){
-	var exdate = new Date();
-	exdate.setDate(exdate.getDate()-1);//昨天日期
-	document.cookie =c_name+"=;expires="+exdate.toGMTString();
-}
-```
-
-
-
-# `|`和`&`运算 — 位运算 
-
-&和|本是位运算符，之所以可以进行"逻辑运算"，是由于JS是无类型的语言、各数据类型可以自由转换这一特性决定的，当用&和|进行"逻辑运算"时，实际上true被转换成1，false被转换成0，再进行逐位运算.
-
-```js
-console.log(3|4); //7
-console.log(4|4);//4
-console.log(8|3);//11
-console.log(5.3|4.1);//5
-console.log(9|3455);//3455
-```
-
-例：
-
-3|4
-
-转换为二进制之后011|100  相加得到111=7
-
-4|4
-
-转换为二进制之后100 |100  相加得到100=4
-
-8|3
-
-转换为二进制之后1000 |011  相加得到1011=11
-
-
-
-
-
-# 前端创建文件和下载
-
-## download属性
-
-HTML5中给`a`标签增加了一个`download`属性，只要有这个属性，点击这个链接时浏览器就不在打开链接指向的文件，而是改为下载. 适合从服务端下载文件
-
-```html
-download=“not-a-file.js”
-```
-
-## DataURI
-
-```js
- <img src=”data:image/gif;base64,R0lGOXXXXX">
-```
-
-[关于DataURI](https://sjolzy.cn/What-is-the-data-URI-scheme-and-how-to-use-the-data-URI-scheme.html)
 
 
 
