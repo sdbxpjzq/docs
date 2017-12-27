@@ -36,6 +36,9 @@
 
 ### CreateJs
 [EaselJS](base/javascript/article/EaselJS.md)  
+[PreloadJS](base/javascript/article/PreloadJS.md)  
+[TweenJs](base/javascript/article/TweenJs.md)  
+[SoundJS](base/javascript/article/SoundJS.md)  
 
 
 
