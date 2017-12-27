@@ -103,7 +103,7 @@ bitmap.addEventListener（‘click’，handle）;
 Stage ， Container 对象有个 Children 属性代表子元素，是一个数组，里面的元素层级像下标一样从 0 开始，简单来说就是后面的覆盖前面的（类似于z-index）,后 addChild 的对象则在数组的后面。
 我们也可以动态改变 Children 的层叠效果。
 
-```
+```js
 obj.parent.setChildIndex(obj, n);  //n为设置的层级
 ```
 
@@ -112,7 +112,7 @@ obj.parent.setChildIndex(obj, n);  //n为设置的层级
 它可以包含 Text 、 Bitmap 、 Shape 、 Sprite 等其他的 EaselJS 元素，包含在一个 Container 中方便统一管理。
 比如一辆汽车由汽车本身，气泡提示，加速效果，减速效果组成，我们可以将这几个部分放在同一个 Container 中，统一移动。使用方法也比较简单：
 
-```
+```js
 var contain = new createjs.Container();
 contain.addChild(bgImg);
 contain.addChild(bitmap);
@@ -121,7 +121,7 @@ stage.addChild(contain);
 
 我们在后期会频繁对这个 Container 里面的元素进行操作，比如展示加速效果，取消展示减速效果。那我们可以给这些元素设置name属性，之后可以直接使用 getChildByName 获取到该对象。
 
-```
+```js
 bitmap.name = ‘quick’; //设置name值
 quick = this.stage.getChildByName(“quick”);  //使用name值方便获取到该对象
 quick.visible = true; //显示该效果
@@ -131,7 +131,7 @@ quick.visible = true; //显示该效果
 
 ## 绘制图片
 
-```
+```js
 var bg = new createjs.Bitmap("./background.png");
 stage.addChild(bg);
 stage.update();
@@ -139,7 +139,7 @@ stage.update();
 
 按照上面的 EaselJS 的正常的绘制流程来说，上面这段代码应该可以正常显示。但是，只是有些情况下可以正常显示的，这个图像资源需要确定加载成功后才可以 new ，否则不会有图像在画布上，如果有做资源预加载，可以直接使用上面的代码，如果没有，则需要在 Image 加载完成 Onload 之后才进行绘制。
 
-```
+```js
 var img = new Image();
 img.src = './img/linkgame_pass@2x.png';
 img.onload = function () {
@@ -155,7 +155,7 @@ img.onload = function () {
 
 使用 mask 属性，可以只显示图片和 shape 相交的区域
 
-```
+```js
 stage = new createjs.Stage("gameView");
 bg = new createjs.Bitmap("./img/linkgame_pass@2x.png");
 bg.x = 10;
@@ -175,14 +175,14 @@ stage.update();
 
 ## 给图片增加滤镜效果
 
-```
+```js
 var blur = new createjs.BlurFilter(5,5,1);
 bg.filters = [blur];
 ```
 
 我们发现，图片还是没有变模糊，原因是图片添加了 Filter 后 Stage 立即刷新， Filter 只能保持一帧的效果，第二帧 Filter 则失效了。而使用图片的 cache() 方法后，可以使得无论舞台怎么刷新，都可以保持住 Filter 的效果，添加 cache 还有很多作用，可以提高 FPS ，缓存等
 
-```
+```js
 bg.cache(0,0,bg.image.width,bg.image.height);
 ```
 
@@ -190,7 +190,7 @@ bg.cache(0,0,bg.image.width,bg.image.height);
 
 使用 EaselJS 内置的 Rectangle 对象来创建一个选取框，显示图片的某各部分。
 
-```
+```js
 stage = new createjs.Stage("gameView");
 bg = new createjs.Bitmap("./img/linkgame_pass@2x.png");
 bg.x = 10;
@@ -205,7 +205,7 @@ stage.update(e);
 
 > 具体的使用方法我们都知道啦，接下来用一个小 Demo 练练手 – **实现一个无缝连接的背景图，模拟汽车加速的状态**
 
-```
+```js
 this.backdrop = new createjs.Bitmap(bg);
 this.backdrop.x = 0;
 this.backdrop.y = 0;
