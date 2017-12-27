@@ -5,7 +5,7 @@
 [History-url历史纪录](base/javascript/article/History-url历史纪录.md)  
 [window.open被浏览器拦截](base/javascript/article/window.open被浏览器拦截.md)  
 [location](base/javascript/article/location.md)  
-[ios和safari下new Date()格式问题](base/javascript/article/ios和safari下new Date()格式问题.md)  
+[ios和safari下new Date()格式问题](base/javascript/article/ios和safari下newDate格式问题.md)  
 [js中的双取反操作](base/javascript/article/js中的双取反操作.md)  
 [event.preventDefault报错问题](base/javascript/article/event.preventDefault报错问题.md)  
 [input的compositionstart和compositionend事件](base/javascript/article/input的compositionstart和compositionend事件.md)  
