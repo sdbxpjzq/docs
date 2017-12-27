@@ -1,6 +1,13 @@
 [TOC]
 
+# sublime 插件
 
+    https://jeffjade.com/2015/12/15/2015-04-17-toss-sublime-text/
+    - SideBarEnhancements
+    - DocBlockr
+    - SyncedSideBar
+    - AutoFileName
+    - Bracket Highlighter
 
 # Dr.Cleaner Mac下免费实用的清理软件
 

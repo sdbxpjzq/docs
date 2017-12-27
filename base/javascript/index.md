@@ -34,6 +34,10 @@
 ### ES6
 [ES6基础](base/javascript/article/ES6基础.md)  
 
+### CreateJs
+[EaselJS](base/javascript/article/EaselJS.md)  
+
+
 
 ### 推荐
 [优秀博文推荐](base/javascript/article/优秀博文推荐.md)
