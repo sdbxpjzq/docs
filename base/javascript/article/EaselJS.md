@@ -1,9 +1,5 @@
 [TOC]
 
-
-
-https://aotu.io/notes/2017/07/19/createjs/index.html
-
 # EaselJS
 
 用于 Sprites 、动画、向量和位图的绘制
@@ -239,6 +235,8 @@ function tick(e) {
 
 - [demo体验链接](http://xn--jdc-lp6e.jd.com/fd/h5/peidan/demo/car.html)： <http://jdc.jd.com/fd/h5/peidan/demo/car.html>
 
+# 参考
+https://aotu.io/notes/2017/07/19/createjs/index.html
 
 
 

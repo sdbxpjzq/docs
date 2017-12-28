@@ -6,7 +6,7 @@
 
 # TweenJS：用于做动画效果
 
-设置一个Tween，你需要调用Tween(target, [props], [pluginData]构建器，参数如下：
+设置一个Tween，你需要调用Tween(target, [props], [pluginData])构建器，参数如下：
 
 - target - 调整属性的对象
 
