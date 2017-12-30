@@ -11,6 +11,8 @@
     <link href="https://cdn.jsdelivr.net/npm/docsify@latest/lib/themes/vue.css" rel="stylesheet">
     <!--<link rel="stylesheet" href="//unpkg.com/docsify-copy-code/styles.css">-->
     <!--<link href="https://cdn.bootcss.com/docsify/4.3.2/themes/dark.css" rel="stylesheet">-->
+
+    <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
     <style>
         .sidebar, body {
             font-size: 18px;
@@ -28,41 +30,13 @@
 </nav>
 <div id="app">加载中</div>
 </body>
-<script>
-    window.$docsify = {
-        ga: 'UA-100833094-1',
-//        routerMode: 'history',
-        loadSidebar: true, // 多页文档
-        autoHeader: true,
-        subMaxLevel: 20,
-        executeScript: true,
-        loadNavbar: true,
-        sidebarToggle: true,
-        coverpage: true, // 启用封面
-        coverpage: 'cover.md', //// 自定义文件名
-        name: 'zongQi',
-        nameLink: 'https://blog.zongqilive.cn/sdbxpjzq/',
-        repo: 'https://github.com/sdbxpjzq',
-    
-        markdown: {
-            smartypants: true
-        },
-        // plugins: [
-        //     window.DocsifyCopyCodePlugin.init()
-        // ]
-    }
-    if (typeof navigator.serviceWorker !== 'undefined') {
-        navigator.serviceWorker.register('sw.js')
-    }
-</script>
-<!--
 
-
-<script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
--->
 
 <script rel="preload" src="https://cdn.jsdelivr.net/npm/docsify@latest/lib/docsify.min.js"></script>
 <!--<script src="//unpkg.com/docsify-copy-code/index.js"></script>-->
+<!--评论 -->
+<script src="//unpkg.com/docsify/lib/plugins/disqus.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/docsify@latest/lib/plugins/ga.min.js"></script>
 
 <script src="//cdn.bootcss.com/prism/9000.0.1/components/prism-php.min.js"></script>
@@ -78,6 +52,46 @@
 <script src="https://cdn.jsdelivr.net/npm/docsify@latest/lib/plugins/front-matter.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/docsify@latest/lib/plugins/external-script.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/docsify@latest/lib/plugins/emoji.min.js"></script>
+
+<script>
+    window.$docsify = {
+        ga: 'UA-100833094-1',
+//        routerMode: 'history',
+        loadSidebar: true, // 多页文档
+        autoHeader: true,
+        subMaxLevel: 20,
+        executeScript: true,
+        loadNavbar: true,
+        sidebarToggle: true,
+        coverpage: true, // 启用封面
+        coverpage: 'cover.md', //// 自定义文件名
+        name: 'zongQi',
+        nameLink: 'https://blog.zongqilive.cn/sdbxpjzq/',
+        repo: 'https://github.com/sdbxpjzq',
+
+        markdown: {
+            smartypants: true
+        },
+        disqus: 'zongqi'
+        // plugins: [
+        //     window.DocsifyCopyCodePlugin.init()
+        // ]
+    }
+    if (typeof navigator.serviceWorker !== 'undefined') {
+        navigator.serviceWorker.register('sw.js')
+    }
+
+    // const gitalk = new Gitalk({
+    //     clientID: 'Github Application Client ID',
+    //     clientSecret: 'Github Application Client Secret',
+    //     repo: 'Github repo',
+    //     owner: 'Github repo owner',
+    //     admin: ['Github repo collaborators, only these guys can initialize github issues'],
+    //     // facebook-like distraction free mode
+    //     distractionFreeMode: false
+    // })
+</script>
+
 </html>
 
 
