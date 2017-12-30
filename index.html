@@ -9,7 +9,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <!--<link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css"> -->
     <link href="https://cdn.jsdelivr.net/npm/docsify@latest/lib/themes/vue.css" rel="stylesheet">
-    <link rel="stylesheet" href="//unpkg.com/docsify-copy-code/styles.css">
+    <!--<link rel="stylesheet" href="//unpkg.com/docsify-copy-code/styles.css">-->
     <!--<link href="https://cdn.bootcss.com/docsify/4.3.2/themes/dark.css" rel="stylesheet">-->
     <style>
         .sidebar, body {
@@ -47,9 +47,9 @@
         markdown: {
             smartypants: true
         },
-        plugins: [
-            window.DocsifyCopyCodePlugin.init()
-        ]
+        // plugins: [
+        //     window.DocsifyCopyCodePlugin.init()
+        // ]
     }
     if (typeof navigator.serviceWorker !== 'undefined') {
         navigator.serviceWorker.register('sw.js')
@@ -62,7 +62,7 @@
 -->
 
 <script rel="preload" src="https://cdn.jsdelivr.net/npm/docsify@latest/lib/docsify.min.js"></script>
-<script src="//unpkg.com/docsify-copy-code/index.js"></script>
+<!--<script src="//unpkg.com/docsify-copy-code/index.js"></script>-->
 <script src="https://cdn.jsdelivr.net/npm/docsify@latest/lib/plugins/ga.min.js"></script>
 
 <script src="//cdn.bootcss.com/prism/9000.0.1/components/prism-php.min.js"></script>
