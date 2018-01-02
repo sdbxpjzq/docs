@@ -1,4 +1,5 @@
 ### 基础
+[Object.defineProperty](base/javascript/article/Object.defineProperty.md)  
 [scrollIntoView和scrollIntoViewIfNeeded](base/javascript/article/scrollIntoView和scrollIntoViewIfNeeded.md)  
 [图片懒加载](base/javascript/article/图片懒加载.md)  
 [前端创建文件和下载](base/javascript/article/前端创建文件和下载.md)  

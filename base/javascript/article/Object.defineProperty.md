@@ -157,9 +157,7 @@ $('#inputDom').on('keyup',funtion(){
       userInfo.nickName = this.value();
 });
 ```
-
+# 参考
 https://juejin.im/entry/59116fa6a0bb9f0058aaaa4c
-
 https://juejin.im/entry/5923973da22b9d005893805a
-
 https://github.com/DMQ/mvvm
