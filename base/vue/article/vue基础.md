@@ -391,7 +391,6 @@ no hello
 
 
 
-
 # **组件**
 
 ## **全局**组件
@@ -606,16 +605,6 @@ child.vue
 - 把需要传给子组件的值赋给该属性
 
 
-
-
-
-
-
-
-
-
-
-
 # props
 
 
@@ -650,144 +639,6 @@ props: {
 
 
 # vue虚拟节点
-
-
-
-
-
-
-
-
-
-# **vue2.0生命周期**
-
-1. beforeCreate
-2. created
-3. beforeMount
-4. mounted
-5. beforeUpdate
-6. updated
-7. activated
-8. deactivated
-9. beforeDestroy
-10. destroyed
-
-```vue 
-new Vue({
-  el: '#app',
-  
-  beforeCreate: function () {
-    console.log('1-beforeCreate  初始化之后');
-  },
-  created: function () {
-    console.log('2-created  创建完成');
-  },
-  beforeMount: function () {
-    console.log('3-beforeMount  挂在之前');
-  },
-  // 以前都不允许  dom 操作
-  mounted: function () {
-    // 这里可以进行 dom操作
-    console.log('4-mounted  被创建');
-  },
-  beforeUpdate: function () {
-    console.log('5-beforeUpdate  数据更新前');
-  },
-  updated: function () {
-    console.log('6-updated  被更新后');
-  },
-  // <keep-alive></keep-alive> ,当组件在 <keep-alive> 内被切换, activated 和 deactivated 被执行
-  activated: function () {
-    console.log('7-activated');
-  },
-  deactivated: function () {
-    console.log('8-deactivated ');
-  },
-  beforeDestroy: function () {
-    console.log('9-beforeDestroy  销毁之前');
-  },
-  destroyed: function () {
-    console.log('10-destroyed  销毁之后');
-  }
-})
-```
-
-# vue-cli
-
-- [github](https://github.com/vuejs/vue-cli)
-- [**全局配置分析参考**](https://github.com/DDFE/DDFE-blog/issues/10?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)— 值得一看
-
-
-
-
-
-**全局安装**
-
-`npm install -g vue-cli`
-
-- `webpack` - A full-featured Webpack + vue-loader setup with hot reload, linting, testing & css extraction.
-- `webpack-simple` - A simple Webpack + vue-loader setup for quick prototyping.
-- `browserify` - A full-featured Browserify + vueify setup with hot-reload, linting & unit testing.
-- `browserify-simple` - A simple Browserify + vueify setup for quick prototyping.
-- `simple` - The simplest possible Vue setup in a single HTML file
-
-**创建项目**
-
-`vue init webpack helloworld`
-
-- cd helloworld 进入helloworld 文件夹
-- npm install 安装package.json中依赖的node_modules
-- npm run dev 运行该项目
-
-**支持scss**
-
-直接安装 `node-sass`和`sass-loader`
-`npm install node-sass sass-loader --save-dev`
-
-
-
-## 全局引入jQuery
-
-`npm install jquery --save`
-
-在`webpack.base.conf.js`里加入
-
-```js
-var webpack = require("webpack")
-```
-
-在`module.exports`的最后加入
-
-```js
-plugins: [
- new webpack.ProvidePlugin({
-     jQuery: "jquery",
-     $: "jquery"
- })
-]
-```
-
-在`main.js `引入就ok了
-
-```js
-import $ from 'jquery'
-```
-
-
-
-[参考--如何在 vue 项目里正确地引用 jquery 和 jquery-ui的插件](https://segmentfault.com/a/1190000007020623)
-
-
-
-# vue-cli 自定义模板
-
-1. 当官方模板不能满足需求时，我们可以 fork 官方模板按照自己的需求修改后，通过 vue-cli 命令生成基于自己模板的项目结构：
-
-   `vue init username/repo my-project`
-
-2. 除了从 github 下载模板外，我们还可以从本地加载模板：
-
-   `vue init ~/fs/path/to-custom-template my-project`
 
 
 
