@@ -2,26 +2,6 @@
 
 # 基于vue-cli的webpack优化
 
-## 多入口模式
-
-```js
- entry: {
-    app: './src/main.js',
-    lib: ['vue','vue-router','axios','vue-lazyload'],
-  },
-```
-
-## 开启webpack的cache
-
-打开`webpack.base.conf.js`，在`module.exports`里加上`cache: true`：
-
-```js
-module: {
-      cache: true,
-        // 其他配置
-}
-```
-
 ## 开启`babel-loader`的cache和exclude
 
 开启了cache的`babel-loader`，在下次编译的时候，遇到不变的部分可以直接拿取cache里的内容，能够较为明显地提高构建速度。在`loader`选项里只需要对`babel-loader`开启`cacheDirectory=true`即可。
@@ -69,21 +49,6 @@ import * as api from 'api' // 'api'是个alias，webpack会直接去找`server/a
 
 而不用手动去根据项目文件和api所在路径的相对位置去书写import的路径了。
 
-## 使用`CommonsChunkPlugin`提取公用模块
-
-我们经常会有这种场景：在`a.vue`组件里引入了`a.js`或者比如`c.vue`，在`b.vue`组件里也引入了`a.js`或者`c.vue`。这样，打包了之后将会把引入的模块重复打包。而`CommonsChuncksPlugin`就是把这样重复打包的模块给抽取出来单独打包的插件。这个能够显著降低最后打包的体积，也能提升一些打包速度
-
-在`webpack.prod.conf.js`里的`plugins`可以加上这段：
-
-```js
-new webpack.optimize.CommonsChunkPlugin({
-          async: 'shared-module',
-          minChunks: (module, count) => (
-              count >= 2    // 当一个模块被重复引用2次或以上的时候单独打包起来。
-          )
-      })
-```
-
 ## 使用路由懒加载
 
 ```js
@@ -106,22 +71,7 @@ export default new Router({
 })
 ```
 
-
-
-## 控制vendor.js的hash值
-
-这个文件是我们`npm`安装的那些库.
-
-`webpack.prod.conf.js`文件中
-
-![](https://ws2.sinaimg.cn/large/006tKfTcgy1fmxorze0gyj30m809yaao.jpg)
-
-
-
-
-
-
-
 npm run build --report 
 
 https://juejin.im/post/5a337a1f6fb9a0452b4949e0
+
