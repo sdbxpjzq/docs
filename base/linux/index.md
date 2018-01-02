@@ -1,4 +1,5 @@
 ### Linux基础
+[centos安装git](base/linux/article/centos安装git.md.md)  
 [如何自动拉取master](base/linux/article/如何自动拉取master.md.md)  
 [基础](base/linux/linux.md)  
 
