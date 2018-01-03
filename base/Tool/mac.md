@@ -306,6 +306,8 @@ http://blog.csdn.net/kid_2412/article/details/51008156
 - 启动— `w2 start`
 
 
+>  电脑也要安装证书的
+
 https://mp.weixin.qq.com/s/Dehz2FhFriNBVseRlyAwzw
 
 ## 更新日志
