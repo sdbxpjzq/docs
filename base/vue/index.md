@@ -1,5 +1,6 @@
 ### Vue基础
 [Vue基础](base/vue/article/vue基础.md)  
+[vue组件的三种调用方式](base/vue/article/vue组件的三种调用方式.md)  
 [vue生命周期](base/vue/article/vue生命周期.md)  
 [vue-cli](base/vue/article/vue-cli.md)  
 [全局配置jQuery](base/vue/article/全局配置jQuery.md)  
