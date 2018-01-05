@@ -12,6 +12,9 @@
     <!--<link rel="stylesheet" href="//unpkg.com/docsify-copy-code/styles.css">-->
     <!--<link href="https://cdn.bootcss.com/docsify/4.3.2/themes/dark.css" rel="stylesheet">-->
 
+    <link rel="stylesheet" href="//unpkg.com/docsify-copy-code/styles.css">
+    <script src="//unpkg.com/docsify-copy-code/index.js"></script>
+
     <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
     <style>
         .sidebar, body {
@@ -49,10 +52,10 @@
         markdown: {
             smartypants: true
         },
-        disqus: 'zongqi'
-        // plugins: [
-        //     window.DocsifyCopyCodePlugin.init()
-        // ]
+        disqus: 'zongqi',
+        plugins: [
+            window.DocsifyCopyCodePlugin.init()
+        ]
     }
     if (typeof navigator.serviceWorker !== 'undefined') {
         navigator.serviceWorker.register('sw.js')
