@@ -5,6 +5,7 @@
   - **[Vue](fe/vue/index.md)**
   - **[React](fe/React/index.md)**
   - **[Angular](fe/Angular/index.md)**
+  - **[相关资料库](fe/other/index.md)**
 - **Git**
   - **[Git命令](base/Git/index)**
 
