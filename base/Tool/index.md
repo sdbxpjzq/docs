@@ -2,9 +2,9 @@
 
 ## [mac软件推荐](base/Tool/mac.md)
 
-## [业务代码总结](base/Tool/dailySummary.md)
-
-## [监控工具](base/Tool/jianKongTool.md)
+### 工具类
+[mac安装nginx](base/Tool/article/mac安装nginx.md)  
+[上传图片到CDN](base/Tool/article/上传图片到CDN.md)  
 
 
 
