@@ -27,25 +27,23 @@ composer create-project laravel/laravel --prefer-dist
 1. `composer require barryvdh/laravel-ide-helper  `
 2. 下载完成后加入 **config/app.php** 中的 **providers** 数组中
 
-`Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,`
+   `Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,`
 
 3. 仅在开发系统中安装提示包
 
-`composer require --dev barryvdh/laravel-ide-helper`
+   `composer require --dev barryvdh/laravel-ide-helper`
 
 4. 在 **app/Providers/AppServiceProvider.php **文件中注册
-
-```php
-public function register()
-{
-    if ($this->app->environment() !== 'production') {
-        $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
-    }
-```
-
+    ```php
+    public function register()
+    {
+        if ($this->app->environment() !== 'production') {
+            $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
+        }
+    ```
 5. 生成代码跟踪支持
 
-`php artisan ide-helper:generate`
+    `php artisan ide-helper:generate`
 
 
 
