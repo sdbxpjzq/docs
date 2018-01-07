@@ -47,7 +47,7 @@ composer create-project laravel/laravel --prefer-dist
 
 
 
-## 目录说明
+# 目录说明
 
 ![](https://ws4.sinaimg.cn/large/006tNc79ly1fn7sq6b78vj312k0mc0yx.jpg)
 
@@ -55,7 +55,7 @@ composer create-project laravel/laravel --prefer-dist
 
 
 
-## 路由
+# 路由
 
 `\Illuminate\Support\Facades\Route`
 
