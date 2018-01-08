@@ -53,8 +53,6 @@ composer create-project laravel/laravel --prefer-dist
 
 ![](https://ws4.sinaimg.cn/large/006tNc79ly1fn7u402do9j31260den19.jpg)
 
-
-
 # 路由
 
 `\Illuminate\Support\Facades\Route`
@@ -217,11 +215,11 @@ O— Object , R— Relation, M —Map
 
 每一条记录 —>对象的属性
 
-![](http://img.zongqilive.cn/2018-1-8-下午8:02:41.png)
+![](https://ws3.sinaimg.cn/large/006tNc79ly1fn9icpmc5cj30wc0ggdlk.jpg)
 
 
 
-
+![](https://ws2.sinaimg.cn/large/006tNc79ly1fn9if3tsy0j30ru0fi76f.jpg)
 
 
 
