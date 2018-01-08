@@ -1,4 +1,5 @@
 ### 基础
+[tap事件点透的问题](fe/javascript/article/tap事件点透的问题.md)  
 [Object.defineProperty](fe/javascript/article/Object.defineProperty.md)  
 [scrollIntoView和scrollIntoViewIfNeeded](fe/javascript/article/scrollIntoView和scrollIntoViewIfNeeded.md)  
 [图片懒加载](fe/javascript/article/图片懒加载.md)  

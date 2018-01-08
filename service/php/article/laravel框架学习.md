@@ -121,6 +121,10 @@ Route::group(['prefix'=>'home'],function (){
 
 
 
+## 创建model
+
+`php artisan make:model Goods`
+
 # 使用session
 
 session相关配置在`config/session.php`
@@ -158,7 +162,64 @@ DB_PASSWORD=zongqi
 
 ## 数据库查询
 
-3种操作方式
+### 查询构造器
+
+![](https://ws4.sinaimg.cn/large/006tNc79ly1fn94uxo5rjj30ve0fq42h.jpg)
+
+```php
+DB::table('test_goods')->insert(['name'=>'诺基亚','price'=>100]);
+        echo DB::table('test_goods')->insertGetId(['name'=>'小米手机','price'=>100]);
+        echo DB::table('test_goods')->where('id',8)->update(['name'=>'小米手机','price'=>300]);
+        // 字段减 默认减1
+        echo DB::table('test_goods')->where('id',8)->decrement('price',2);
+        //字段加 默认加1
+        echo DB::table('test_goods')->where('id',8)->increment('price',2);
+        // 删除记录
+        echo DB::table('test_goods')->where('id',8)->delete();
+```
+
+![](https://ws4.sinaimg.cn/large/006tNc79ly1fn94w7q2a5j30mo0gq42e.jpg)
+
+```php
+//
+echo DB::table('test_goods')->where('id',1)->update(['price' => 200]);
+//
+echo DB::table('test_goods')->get();
+//
+echo DB::table('test_goods')->where('id',5)->get();
+//
+echo DB::table('test_goods')->pluck('name'); // 只查询某个字段
+//
+echo DB::table('test_goods')->select('name')->get();
+ //  chunk 之前需要排序 分段查询
+echo DB::table('test_goods')->orderBy('price')->chunk(2,function($res){
+            var_dump($res);
+        });
+```
+
+![](http://img.zongqilive.cn/2018-1-8-下午7:47:49.png)
+
+```php
+echo DB::table('test_goods')->count();
+echo DB::table('test_goods')->max('price');
+echo DB::table('test_goods')->min('price');
+echo DB::table('test_goods')->avg('price');
+echo DB::table('test_goods')->sum('price');
+```
+
+### ORM操作数据表
+
+O— Object , R— Relation, M —Map
+
+![](http://img.zongqilive.cn/2018-1-8-下午7:52:23.png)
+
+一张表 —>一个对象
+
+每一条记录 —>对象的属性
+
+![](http://img.zongqilive.cn/2018-1-8-下午8:02:41.png)
+
+
 
 
 
