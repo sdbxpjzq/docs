@@ -1,4 +1,5 @@
 ### 基础
+[字符串处理函数](service/php/article/String.md)  
 [锁机制](service/php/article/锁机制.md)  
 [面向对象](service/php/article/面向对象.md)  
 [cookie和session](service/php/article/cookie和session.md)  
