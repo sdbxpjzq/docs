@@ -11,11 +11,15 @@
 ### vue-router
 [vue-router](fe/vue/vueRouter.md)  
 
+
 ### vuex
 [vuex](fe/vue/vuex.md)  
 
 ### axios
 [axios](fe/vue/axios.md)  
+
+### NuxtJs
+[NuxtJs实战](fe/vue/article/NuxtJs实战.md)  
 
 ### UI
 [UI](fe/vue/vue-ui.md)  
