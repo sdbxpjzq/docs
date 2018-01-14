@@ -58,5 +58,5 @@ new Vue({
 
 ## 图示
 
-![](http://7xjyw1.com1.z0.glb.clouddn.com/vue-lifecycle.png)
+![](https://ws1.sinaimg.cn/large/006tNc79ly1fngg8vp0daj30xc25s77b.jpg)
 
