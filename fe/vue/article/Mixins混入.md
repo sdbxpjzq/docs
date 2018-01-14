@@ -70,6 +70,7 @@ export default addConsole;
 `globalConsole.js`
 
 ```js
+import Vue from 'vue'
 Vue.mixin({
     updated(){
         console.log('我是全局的混入 global mixins');
