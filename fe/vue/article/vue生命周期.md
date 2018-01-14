@@ -2,6 +2,8 @@
 
 # **vue2.0生命周期**
 
+## 代码实例
+
 1. beforeCreate
 2. created
 3. beforeMount
@@ -52,3 +54,9 @@ new Vue({
   }
 })
 ```
+
+
+## 图示
+
+![](http://7xjyw1.com1.z0.glb.clouddn.com/vue-lifecycle.png)
+

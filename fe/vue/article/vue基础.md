@@ -136,19 +136,9 @@ http://jingyan.baidu.com/article/acf728fd5ee4acf8e510a3cc.html
 
 
 
-
-
-
-
-
-
 ## methods
 
 > **不应该使用箭头函数来定义 method 函数**
-
-
-
-
 
 ## watch
 
@@ -214,17 +204,11 @@ export default {
 
 
 
-
-
-
-
 ## 不能用于异步事件
 
 Vue.directive() 的命令一般都是自动运行的或者说初始化等等触发的，并不能用于异步事件.
 
 可以用`mixins`混合命令
-
-
 
 ## mixins
 
@@ -335,218 +319,8 @@ no hello
 
 
 
-# **组件**
 
-## **全局**组件
-
-1. 定于模板
-
-```vue
-<template>
-    <div>
-        loading..............
-    </div>
-</template>
-<script>
-    export default {
-
-    }
-</script>
-```
-
-2. 创建index.js
-
-```js
-import loadingComponent from './loading.vue'
-import loadingComponent2 from './loading2.vue'
-
-const loading={
-    install:function(Vue){
-        Vue.component('Loading',loadingComponent)
-    }  //'Loading'这就是后面可以使用的组件的名字，install是默认的一个方法
-};
-
-const loading2={
-    install:function(Vue){
-        Vue.component('Loading2',loadingComponent2)
-    }  //'Loading'这就是后面可以使用的组件的名字，install是默认的一个方法
-};
-
-
-//  export default loading;
-export {loading,loading2} ; // 多组件导出
-```
-
-只要在index.js中规定了`install`方法，就可以像一些公共的插件一样使用`Vue.use()`来使用.
-
-3. 引入
-
-```js
-// import loading from './index.js'
-import {loading, loading2} from './index.js'  // 多组件引入
-
-Vue.use(loading);
-Vue.use(loading2);
-```
-
-
-
-4. 使用
-
-```vue
-<template>
-    <div>
-        <Loading></Loading>
-      	<Loading2></Loading2>
-    </div>
-</template>
-```
-
-
-
-## 局部组件
-
-
-
-```vue
-<script>
-import loadingComponent from './loading.vue'
-  
-  new Vue({
-  // ...
-  components: {
-    // 只能在父级模板中使用 <my-component>
-    'my-component': loadingComponent
-  }
-})
-</script>
-
-```
-
-
-
-# 组件传值
-
-## 子组件===> 父组件
-
-`$emit()`
-
-child.vue
-
-```vue
-<template>
-    <div class="hello">
-        <p @click="sendParentMsg">我child要向父元素传值</p>
-    </div>
-</template>
-
-<script>
-    export default {
-        name: 'hello',
-        data() {
-            return {
-                msg: ''
-            }
-        },
-        methods: {
-            sendParentMsg: function () {
-                this.$emit('listenChild','我是subhead.vue');
-            }
-        }
-    }
-</script>
-
-```
-
-APP.vue
-
-```vue
-<template>
-  <div id="app">
-    // 这里将 child.vue 注册成了全局组件(suba),也可以注册成局部组件 
-    <suba @listenChild="showFromChild"></suba>
-    <router-view></router-view>
-  </div>
-</template>
-
-<script>
-    export default {
-        name: 'app',
-        data() {
-            return {
-                msg: '',
-            }
-        },
-        methods: {
-            showFromChild: function (data) {
-                console.log(data)
-            }
-        },
-    }
-</script>
-
-```
-
-总结:
-
-- 子组件中需要以某种方式, 例如, 点击事件的方法来触发一个自定义事件
-- 将需要传的值作为`$emit`的第二个参数，该值将作为实参传给响应自定义事件的方法
-- 在父组件中注册子组件并在子组件标签上绑定对自定义事件的监听
-
-## 父组件 ===> 子组件
-
-`props`
-
-APP.vue
-
-```vue
-<template>
-  <div id="app">
-    <suba :toChild="msg"></suba>
-    <router-view></router-view>
-  </div>
-</template>
-
-<script>
-    export default {
-        name: 'app',
-        data() {
-            return {
-                msg: '我是APP.vue来的信息',
-            }
-        },
-    }
-</script>
-```
-
-child.vue
-
-```vue
-<template>
-    <div class="hello">
-        <p>来自父元素的信息: {{toChild}}</p>
-    </div>
-</template>
-
-<script>
-    export default {
-        name: 'hello',
-        data() {
-            return {
-            }
-        },
-        props: ['toChild'],
-    }
-</script>
-
-```
-
-总结:
-
-- 子组件在props中创建一个属性，用以接收父组件传过来的值
-- 父组件中注册子组件
-- 在子组件标签中添加子组件props中创建的属性
-- 把需要传给子组件的值赋给该属性
+- ​
 
 
 # props
@@ -577,7 +351,13 @@ props: {
 
 除了以上这些，`type` 还可以是一个自定义构造函数，在通过 `instanceof` 检测时，此构造函数会被用于进行类型推断。
 
+# delimiters 选项
 
+delimiters的作用是改变我们插值的符号。Vue默认的插值是双大括号{{}}。但有时我们会有需求更改这个插值的形式。
+
+```vue
+delimiters:['${','}']
+```
 
 
 

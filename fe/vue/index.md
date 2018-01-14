@@ -1,5 +1,10 @@
 ### Vue基础
 [Vue基础](fe/vue/article/vue基础.md)  
+[组件&组件传值](fe/vue/article/组件&组件传值.md)  
+[Vue.set](fe/vue/article/Vue.set.md)  
+[Vue.extend构造器的延伸](fe/vue/article/Vue.extend构造器的延伸.md)  
+[自定义指令](fe/vue/article/自定义指令.md)  
+[Mixins混入](fe/vue/article/Mixins混入.md)  
 [vue组件的三种调用方式](fe/vue/article/vue组件的三种调用方式.md)  
 [vue生命周期](fe/vue/article/vue生命周期.md)  
 [vue-cli](fe/vue/article/vue-cli.md)  

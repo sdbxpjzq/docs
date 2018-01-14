@@ -15,20 +15,7 @@
 ```vue
 <template>
   <div class="dialog">
-    <div class="dialog__wrapper" v-if="visble" @clcik="closeModal">
-      <div class="dialog">
-        <div class="dialog__header">
-          <div class="dialog__title">{{ title }}</div>
-        </div>
-        <div class="dialog__body">
-          <slot></slot>
-        </div>
-        <div class="dialog__footer">
-          <slot name="footer"></slot>
-        </div>
-      </div>
-    </div>
-    <div class="modal" v-show="visible"></div>
+    <p> hello {{name}}</p>
   </div>
 </template>
 
@@ -36,21 +23,9 @@
   export default {
     name: 'dialog',
     props: {
-      title: String,
-      visible: {
-        type: Boolean,
-        default: false
-      }
+      name: String,
     },
     methods: {
-      close() {
-        this.$emit('update:visible', false) // 传递关闭事件
-      },
-      closeModal(e) {
-        if (this.visible) {
-          document.querySelector('.dialog').contains(e.target) ? '' : this.close(); // 判断点击的落点在不在dialog对话框内，如果在对话框外就调用this.close()方法关闭对话框
-        }
-      }
     }
   }
 </script>
@@ -61,8 +36,8 @@
 ```vue
 <template>
   <div class="xxx">
-    <dialog :visible.sync="visible"></dialog> 
-    <button @click="openDialog"></button>
+    // 标签式调用
+    <dialog :name="zong" :visible.sync="visible"></dialog> 
   </div>
 </template>
 
@@ -74,17 +49,97 @@
     },
     data() {
       return {
-        visible: false
       }
     },
     methods: {
-      openDialog() {
-        this.visible = true // 通过data显式控制dialog
-      }
+     
     }
   }
 </script>
 ```
+
+
+
+## js调用extend创建的组件
+
+`notice.vue`
+
+```vue
+<template>
+    <div>
+        <p>hello {{content}}</p>
+    </div>
+</template>
+<script>
+    export default {
+        data() {
+            return {
+                content: ''
+            }
+        },
+    }
+</script>
+```
+
+`notice.js`
+
+```js
+import Vue from 'vue'
+
+let noticeTmp = Vue.extend(require('./Author.vue'));
+const notice = (content) => {
+    const noticeObj = new noticeTmp({
+        data: {
+            content: content
+        }
+    }); // 实例化一个带有content内容的Notice
+
+    noticeObj.vm = noticeObj.$mount(); // 挂载但是并未插入dom，是一个完整的Vue实例
+    noticeObj.dom = noticeObj.vm.$el;
+    console.log(noticeObj.dom)
+    document.body.appendChild(noticeObj.dom); // 将dom插入body
+    return noticeObj.vm;
+};
+export default {
+    install: Vue => {
+        Vue.prototype.$notice = notice // 将Notice组件暴露出去，并挂载在Vue的prototype上
+    }
+}
+```
+
+`Index.vue`
+
+```vue
+<template>
+    <div class="hello">
+        <button @click="hello">js触发extend组件</button>
+    </div>
+</template>
+
+<script>
+    import Vue from 'vue'
+  //引入js
+    import notice from './author'
+  // use
+    Vue.use(notice);
+    export default {
+        data() {
+            return {
+            }
+        },
+        methods: {
+            hello() {
+                // js触发组件
+                this.$notice('hi zongqi');
+            }
+        }
+    }
+</script>
+```
+
+
+
+
 
 
 
