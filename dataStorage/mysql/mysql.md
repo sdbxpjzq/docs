@@ -121,59 +121,11 @@ create table if not exists USER(
 
    ​
 
-## 常规索引  index || key
-
-关键字 index 或 key
-索引应该建立在搜索，排序，分组等操涉及的数据列上，就是在 where字句，from字句，order by字句，group by字句
-不要建立太多索引，索引会消耗系统资源。
-
-1. 创建表的时候直接指定
-
-```sql
-create table if not exists you(
-id int not null ,
-youname CHAR(20),
-index indexname(youname(20))
-);
-```
-
-2. 创建索引
-
-```sql
-CREATE INDEX indexName ON mytable(user_name); // name都不要用引号
-```
-
-```sql
-ALTER TABLE user_info ADD INDEX indexName(user_name);// name都不要用引号
-```
 
 
 
-## 全文索引
-
-`fulltext索`引只能用于`myisam`表.
-
-这是一种特殊的索引，他会把在某个数据表的某个数据列里出现过的所有单词生成一份清单。只作用在 `char`, ` varchar`, `text`类型的字段上
-
-使用全文索引获取数据时 ，在`select`语句中需要使用`match()`和`against()`两个`mysql函数`
-
-```sql
- SELECT * FROM sales_goods WHERE match(goods_name) AGAINST('xxx');
-```
-
-## 删除索引
-
-```sql
-DROP INDEX [indexName] ON mytable; 
-```
-
-```sql
-ALTER TABLE table_name DROP INDEX index_name
-```
 
 
-
-## 最左原则
 
 
 
