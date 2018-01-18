@@ -1,6 +1,5 @@
 ### Vue基础
 [Vue基础](fe/vue/article/vue基础.md)  
-[资源推荐](fe/vue/article/资源推荐.md)  
 [slot分发](fe/vue/article/slot分发.md)  
 [组件&组件传值](fe/vue/article/组件&组件传值.md)  
 [Vue.set](fe/vue/article/Vue.set.md)  
@@ -27,6 +26,11 @@
 
 ### NuxtJs
 [NuxtJs实战](fe/vue/article/NuxtJs实战.md)  
+
+### 推荐
+[资源推荐](fe/vue/article/资源推荐.md)  
+
+
 
 ### UI
 [UI](fe/vue/vue-ui.md)  
