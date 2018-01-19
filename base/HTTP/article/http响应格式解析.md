@@ -124,6 +124,8 @@ WEB服务器表明自己使用了什么压缩方法（gzip，deflate）压缩响
 
 例如：  `Connection: close`  代表一个Request完成后，客户端和服务器之间用于传输HTTP数据的TCP连接会关闭， 当客户端再次发送Request，需要重新建立TCP连接。
 
+
+
 ### Location头域
 
 #### **Location：**
