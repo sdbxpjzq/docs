@@ -7,6 +7,10 @@
 - http://animejs.com/
 - http://code.ciaoca.com/jquery/transit/
 
+### bignumber.js 用于任意精度十进制和非十进制算术的JavaScript库
+https://github.com/MikeMcl/bignumber.js
+
+
 ### Inputmask -- 用于输入验证
 
 https://github.com/RobinHerbots/Inputmask
