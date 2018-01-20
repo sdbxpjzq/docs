@@ -1,4 +1,7 @@
 ## Mysql基础
+[MaxScale实现mysql读写分离和负载均衡](dataStorage/mysql/article/MaxScale实现mysql读写分离和负载均衡.md)  
+[pt-online-schema-change](dataStorage/mysql/article/pt-online-schema-change.md)  
+[数据类型](dataStorage/mysql/article/数据类型.md)  
 [mysql基准测试](dataStorage/mysql/article/mysql基准测试.md)  
 [MySQL唯一索引和插入重复自动更新](dataStorage/mysql/article/MySQL唯一索引和插入重复自动更新.md)  
 [Mysql EXPLAIN详解](dataStorage/mysql/article/MysqlEXPLAIN详解.md)  
