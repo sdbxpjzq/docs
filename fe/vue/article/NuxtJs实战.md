@@ -102,12 +102,35 @@ asyncData (params) {
 
 ![](https://ws1.sinaimg.cn/large/006tNc79gy1fniqcifwjsj30cs0go74l.jpg)
 
-
-
-
-
-# 参考学习
+## 参考学习
 
 https://juejin.im/post/59ee97a66fb9a044fc43e910
 
 https://segmentfault.com/a/1190000012802572
+
+
+
+# 部署
+
+执行
+
+```shell
+npm run generate
+```
+
+生成dist目录.
+
+## 参考
+
+https://segmentfault.com/a/1190000012774650
+
+
+
+
+
+
+
+
+
+
+
