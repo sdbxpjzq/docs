@@ -1,8 +1,8 @@
-## [Redis](base/NoSQL/Redis.md)
+## [Redis](dataStorage/NoSQL/Redis.md)
 
-## [memcache](base/NoSQL/memcache.md)
+## [memcache](dataStorage/NoSQL/memcache.md)
 
-## [MongoDB](base/NoSQL/MongoDB.md)
+## [MongoDB](dataStorage/NoSQL/MongoDB.md)
 
 
 
