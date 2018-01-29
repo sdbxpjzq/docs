@@ -1,4 +1,4 @@
-# httpCode
+# http状态码
 
 ## 1xx: 信息
 

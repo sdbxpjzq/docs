@@ -89,32 +89,6 @@ http://weizhifeng.net/node-js-exports-vs-module-exports.html
 
 
 
-# nrm 源管理
-
-**nrm - 源管理**
-
-`npm install -g nrm`
-
-`nrm ls`
-
-* npm ---- https://registry.npmjs.org/
-  cnpm --- http://r.cnpmjs.org/
-  taobao - http://registry.npm.taobao.org/
-  eu ----- http://registry.npmjs.eu/
-  au ----- http://registry.npmjs.org.au/
-  sl ----- http://npm.strongloop.com/
-  nj ----- https://registry.nodejitsu.com/``
-
-`nrm use taobao`
-
-`nrm add  <registry> <url> [home]`
-
-`nrm del <registry>`
-
-`nrm test npm  `
-
-`nrm test`
-
 
 
 
@@ -129,27 +103,7 @@ http://weizhifeng.net/node-js-exports-vs-module-exports.html
 
 # 管理node版本 — n
 
-`npm install -g n`
 
-安装node最新版本：
-
-​     `n latest`
-
-​     安装稳定版
-
-   `  n stable`
-
-​     查看已安装版本
-
-   `  n`
-
-删除指定版本
-
-​    `n rm 0.10.1`
-
-指定某个版本运行脚本
-
-​    `n use 0.10.1`
 
 # 服务端使用node 无法加载模块
 
