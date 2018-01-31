@@ -1,4 +1,5 @@
 ### 基础
+[正则函数](service/php/article/RegExp.md)  
 [检测数据类型](service/php/article/检测数据类型.md)  
 [字符串处理函数](service/php/article/String.md)  
 [锁机制](service/php/article/锁机制.md)  
