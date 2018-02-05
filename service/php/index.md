@@ -1,4 +1,6 @@
 ### 基础
+[array_flip删除数组重复元素](service/php/article/array_flip删除数组重复元素.md)  
+[PHP从数组中删除元素的四种方法](service/php/article/PHP从数组中删除元素的四种方法.md)  
 [正则函数](service/php/article/RegExp.md)  
 [检测数据类型](service/php/article/检测数据类型.md)  
 [字符串处理函数](service/php/article/String.md)  

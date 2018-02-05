@@ -37,6 +37,7 @@
 [javascript设计模式](fe/javascript/article/javascript设计模式.md)
 
 ### 事件
+[常用事件](fe/javascript/常用事件.md)  
 [自定义事件](fe/javascript/article/自定义事件.md)  
 [addEventListener和attachEvent](fe/javascript/article/addEventListener和attachEvent.md)  
 
