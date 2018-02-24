@@ -22,6 +22,9 @@
 [laravel框架学习](service/php/article/laravel框架学习.md)  
 
 
+### 推荐看
+http://www.jb51.net/list/list_15_1.htm
+http://www.php.cn/
 
 
 
