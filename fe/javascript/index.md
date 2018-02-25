@@ -21,6 +21,7 @@
 [input的compositionstart和compositionend事件](fe/javascript/article/input的compositionstart和compositionend事件.md)  
 [跨域](fe/javascript/article/跨域.md)  
 [for循环与setTimeout输出](fe/javascript/article/for循环与setTimeout输出.md)  
+[js类型转换](fe/javascript/article/类型转换.md)  
 [js类型检测](fe/javascript/article/js类型检测.md)  
 [null和undefined](fe/javascript/article/null和undefined.md)  
 [for...in循环](fe/javascript/article/for...in循环.md)  
