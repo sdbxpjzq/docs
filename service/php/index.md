@@ -1,4 +1,5 @@
 ### 基础
+[array_merge和+号合并数组的区别](service/php/article/array_merge和+号合并数组的区别.md)  
 [array_flip删除数组重复元素](service/php/article/array_flip删除数组重复元素.md)  
 [PHP从数组中删除元素的四种方法](service/php/article/PHP从数组中删除元素的四种方法.md)  
 [正则函数](service/php/article/RegExp.md)  

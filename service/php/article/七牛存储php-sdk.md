@@ -6,3 +6,8 @@
 
 ` php composer.phar require qiniu/php-sdk`
 
+
+
+
+
+js数组问题  连续设置数组
