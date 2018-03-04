@@ -234,7 +234,15 @@ https://teddysun.com/489.html
 
 # TCP双边加速
 
-`FinalShell`
+## net-speed
+
+
+
+https://github.com/snooda/net-speeder
+
+`nohup ./net_speeder eth0 "ip" &` 
+
+## `FinalShell`
 
 ### 一. 开放端口
 
