@@ -23,7 +23,7 @@
 [js类型转换](fe/javascript/article/类型转换.md)  
 [js类型检测](fe/javascript/article/js类型检测.md)  
 [null和undefined](fe/javascript/article/null和undefined.md)  
-[for...in循环](fe/javascript/article/for...in循环.md)  
+[for...in循环](fe/javascript/article/for...in循环和for..of.md)  
 [浏览器进程？线程？傻傻分不清楚](fe/javascript/article/浏览器进程？线程？傻傻分不清楚.md)  
 [isNaN](fe/javascript/article/isNaN.md)  
 [ajax](fe/javascript/article/ajax.md)  
