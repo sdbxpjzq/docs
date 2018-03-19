@@ -1,7 +1,5 @@
 [TOC]
 
-###05-02 
-
 # 更新自己的分支开发(上班第一件事)
 
 1. `git checkout master`
@@ -143,8 +141,6 @@ https://ithelp.ithome.com.tw/articles/10138150
 `git push all master`
 
 
-
-
 # git add
 
 - `git add [file1][file2]…` — 添加指定文件到暂存区
@@ -203,7 +199,7 @@ https://ithelp.ithome.com.tw/articles/10138150
 
 `git diff --cached`  或者 `git diff --staged`— 查看暂存区的改动
 
-
+`git difftool  --cached` — 使用工具查看
 
 # git push
 
@@ -327,6 +323,12 @@ https://ithelp.ithome.com.tw/articles/10138150
 `git log --oneline -5 --before='2017-07-01'` 1 week, 3 days
 
 `git log --oneline -5 --before='1 week'`
+
+
+
+# git bisect
+
+http://blog.csdn.net/z69183787/article/details/54947538
 
 
 

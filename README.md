@@ -12,7 +12,7 @@
 
 - QQ: 1165064143
 - 邮箱: 1165064143@qq.com
-- [segmentfault](https://segmentfault.com/u/sdbxpjzq)
+- [segmentfault](https://segmentfault.com/blog/sdbxpjzq)
 
 # 工作
 
