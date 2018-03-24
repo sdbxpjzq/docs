@@ -1,6 +1,7 @@
 # Elasticsearch
 
 https://www.elastic.co/downloads/elasticsearch
+
 [Elasticsearch: 权威指南](https://elasticsearch.cn/book/elasticsearch_definitive_guide_2.x/mapping-analysis.html)
 
 ## 下载
