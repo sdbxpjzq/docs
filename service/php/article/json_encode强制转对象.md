@@ -19,6 +19,12 @@ echo json_encode($tmp);
 `{"a":"a","b":"b","c":"c"}`
 
 
+```php
+$tmp3 = [];
+$a =  json_encode($tmp3);
+print_r($a); // []
+```
+
 
 > **索引数组本来就是连贯的，应该是除了索引数组，其他数组（关联数组，多维数组）都会被编码为object。**
 

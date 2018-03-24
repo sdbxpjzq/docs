@@ -533,3 +533,5 @@ https://www.waitsun.com/
 http://xclient.info/
 
 http://www.amegaz.com/
+
+http://www.zhinin.com/
