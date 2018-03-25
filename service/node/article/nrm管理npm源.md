@@ -5,12 +5,8 @@
 `nrm ls`
 
 * npm ---- https://registry.npmjs.org/
-  cnpm --- http://r.cnpmjs.org/
-  taobao - http://registry.npm.taobao.org/
-  eu ----- http://registry.npmjs.eu/
-  au ----- http://registry.npmjs.org.au/
-  sl ----- http://npm.strongloop.com/
-  nj ----- https://registry.nodejitsu.com/``
+* cnpm --- http://r.cnpmjs.org/
+* taobao - http://registry.npm.taobao.org/
 
 `nrm use taobao`
 
