@@ -34,8 +34,35 @@ https://github.com/elastic/elasticsearch-php
 
 
 
+## 插件安装
+
+### 安装elasticsearch-head
+
+6.X中，elasticsearch-head
+
+1. 不能放在elasticsearch的 plugins、modules 目录下
+2. 不能使用 elasticsearch-plugin install
+
+
+
+https://github.com/mobz/elasticsearch-head
+
+
+
+## 教程参考
+
+https://www.sojson.com/blog/85.html
+
+https://blog.csdn.net/qq_21383435/article/details/79367821
+
+
+
+
+
 内容展示
 ![](https://ws1.sinaimg.cn/large/006tNc79gy1fpnualproij317s162gs9.jpg)
+
+
 
 
 
