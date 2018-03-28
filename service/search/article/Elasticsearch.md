@@ -19,6 +19,14 @@ https://www.elastic.co/downloads/elasticsearch
 
 可以先设置权限(`chmod -R 777 ./xxx`)不要`root`用户执行(为了安全考虑)
 
+root执行: 
+
+用vi打开elasicsearch执行文件，在变量ES_JAVA_OPTS使用前添加以下命令
+
+`ES_JAVA_OPTS="-Des.insecure.allow.root=true" `
+
+
+
 ## 测试
 
 `curl http://localhost:9200/` 
