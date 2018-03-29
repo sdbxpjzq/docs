@@ -1,9 +1,3 @@
-
-
-
-
-[koa实战](http://book.apebook.org/minghe/koa-action/hello-koa/index.html)
-
 # 简单入门
 
 ```js
@@ -151,10 +145,6 @@ test();
 # koa-router
 
 [github](https://github.com/alexmingoia/koa-router)
-
-
-
-https://chenshenhai.github.io/koa2-note/note/route/koa-router.html
 
 https://github.com/chenshenhai
 
@@ -372,21 +362,11 @@ http://www.jianshu.com/p/d7fcd17d79a9
 
 
 
+# 参考
 
+[koa实战](http://book.apebook.org/minghe/koa-action/hello-koa/index.html)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+https://chenshenhai.github.io/koa2-note/
 
 [参考廖雪峰js教程](https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001471087582981d6c0ea265bf241b59a04fa6f61d767f6000)
 
