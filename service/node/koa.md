@@ -1,4 +1,4 @@
-[TOC]
+
 
 
 
@@ -66,6 +66,85 @@ app.use(async (ctx, next) => {
 ```
 
 ![](https://ws1.sinaimg.cn/large/006tKfTcgy1fl7h597f3nj30eo0960sn.jpg)
+
+
+
+
+
+# async/await的使用方法
+
+## async
+
+```node
+async function testAsync(){
+    return 'Hello async';
+}
+const result = testAsync();
+console.log(result);
+```
+
+输出一个promise:
+
+`Promise { 'Hello async' }`
+
+## await
+
+这是 `async` 和 `wait`的简写.
+
+await一般在等待async方法执行完毕.但是其实await等待的只是一个表达式，这个表达式在官方文档里说的是Promise对象，可是它也可以接受普通值.
+
+```node
+function getSomething(){
+    return 'something';
+}
+ 
+async function testAsync(){
+    return 'Hello async';
+}
+ 
+async function test(){
+    const v1=await getSomething();
+    const v2=await testAsync();
+    console.log(v1,v2);
+}
+ 
+test();
+```
+
+实际项目中多是去后台请求数据，等数据回来后进行执行。
+
+```node
+function takeLongTime() {
+    return new Promise(resolve => {
+        setTimeout(() => resolve("long_time_value"), 3000);
+    });
+}
+ 
+async function test() {
+    const v = await takeLongTime();
+    console.log(v);
+}
+ 
+test();
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -155,6 +234,130 @@ app
   app.listen(3000,()=>{
       console.log('starting at port 3000');
   });
+```
+
+
+
+### post请求
+
+`npm install koa-bodyparser --save`
+
+当然`koa-bodyparser`也能接收Get请求的参数
+
+```node
+static async postIndex(context,next)
+    {
+        context.body = {
+            value:context.request.body // post参数
+        };
+
+    }
+```
+
+
+
+# cookie
+
+- ctx.cookies.get(name,[optins]):读取上下文请求中的cookie。
+- ctx.cookies.set(name,value,[options])：在上下文中写入cookie。
+
+### 写入Cookie操作：
+
+```node
+const Koa  = require('koa');
+const app = new Koa();
+ 
+app.use(async(ctx)=>{
+    if(ctx.url=== '/index'){
+        ctx.cookies.set(
+            'MyName','JSPang'
+        );
+        ctx.body = 'cookie is ok';
+    }else{
+        ctx.body = 'hello world'
+    }
+});
+ 
+app.listen(3000,()=>{
+    console.log('[demo] server is starting at port 3000');
+})
+```
+
+### Cookie选项
+
+比如我们要存储用户名，保留用户登录状态时，你可以选择7天内不用登录，也可以选择30天内不用登录。这就需要在写入是配置一些选项：
+
+- domain：写入cookie所在的域名
+- path：写入cookie所在的路径
+- maxAge：Cookie最大有效时长
+- expires：cookie失效时间
+- httpOnly:是否只用http请求中获得
+- overwirte：是否允许重写
+
+```node
+const Koa  = require('koa');
+const app = new Koa();
+ 
+app.use(async(ctx)=>{
+    if(ctx.url=== '/index'){
+        ctx.cookies.set(
+            'MyName','JSPang',{
+                domain:'127.0.0.1', // 写cookie所在的域名
+                path:'/index',       // 写cookie所在的路径
+                maxAge:1000*60*60*24,   // cookie有效时长
+                expires:new Date('2018-12-31'), // cookie失效时间
+                httpOnly:false,  // 是否只用于http请求中获取
+                overwrite:false  // 是否允许重写
+            }
+        );
+        ctx.body = 'cookie is ok';
+    }else{
+        ctx.body = 'hello world'
+    }
+});
+ 
+app.listen(3000,()=>{
+    console.log('[demo] server is starting at port 3000');
+})
+```
+
+
+
+### 读取Cookie：
+
+```node
+ ctx.body = ctx.cookies.get('MyName');
+```
+
+
+
+# koa-static静态资源中间件
+
+`npm install --save koa-static`
+
+我们新建一个demo12.js文件，引入koa-static中间件，并用app.use方法进行使用。
+
+```node
+const Koa = require('koa')
+const path = require('path')
+const static = require('koa-static')
+ 
+const app = new Koa()
+ 
+ 
+const staticPath = './static'
+ 
+app.use(static(
+  path.join( __dirname,  staticPath)
+))
+ 
+ 
+app.use( async ( ctx ) => {
+  ctx.body = 'hello world'
+})
+ 
+app.listen(3000, () => {
+  console.log('[demo] static-use-middleware is starting at port 3000')
 ```
 
 
