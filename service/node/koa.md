@@ -73,60 +73,91 @@ app.use(async (ctx, next) => {
 
 [github](https://github.com/alexmingoia/koa-router)
 
+
+
+https://chenshenhai.github.io/koa2-note/note/route/koa-router.html
+
+https://github.com/chenshenhai
+
+## 设置前缀
+
+```node
+const router = new Router({
+      prefix:'/zongqi'
+})
+```
+
+访问链接: http://127.0.0.1:3000/zongqi/test
+
 ## 嵌套路由
 
-user.js
-
-```js
-const userRouter = require('koa-router')();
-const console = require('console');
-userRouter.get('/login',async(ctx,next) => {
-    console.log(ctx.request.path);
-    ctx.response.body = {
-        code: 200,
-        msg: 'hello login'
-    };
-});
-module.exports = userRouter;
-```
-
-
-
-sms.js
-
-```js
-const smsRouter = require('koa-router')();
-const console = require('console');
-
-smsRouter.get('/sendmsg',async(ctx,next) => {
-    console.log(ctx.request.path);
-    ctx.response.body = 'world';
-});
-
-module.exports = smsRouter
-```
-
-
-
-server.js
-
-```js
+```nodejs
 const Koa = require('koa');
-const router = require('koa-router')();
 const app = new Koa();
-
-const userRouter = require('./server/router/user')
-const smsRouter = require('./server/router/sms')
-
-//装载子路由
-router.use('/api', userRouter.routes(), userRouter.allowedMethods());
-router.use('/api', smsRouter.routes(), smsRouter.allowedMethods());
-
-// 加载路由中间件
+const Router = require('koa-router');
+ 
+ 
+let home = new Router();
+home.get('/zongqi',async(ctx)=>{
+    ctx.body="Home zongqi";
+}).get('/todo',async(ctx)=>{
+    ctx.body ='Home ToDo';
+})
+ 
+ 
+ 
+let page = new Router();
+page.get('/zongqi',async(ctx)=>{
+    ctx.body="Page zongqi";
+}).get('/todo',async(ctx)=>{
+    ctx.body ='Page ToDo';
+})
+ 
+//装载所有子路由
+let router = new Router();
+router.use('/home',home.routes(),home.allowedMethods());
+router.use('/page',page.routes(),page.allowedMethods());
+ 
+ 
+//加载路由中间件
 app.use(router.routes()).use(router.allowedMethods());
-
-app.listen(3000);
+ 
+app.listen(3000,()=>{
+    console.log('[demo] server is starting at port 3000');
+});
 ```
+
+## 接收参数
+
+### get请求
+
+`ctx.query` `ctx.params`
+
+```node
+const Koa = require('koa');
+const Router = require('koa-router');
+const app = new Koa();
+const router = new Router();
+
+// http://127.0.0.1:3000?name=zongqi
+router.get('/', function (ctx, next) {
+    ctx.body=ctx.query; // query, 接收get参数
+});
+
+// http://127.0.0.1:3000/test2/zongqi
+router.get('/test/:name', function (ctx, next) {
+    ctx.body=ctx.params; // params, 接收get参数
+});
+
+app
+  .use(router.routes())
+  .use(router.allowedMethods());
+  app.listen(3000,()=>{
+      console.log('starting at port 3000');
+  });
+```
+
+
 
 
 
