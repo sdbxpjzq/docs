@@ -19,7 +19,7 @@
 - **后端**
   - **[Node](service/node/index.md)**
   - **[php](service/php/index.md)**
-  - **[Redis](dataStorage/NoSQL/index.md)**
+  - **[NoSQL](dataStorage/NoSQL/index.md)**
   - **[Mysql](dataStorage/mysql/index.md)**
   - **[搜索引擎](service/search/index.md)**
 

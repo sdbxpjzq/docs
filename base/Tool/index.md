@@ -6,7 +6,7 @@
 ### chrome浏览器
 
 - [chrome常用快捷键](base/Tool/article/chrome常用快捷键.md)
-
+- [chrome插件说明](base/Tool/article/chrome插件说明.md)
 
 
 ### 工具类
