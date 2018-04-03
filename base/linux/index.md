@@ -1,13 +1,16 @@
 ### Linux基础
-[linux用户相关](base/linux/article/linux用户相关.md.md)  
-[LNMP安装](base/linux/article/LNMP安装.md.md)  
-[centos安装zsh](base/linux/article/centos安装zsh.md.md)  
-[centos安装git](base/linux/article/centos安装git.md.md)  
-[如何自动拉取master](base/linux/article/如何自动拉取master.md.md)  
-[基础](base/linux/linux.md)  
+- [用户相关](base/linux/article/linux用户相关.md)  
+- [LNMP安装](base/linux/article/LNMP安装.md)  
+- [centos安装zsh](base/linux/article/centos安装zsh.md)  
+- [centos安装git](base/linux/article/centos安装git.md)  
+- [如何自动拉取master](base/linux/article/如何自动拉取master.md)  
+- [基础](base/linux/linux.md)  
 
 ### Nginx
-[Nginx](base/linux/Nginx.md)
+- [Nginx](base/linux/Nginx.md)
+
+### Vim
+- [Vim快捷键](base/linux/article/vim.md)
 
 ### VPN搭建
 [VPN搭建](base/linux/vpn.md)

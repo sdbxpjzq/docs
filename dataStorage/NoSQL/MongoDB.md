@@ -8,9 +8,9 @@
 
 [PHP7安装](http://www.runoob.com/mongodb/php7-mongdb-tutorial.html)
 
-## mongodb安装[用了扩展安装就不需要这一步了]
+## mongodb安装
 
-`curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.4.10.tgz`
+## `curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.4.10.tgz`
 
 `tar -zxvf mongodb-linux-x86_64-3.4.10.tgz`  
 
