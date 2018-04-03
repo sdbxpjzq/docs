@@ -52,6 +52,9 @@
 [laravel框架学习](service/php/article/laravel框架学习.md)  
 
 
+### 设计模式
+- [设计模式-PHP版](service/php/article/设计模式.md)
+
 ### 推荐看
 http://www.jb51.net/list/list_15_1.htm
 http://www.php.cn/

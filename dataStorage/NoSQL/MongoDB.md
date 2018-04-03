@@ -35,6 +35,60 @@ source /etc/profile
 
 
 
+## 启动
+
+### 手动启动
+
+创建相应的目录结构
+
+```shell
+cd /data/
+mkdir mongodb_data mongodb_log
+```
+
+在 `bin`目录下执行,后台启动
+
+`./mongod --dbpath=/data/mongodb_data/ --logpath=/data/mongodb_log/mongodb.log --logappend& `
+
+默认端口号是`27017`
+
+检查是否启动成功
+
+`netstat -lanp | grep "27017"  `
+
+
+
+### 设置开机启动
+
+   编辑/etc/rc.local，加入下述代码然后再保存即可。 
+
+1. `#add mongonDB service   `
+2. `/usr/local/mongodb/bin/mongod --dbpath=/data/mongodb_data/ --logpath=/data/mongodb_log/mongodb.log --logappend&  `
+
+
+
+
+
+
+
+# MongoDB 概念解析
+
+在mongodb中基本的概念是文档、集合、数据库
+
+| SQL术语/概念 | MongoDB术语/概念 | 解释/说明                           |
+| ------------ | ---------------- | ----------------------------------- |
+| database     | database         | 数据库                              |
+| table        | collection       | 数据库表/集合                       |
+| row          | document         | 数据记录行/文档                     |
+| column       | field            | 数据字段/域                         |
+| index        | index            | 索引                                |
+| table joins  |                  | 表连接,MongoDB不支持                |
+| primary key  | primary key      | 主键,MongoDB自动将_id字段设置为主键 |
+
+
+
+
+
 ## 创建数据库目录
 
 `MongoDB`需要自建数据库文件夹.
