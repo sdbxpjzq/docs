@@ -13,6 +13,7 @@
 - [mac安装nginx](base/Tool/article/mac安装nginx.md)  
 - [上传图片到CDN](base/Tool/article/上传图片到CDN.md)  
 - [mac升级PHP](base/Tool/article/mac升级PHP.md)  
+- [编程字体Source Code Pro](base/Tool/article/编程字体.md)
 
 
 
