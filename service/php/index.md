@@ -8,6 +8,8 @@
   - [const和define区别](service/php/article/const和define区别.md)  
 - ***魔术常量***
   - [魔术常量](service/php/article/魔术常量.md) 
+- 数字操作
+  - [补全数字](service/php/article/补全数字.md)
 - ***字符串操作***
   - [字符串处理函数](service/php/article/String.md)  
 
