@@ -29,6 +29,7 @@
 - http://techbrood.com/
 - http://animejs.com/
 - http://code.ciaoca.com/jquery/transit/
+- https://github.com/sdbxpjzq/WOW
 
 
 
