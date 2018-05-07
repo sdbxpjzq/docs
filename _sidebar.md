@@ -12,7 +12,7 @@
 
 
 - **Linux**
-  - **[Linux命令](base/linux/index.md)**
+  - **[Linux](base/linux/index.md)**
 
 
 
