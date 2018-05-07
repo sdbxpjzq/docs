@@ -7,7 +7,7 @@
 - [linux安装supervisor](base/linux/article/linux安装supervisor.md)
 - [Linux安装ansible](base/linux/article/Linux安装ansible.md)
 - [linux安装Go](base/linux/article/linux安装Go.md)
-- [Linux安装holer(内网穿透工具)](base/linux/article/Linux安装holer(内网穿透工具).md)
+- [Linux安装holer(内网穿透工具)](base/linux/article/Linux安装holer\(内网穿透工具\).md)
 - [如何自动拉取master](base/linux/article/如何自动拉取master.md)  
 - [基础](base/linux/linux.md)  
 
