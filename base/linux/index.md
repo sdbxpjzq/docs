@@ -9,7 +9,6 @@
 - [linux安装Go](base/linux/article/linux安装Go.md)
 - [Linux安装(内网穿透工具)](base/linux/article/Linux安装内网穿透工具.md)
 - [Linux安装JenKins](base/linux/article/Linux安装JenKins)
-- [如何自动拉取master](base/linux/article/如何自动拉取master.md)  
 - [基础](base/linux/linux.md)  
 
 ### Nginx

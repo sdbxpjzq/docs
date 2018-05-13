@@ -84,6 +84,10 @@ service jenkins start/stop/restart
 
 
 
+# 参考
+
+https://blog.csdn.net/boling_cavalry/article/details/78943061
+
 
 
 
