@@ -242,6 +242,34 @@ https://github.com/snooda/net-speeder
 
 `nohup ./net_speeder eth0 "ip" &` 
 
+`nohup ./net_speeder eth0 "tcp" &`
+
+
+
+nohup ./net_speeder eth0  "tcp src port 80 or port 443 or port 8989" >/dev/null 2>&1 &
+
+nohup ./net_speeder eth0 "tcp" >/dev/null 2>&1 &
+
+nohup ./net_speeder eth0 "ip" >/dev/null 2>&1 &
+
+关闭net-speeder
+
+killall net_speeder
+
+
+
+把这个工具加入开机启动，先拷贝到/usr/bin目录下
+
+
+
+```
+cp ./net_speeder /usr/bin
+echo 'nohup /usr/bin/net_speeder venet0:0 "tcp src port 8388" >/dev/null 2>&1 &' >> /etc/rc.local
+
+```
+
+https://zhgcao.github.io/2016/05/26/ubuntu-install-net-speeder/
+
 ## `FinalShell`
 
 ### 一. 开放端口

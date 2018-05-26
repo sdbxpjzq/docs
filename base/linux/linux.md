@@ -633,3 +633,4 @@ rename [旧名字]  [新名字]  [旧名字]
 需要安装: brew install rename
 ```
 
+yum

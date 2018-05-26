@@ -3,7 +3,7 @@
 ```shell
 sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
 sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
-sudo yum install jenkins
+sudo yum install -y jenkins
 ```
 
 启动jenkins的命令：
@@ -93,22 +93,19 @@ service jenkins start/stop/restart
 # shell脚本
 
 ```shell
-#!/bin/bash
-WEB_PATH='/data/wwwroot/test' #这个代表项目所在目录，就是要生产的目录
+WEB_PATH=$1 #这个代表项目所在目录，就是要生产的目录
 WEB_USER='www' #用户， Nginx和Apache一般都是这个用户
 WEB_USERGROUP='www' #用户组
-
 
 echo "Start pull" #UI，这个无所谓
 cd $WEB_PATH #进入目录
 echo "pulling source code .. " #UI
-/usr/local/git/bin/git reset --hard origin/master #回到这个版本
-/usr/local/git/bin/git clean -f #清除文件
-/usr/local/git/bin/git pull #拉文件下来
-#git checkout master #回到master分支
+sudo git reset --hard origin/master #回到这个版本
+sudo git clean -f #清除文件
+sudo git pull #拉文件下来
+sudo git checkout master #回到master分支
 echo "changing permissions .."
-#sudo chown -R 777 $WEB_USER:$WEB_USERGROUP $WEB_PATH #防止pull下来过后出现权限问题，
-sudo chown -R 777 $WEB_PATH
+sudo chown -R $WEB_USER:$WEB_USERGROUP $WEB_PATH #防止pull下来过后出现权限问题，
 echo "Finished."
 
 ```
