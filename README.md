@@ -9,9 +9,6 @@
 
 
 # 联系方式
-
-- QQ: 1165064143
-- 邮箱: 15901008397@163.com
 - [segmentfault](https://segmentfault.com/blog/sdbxpjzq)
 - [我的小书](https://book.gitlore.com/sdbxpjzq/mybook/)
 
